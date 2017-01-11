@@ -92,10 +92,11 @@ HRESULT loading::init(void)
 {
 	//로딩화면 백그라운드 이미지 초기화
 	_background = IMAGEMANAGER->addImage("bgLoadingScene", "bgLoadingScene.bmp", WINSIZEX, WINSIZEY);
-
+	_loadingnum = IMAGEMANAGER->addFrameImage("loadingnum", "num.bmp", 220, 30, 10, 1, true, RGB(255, 0, 255));
+	_loadingPersent = IMAGEMANAGER->addImage("_loadingPersent", "%.bmp", 30, 21, true, RGB(255, 0, 255));
 	//로딩바 초기화
 	_loadingBar = new progressBar;
-	_loadingBar->init("loadingBarFront", "loadingBarBack", 100, 430, 600, 20);
+	_loadingBar->init("loadingBarFront", "loadingBarBack", 50, 580, 700, 25);
 	_loadingBar->setGauge(0, 0);
 	//현재 게이지 초기화
 	_currentGauge = 0;
@@ -122,6 +123,27 @@ void loading::render(void)
 
 	//로딩바 렌더
 	_loadingBar->render();
+
+	if (_currentGauge / 10 < 10)
+	{
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10), 0);
+		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
+	}
+	if (_currentGauge / 10 >= 10 && _currentGauge / 10 < 100)
+	{
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, (_currentGauge / 10) / 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10) % 10, 0);
+		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
+	}
+	if (_currentGauge / 10 >= 100)
+	{
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 190, _loadingBar->getRect().top - 40, (_currentGauge / 10) / 100, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, ((_currentGauge / 10) % 100) / 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10) % 10, 0);
+		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
+	}
+
+	fileNameText();
 }
 
 void loading::loadImage(string strKey, int width, int height)
@@ -177,7 +199,7 @@ BOOL loading::loadingDone(void)
 		IMAGEMANAGER->addImage(img.keyName, img.width, img.height);
 	}
 	break;
-	
+
 	case LOAD_KIND_IMAGE_1:
 	{
 		tagImageResource img = item->getImageResource();
@@ -210,6 +232,13 @@ BOOL loading::loadingDone(void)
 		break;
 	}
 
+	ZeroMemory(dir, sizeof(dir));
+	ZeroMemory(str, sizeof(str));
+	GetCurrentDirectory(1024, dir);
+
+	sprintf(str, "\\%s.bmp", _vLoadItem[_currentGauge]->getImageResource().keyName.c_str());
+	strcat(dir, str);
+
 	//현재게이지 증가
 	_currentGauge++;
 
@@ -217,4 +246,14 @@ BOOL loading::loadingDone(void)
 	_loadingBar->setGauge(_currentGauge, _vLoadItem.size());
 
 	return FALSE;
+}
+void loading::fileNameText()
+{
+	HFONT myfont = CreateFont(10, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 0, 0, 0, 0, "THE노란코끼리M");
+	SelectObject(getMemDC(), myfont);
+	SetTextColor(getMemDC(), RGB(0, 255, 255));
+	SetBkMode(getMemDC(), TRANSPARENT);
+	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, dir, strlen(dir));
+
+	DeleteObject(myfont);
 }

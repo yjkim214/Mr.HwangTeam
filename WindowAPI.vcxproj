@@ -151,10 +151,12 @@
     <ClInclude Include="imageManager.h" />
     <ClInclude Include="iniData.h" />
     <ClInclude Include="iniTestScene.h" />
+    <ClInclude Include="introScene.h" />
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="loading.h" />
     <ClInclude Include="loadingScene.h" />
     <ClInclude Include="mainGame.h" />
+    <ClInclude Include="mainMenuScene.h" />
     <ClInclude Include="minion.h" />
     <ClInclude Include="pixelCollision.h" />
     <ClInclude Include="player.h" />
@@ -170,6 +172,7 @@
     <ClInclude Include="timeManager.h" />
     <ClInclude Include="txtData.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="villegeScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bullet.cpp" />
@@ -180,10 +183,12 @@
     <ClCompile Include="imageManager.cpp" />
     <ClCompile Include="iniData.cpp" />
     <ClCompile Include="iniTestScene.cpp" />
+    <ClCompile Include="introScene.cpp" />
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="loading.cpp" />
     <ClCompile Include="loadingScene.cpp" />
     <ClCompile Include="mainGame.cpp" />
+    <ClCompile Include="mainMenuScene.cpp" />
     <ClCompile Include="minion.cpp" />
     <ClCompile Include="pixelCollision.cpp" />
     <ClCompile Include="player.cpp" />
@@ -202,6 +207,7 @@
     <ClCompile Include="timeManager.cpp" />
     <ClCompile Include="txtData.cpp" />
     <ClCompile Include="util.cpp" />
+    <ClCompile Include="villegeScene.cpp" />
     <ClCompile Include="winMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -15,9 +15,12 @@ HRESULT mainGame::init(void)
 	SCENEMANAGER->addScene("ini", new iniTestScene);
 	SCENEMANAGER->addScene("로딩화면", new loadingScene);
 	SCENEMANAGER->addScene("사운드", new soundTestScene);
+	SCENEMANAGER->addScene("메인메뉴", new mainMenuScene);
+	SCENEMANAGER->addScene("인트로", new introScene);
+	SCENEMANAGER->addScene("마을", new villegeScene);
 
 	/*현재씬 설정*/
-	SCENEMANAGER->changeScene("사운드");
+	SCENEMANAGER->changeScene("인트로");
 
 	return S_OK;
 }

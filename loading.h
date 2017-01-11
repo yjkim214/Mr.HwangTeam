@@ -70,8 +70,12 @@ private:
 	//이곳에 로딩화면에서 사용할 이미지와 로딩바 수정할것!!
 	//로딩화면에서 사용할 이미지 및 로딩바
 	image* _background;
+	image* _loadingnum;
+	image* _loadingPersent;
 	progressBar* _loadingBar;
 	int _currentGauge;
+	char str[1024];
+	char dir[1024];
 
 public:
 	HRESULT init(void);
@@ -91,6 +95,9 @@ public:
 	/*중요함*/
 	//로딩완료 됐냐?(로딩완료후 화면전환)
 	BOOL loadingDone(void);
+
+	//textOut출력
+	void fileNameText();
 
 	//로드아이템클래스를 담은 벡터 가져오기
 	//vector<loadItem*> getLoadItem(void)

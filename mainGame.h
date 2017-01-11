@@ -6,7 +6,9 @@
 #include "iniTestScene.h"
 #include "loadingScene.h"
 #include "soundTestScene.h"
-
+#include "mainMenuScene.h"
+#include "introScene.h"
+#include "villegeScene.h"
 class mainGame : public gameNode
 {
 public:

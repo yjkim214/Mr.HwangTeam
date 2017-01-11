@@ -63,6 +63,9 @@
     <Filter Include="MainGame\소리재생">
       <UniqueIdentifier>{afb6b8b1-a1ce-453f-9359-64c2b271e539}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainGame\씬화면담당">
+      <UniqueIdentifier>{8d4afb09-e8e5-4383-85ed-3ed73e1916cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainGame.h">
@@ -149,6 +152,15 @@
     <ClInclude Include="soundTestScene.h">
       <Filter>MainGame\소리재생</Filter>
     </ClInclude>
+    <ClInclude Include="introScene.h">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenuScene.h">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClInclude>
+    <ClInclude Include="villegeScene.h">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -228,6 +240,15 @@
     </ClCompile>
     <ClCompile Include="soundTestScene.cpp">
       <Filter>MainGame\소리재생</Filter>
+    </ClCompile>
+    <ClCompile Include="introScene.cpp">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenuScene.cpp">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClCompile>
+    <ClCompile Include="villegeScene.cpp">
+      <Filter>MainGame\씬화면담당</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

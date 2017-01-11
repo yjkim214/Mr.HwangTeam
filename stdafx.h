@@ -60,10 +60,10 @@ using namespace MY_UTIL;
 //			## 디파인문 - 메크로 ## (윈도우창 초기화)
 //====================================================================
 #define WINNAME (LPTSTR)(TEXT("피의 수요일과 함께하는 개발3팀"))
-#define WINSTARTX	-1400
+#define WINSTARTX	100
 #define WINSTARTY	0
 #define WINSIZEX		800
-#define WINSIZEY		500
+#define WINSIZEY		600
 #define WINSTYLE		WS_CAPTION | WS_SYSMENU
 
 //====================================================================
