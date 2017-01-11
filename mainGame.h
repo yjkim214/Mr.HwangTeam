@@ -8,7 +8,7 @@
 #include "soundTestScene.h"
 #include "mainMenuScene.h"
 #include "introScene.h"
-#include "villegeScene.h"
+#include "villageScene.h"
 class mainGame : public gameNode
 {
 public:

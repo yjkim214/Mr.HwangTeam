@@ -66,6 +66,9 @@
     <Filter Include="MainGame\씬화면담당">
       <UniqueIdentifier>{8d4afb09-e8e5-4383-85ed-3ed73e1916cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainGame\마을 씬">
+      <UniqueIdentifier>{7f41bc4d-7265-4019-ba2a-a465a8be4063}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainGame.h">
@@ -158,8 +161,11 @@
     <ClInclude Include="mainMenuScene.h">
       <Filter>MainGame\씬화면담당</Filter>
     </ClInclude>
-    <ClInclude Include="villegeScene.h">
-      <Filter>MainGame\씬화면담당</Filter>
+    <ClInclude Include="villageMap.h">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClInclude>
+    <ClInclude Include="villageScene.h">
+      <Filter>MainGame\마을 씬</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -247,8 +253,11 @@
     <ClCompile Include="mainMenuScene.cpp">
       <Filter>MainGame\씬화면담당</Filter>
     </ClCompile>
-    <ClCompile Include="villegeScene.cpp">
-      <Filter>MainGame\씬화면담당</Filter>
+    <ClCompile Include="villageMap.cpp">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="villageScene.cpp">
+      <Filter>MainGame\마을 씬</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

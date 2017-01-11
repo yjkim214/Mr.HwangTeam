@@ -172,7 +172,8 @@
     <ClInclude Include="timeManager.h" />
     <ClInclude Include="txtData.h" />
     <ClInclude Include="util.h" />
-    <ClInclude Include="villegeScene.h" />
+    <ClInclude Include="villageMap.h" />
+    <ClInclude Include="villageScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bullet.cpp" />
@@ -207,7 +208,8 @@
     <ClCompile Include="timeManager.cpp" />
     <ClCompile Include="txtData.cpp" />
     <ClCompile Include="util.cpp" />
-    <ClCompile Include="villegeScene.cpp" />
+    <ClCompile Include="villageMap.cpp" />
+    <ClCompile Include="villageScene.cpp" />
     <ClCompile Include="winMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
