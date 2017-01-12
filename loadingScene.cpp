@@ -102,7 +102,11 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("winTempest", "winTempest.bmp", 310, 124, 5, 1, true, RGB(255, 0, 255));	
 	_loading->loadImage("dieTempest", "dieTempest.bmp", 110, 64, true, RGB(255, 0, 255));
 																													  
-
+//배틀화면 슬라임 애니메이션
+	_loading->loadFrameImage("slime_idle", "slime_idle.bmp", 180, 60, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_attack", "slime_attack.bmp", 345, 64, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_getdmg", "slime_getdmg.bmp", 120, 52, 2, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_dead", "slime_dead", 60, 60, 1, 1, true, RGB(255, 0, 255));
 }
 //로딩사운드 함수(이곳에 사운드를 전부 넣어라)
 void loadingScene::loadingSound(void)
