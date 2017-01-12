@@ -37,7 +37,7 @@ image * imageManager::addImage(string strKey, int width, int height)
 
 	//_mImageList.insert(pair<string, image*>(strKey, img));
 	_mImageList.insert(make_pair(strKey, img));
-	
+
 	return img;
 }
 
@@ -162,7 +162,7 @@ BOOL imageManager::deleteImage(string strKey)
 		SAFE_DELETE(key->second);
 		//맵의 반복자 삭제
 		_mImageList.erase(key);
-	
+
 		return TRUE;
 	}
 
@@ -192,7 +192,7 @@ BOOL imageManager::deleteAll()
 
 	//맵 전체를 삭제
 	_mImageList.clear();
-	
+
 	return TRUE;
 }
 
@@ -274,4 +274,9 @@ void imageManager::loopAlphaRender(string strKey, HDC hdc, const LPRECT drawArea
 	//이미지를 찾아서 그냥 렌더시키면됨
 	image* img = findImage(strKey);
 	if (img) img->loopAlphaRender(hdc, drawArea, offsetX, offsetY, alpha);
+}
+void imageManager::frameAlphaRender(string strKey, HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha)
+{
+	image* img = findImage(strKey);
+	if (img) img->frameAlphaRender(hdc, destX, destY, currentFrameX, currentFrameY, alpha);
 }

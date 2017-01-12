@@ -38,6 +38,10 @@ private:
 	image*_inven;
 	RECT _invenRect;
 
+	int _proveLeft;
+	int _proveRight;
+	int _proveUp;
+	int _proveDown;
 
 public:
 	HRESULT init(void);
@@ -52,6 +56,7 @@ public:
 	void playersetstate();
 	void animation();
 	void inventory();
+	void ProveUpdate();
 
 	//겟셋함수 만들어놓기
 	image* getPlayerImg() { return _playerImg; }
@@ -62,6 +67,14 @@ public:
 	void setY(float y) { _y = y; }
 	Lookat getLookat() { return _lookat; }
 	void setLookat(Lookat lookat) { _lookat = lookat; }
+	int getProveLeft() { return _proveLeft; }
+	void setProveLeft(int proveLeft) { _proveLeft = proveLeft; }
+	int getProveRight() { return _proveRight; }
+	void setProveRight(int proveRight) { _proveRight = proveRight; }
+	int getProveUp() { return _proveUp; }
+	void setProveUp(int proveUp) { _proveUp = proveUp; }
+	int getProveDown() { return _proveDown; }
+	void setProveDown(int proveDown) { _proveDown = proveDown; }
 
 
 	Owplayer() {}

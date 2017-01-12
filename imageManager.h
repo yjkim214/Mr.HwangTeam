@@ -36,29 +36,30 @@ public:
 	//ÀÌ¹ÌÁö ÀüÃ¼ »èÁ¦
 	BOOL deleteAll();
 
-//====================================================================
-//			## ÀÏ¹Ý·»´õ ##
-//====================================================================
+	//====================================================================
+	//			## ÀÏ¹Ý·»´õ ##
+	//====================================================================
 	void render(string strKey, HDC hdc);
 	void render(string strKey, HDC hdc, int destX, int destY);
 	void render(string strKey, HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight);
 
-//====================================================================
-//			## ¾ËÆÄ·»´õ ##
-//====================================================================
+	//====================================================================
+	//			## ¾ËÆÄ·»´õ ##
+	//====================================================================
 	void alphaRender(string strKey, HDC hdc, BYTE alpha);
 	void alphaRender(string strKey, HDC hdc, int destX, int destY, BYTE alpha);
 	void alphaRender(string strKey, HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight, BYTE alpha);
 
-//====================================================================
-//			## ÇÁ·¹ÀÓ·»´õ ##
-//====================================================================	
+	//====================================================================
+	//			## ÇÁ·¹ÀÓ·»´õ ##
+	//====================================================================	
 	void frameRender(string strKey, HDC hdc, int destX, int destY);
 	void frameRender(string strKey, HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY);
+	void imageManager::frameAlphaRender(string strKey, HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha);
 
-//====================================================================
-//			## ·çÇÁ·»´õ ##
-//====================================================================	
+	//====================================================================
+	//			## ·çÇÁ·»´õ ##
+	//====================================================================	
 	void loopRender(string strKey, HDC hdc, const LPRECT drawArea, int offsetX, int offsetY);
 	void loopAlphaRender(string strKey, HDC hdc, const LPRECT drawArea, int offsetX, int offsetY, BYTE alpha);
 

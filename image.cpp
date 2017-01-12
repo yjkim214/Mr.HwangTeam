@@ -474,7 +474,32 @@ void image::alphaRender(HDC hdc, int destX, int destY, BYTE alpha)
 
 void image::alphaRender(HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight, BYTE alpha)
 {
+	//알파블렌드 처음사용하냐?
+	//알파블렌드 사용할 수 있도록 초기화 해라
+	if (!_blendImage) initForAlphaBlend();
+
+	//알파값 초기화
+	_blendFunc.SourceConstantAlpha = alpha;
+
+	if (_isTrans)//배경색(마젠타) 없앤후 알파블렌딩 할꺼냐?
+	{
+		//1. 출력해야 될 DC에 그려져 있는 내용을 블렌드이미지에 그린다
+		BitBlt(_blendImage->hMemDC, sourX, sourY, sourWidth, sourHeight,
+			hdc, destX, destY, SRCCOPY);
+		//2. 원본이미지의 배경을 없앤후 블렌드이미지에 그린다
+		GdiTransparentBlt(_blendImage->hMemDC, sourX, sourY, sourWidth, sourHeight,
+			_imageInfo->hMemDC, sourX, sourY, sourWidth, sourHeight, _transColor);
+		//3. 블렌드이미지를 화면에 그린다
+		AlphaBlend(hdc, destX, destY, sourWidth, sourHeight,
+			_blendImage->hMemDC, sourX, sourY, sourWidth, sourHeight, _blendFunc);
+	}
+	else
+	{
+		AlphaBlend(hdc, destX, destY, sourWidth, sourHeight,
+			_imageInfo->hMemDC, sourX, sourY, sourWidth, sourHeight, _blendFunc);
+	}
 }
+
 
 //====================================================================
 //			## 프레임렌더 ##
@@ -502,8 +527,8 @@ void image::frameRender(HDC hdc, int destX, int destY)
 	{
 		//BitBlt : DC간의 영역끼리 서로 고속복사 해주는 함수
 		BitBlt(hdc, destX, destY, _imageInfo->frameWidth, _imageInfo->frameHeight,
-			_imageInfo->hMemDC, 
-			_imageInfo->currentFrameX * _imageInfo->frameWidth, 
+			_imageInfo->hMemDC,
+			_imageInfo->currentFrameX * _imageInfo->frameWidth,
 			_imageInfo->currentFrameY * _imageInfo->frameHeight, SRCCOPY);
 	}
 }
@@ -553,17 +578,20 @@ void image::frameAlphaRender(HDC hdc, int destX, int destY, int currentFrameX, i
 {
 	_imageInfo->currentFrameX = currentFrameX;
 	_imageInfo->currentFrameY = currentFrameY;
+	if (currentFrameX > _imageInfo->maxFrameX)
+	{
+		_imageInfo->currentFrameX = _imageInfo->maxFrameX;
+	}
+	if (currentFrameY > _imageInfo->maxFrameY)
+	{
+		_imageInfo->currentFrameY = _imageInfo->maxFrameY;
+	}
 
-	if (currentFrameX > _imageInfo->maxFrameX) _imageInfo->currentFrameX = _imageInfo->maxFrameX;
-	if (currentFrameY > _imageInfo->maxFrameY) _imageInfo->currentFrameY = _imageInfo->maxFrameY;
+	alphaRender(hdc, destX, destY, _imageInfo->currentFrameX * _imageInfo->frameWidth, _imageInfo->currentFrameY * _imageInfo->frameHeight, _imageInfo->frameWidth, _imageInfo->frameHeight, alpha);
 
-	alphaRender(hdc, destX, destY,
-		currentFrameX * _imageInfo->frameWidth,
-		currentFrameY * _imageInfo->frameHeight,
-		_imageInfo->frameWidth,
-		_imageInfo->frameHeight,
-		alpha);
 }
+
+
 
 //====================================================================
 //			## 루프렌더 ##

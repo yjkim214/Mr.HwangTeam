@@ -59,6 +59,8 @@ void mainGame::render(void)
 		TIMEMANAGER->render(getMemDC());
 	}
 
+	IMAGEMANAGER->render("mouseCursor", getMemDC(), _ptMouse.x, _ptMouse.y);
+
 //=============================================================
 	//백버퍼의 내용을 HDC에 그린다 (렌더에 그대로 둘것!!)
 	this->getBackBuffer()->render(getHDC());

@@ -55,7 +55,7 @@ void loadingScene::loadingImage(void)
 
 //¸Êµé
 	_loading->loadImage("BossRoom", "BossRoom.bmp", 800, 1000, true, RGB(255, 0, 255));								
-	_loading->loadImage("BossRoomSky", "BossRoomSky.bmp", 800, 1000, true, RGB(255, 0, 255));						
+	_loading->loadImage("BossRoomSky", "BossRoomSky.bmp", 800, 1200, true, RGB(255, 0, 255));						
 	_loading->loadImage("hotel1", "hotel1.bmp", 800, 600, true,RGB(255,0,255));										
 	_loading->loadImage("hotel2", "hotel2.bmp", 800, 600, true, RGB(255, 0, 255));									
 	_loading->loadImage("house1", "house1.bmp", 800, 600, true, RGB(255, 0, 255));									
@@ -78,7 +78,6 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("village", "village.bmp", 1600, 1200,false);												
 	_loading->loadImage("dungeon", "dungeon.bmp", 1600, 1200, false);												
 	_loading->loadImage("exitSelect", "exitSelect.bmp", 800, 600, false);											
-	_loading->loadImage("BossRoomPixel", "BossRoomPixel.bmp", 800, 1000, false);
 	_loading->loadImage("BossRoomPixel", "BossRoomPixel.bmp", 800, 1000, false);
 	_loading->loadImage("dungeonPixel", "dungeonPixel.bmp", 1600, 1200, false);
 	_loading->loadImage("hotel1Pixel", "hotel1Pixel.bmp", 800, 600, false);

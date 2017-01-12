@@ -74,7 +74,7 @@ public:
 	//프레임 이미지 파일로 초기화(주 사용)
 	HRESULT init(const char* fileName, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
 	HRESULT init(const char* fileName, float x, float y, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
-	
+
 	//알파블렌드 초기화
 	HRESULT initForAlphaBlend(void);
 
@@ -84,47 +84,47 @@ public:
 	//해제
 	void release(void);
 
-//====================================================================
-//			## 일반렌더 ##
-//====================================================================
+	//====================================================================
+	//			## 일반렌더 ##
+	//====================================================================
 	void render(HDC hdc);
 	void render(HDC hdc, int destX, int destY);
 	void render(HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight);
 
-//====================================================================
-//			## 알파렌더 ##
-//====================================================================
+	//====================================================================
+	//			## 알파렌더 ##
+	//====================================================================
 	void alphaRender(HDC hdc, BYTE alpha);
 	void alphaRender(HDC hdc, int destX, int destY, BYTE alpha);
 	void alphaRender(HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight, BYTE alpha);
 
-//====================================================================
-//			## 프레임렌더 ##
-//====================================================================	
+	//====================================================================
+	//			## 프레임렌더 ##
+	//====================================================================	
 	void frameRender(HDC hdc, int destX, int destY);
 	void frameRender(HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY);
 	void frameAlphaRender(HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha);
 
-//====================================================================
-//			## 루프렌더 ##
-//====================================================================	
+	//====================================================================
+	//			## 루프렌더 ##
+	//====================================================================	
 	void loopRender(HDC hdc, const LPRECT drawArea, int offsetX, int offsetY);
 	void loopAlphaRender(HDC hdc, const LPRECT drawArea, int offsetX, int offsetY, BYTE alpha);
 
-//====================================================================
-//			## 인라인함수 ## (겟터, 셋터)
-//====================================================================	
+	//====================================================================
+	//			## 인라인함수 ## (겟터, 셋터)
+	//====================================================================	
 	//DC 얻기
 	inline HDC getMemDC(void) { return _imageInfo->hMemDC; }
 
 	//이미지 x좌표
 	inline float getX(void) { return _imageInfo->x; }
 	inline void setX(float x) { _imageInfo->x = x; }
-	
+
 	//이미지 y좌표
 	inline float getY(void) { return _imageInfo->y; }
 	inline void setY(float y) { _imageInfo->y = y; }
-	
+
 	//이미지 센터좌표
 	inline void setCenter(float x, float y)
 	{
@@ -140,8 +140,8 @@ public:
 	inline RECT boundingBox(void)
 	{
 		RECT rc = { (int)_imageInfo->x, (int)_imageInfo->y,
-		(int)_imageInfo->x + _imageInfo->width,
-		(int)_imageInfo->y + _imageInfo->height };
+			(int)_imageInfo->x + _imageInfo->width,
+			(int)_imageInfo->y + _imageInfo->height };
 
 		return rc;
 	}

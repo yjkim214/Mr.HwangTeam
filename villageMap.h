@@ -14,7 +14,6 @@ enum E_MAPSTATE
 	HOUSE4,
 	DUNGEON,
 	BOSSROOM,
-
 };
 
 class Owplayer;
@@ -22,11 +21,14 @@ class Owplayer;
 class villageMap : public gameNode
 {
 private:
+	E_MAPSTATE _state;
+	image* _pixelVillage;
+	image* _pixelHouse1;
 	RECT _playeRc;
 	int _loofX;
 	int _bgX;
 	int _bgY;
-	E_MAPSTATE _state;
+
 
 	Owplayer* _owPlayer;
 public:
@@ -36,7 +38,23 @@ public:
 	void render(void);
 
 	void check();
+
+	//픽셀 충돌함수
+	void villagePixelCol();
+	void house1PixelCol();
+	void house2PixelCol();
+	void storePixelCol();
+	void shopPixelCol();
+	void hotel1PixelCol();
+	void hotel2PixelCol();
+	void house3PixelCol();
+	void house4PixelCol();
+	void dungeonPixelCol();
+	void bossRoomPixelCol();
+
 	void setOWPlayer(Owplayer* owPlayer) { _owPlayer = owPlayer; }
+
+
 
 	int getBgX() { return _bgX; }
 	void setBgX(int bgX) { _bgX = bgX; }
@@ -47,5 +65,4 @@ public:
 	villageMap() {}
 	~villageMap() {}
 };
-
 

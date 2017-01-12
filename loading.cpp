@@ -124,22 +124,22 @@ void loading::render(void)
 	//·Îµù¹Ù ·»´õ
 	_loadingBar->render();
 
-	if (_currentGauge / 10 < 10)
+	if ((_currentGauge * 100) / _vLoadItem.size() < 10)
 	{
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10), 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge * 100) / _vLoadItem.size(), 0);
 		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
 	}
-	if (_currentGauge / 10 >= 10 && _currentGauge / 10 < 100)
+	if ((_currentGauge * 100) / _vLoadItem.size() >= 10 && (_currentGauge * 100) / _vLoadItem.size() < 100)
 	{
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, (_currentGauge / 10) / 10, 0);
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10) % 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, (_currentGauge * 100) / _vLoadItem.size() / 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge * 100) / _vLoadItem.size() % 10, 0);
 		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
 	}
-	if (_currentGauge / 10 >= 100)
+	if ((_currentGauge * 100) / _vLoadItem.size() >= 100)
 	{
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 190, _loadingBar->getRect().top - 40, (_currentGauge / 10) / 100, 0);
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, ((_currentGauge / 10) % 100) / 10, 0);
-		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge / 10) % 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 190, _loadingBar->getRect().top - 40, (_currentGauge * 100) / _vLoadItem.size() / 100, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 160, _loadingBar->getRect().top - 40, ((_currentGauge * 100) / _vLoadItem.size() % 100) / 10, 0);
+		_loadingnum->frameRender(getMemDC(), WINSIZEX - 130, _loadingBar->getRect().top - 40, (_currentGauge * 100) / _vLoadItem.size() % 10, 0);
 		_loadingPersent->render(getMemDC(), WINSIZEX - 100, _loadingBar->getRect().top - 30);
 	}
 
@@ -249,11 +249,11 @@ BOOL loading::loadingDone(void)
 }
 void loading::fileNameText()
 {
-	HFONT myfont = CreateFont(10, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 0, 0, 0, 0, "THE³ë¶õÄÚ³¢¸®M");
-	SelectObject(getMemDC(), myfont);
-	SetTextColor(getMemDC(), RGB(0, 255, 255));
-	SetBkMode(getMemDC(), TRANSPARENT);
+	//HFONT myfont = CreateFont(10, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 0, 0, 0, 0, "THE³ë¶õÄÚ³¢¸®M");
+	//SelectObject(getMemDC(), myfont);
+	//SetTextColor(getMemDC(), RGB(0, 255, 255));
+	//SetBkMode(getMemDC(), TRANSPARENT);
 	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, dir, strlen(dir));
 
-	DeleteObject(myfont);
+	//DeleteObject(myfont);
 }

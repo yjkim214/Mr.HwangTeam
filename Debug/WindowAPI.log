@@ -1,11 +1,2 @@
-﻿  Owplayer.cpp
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(11): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(12): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(42): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(65): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(72): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(90): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(108): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
-  WindowAPI.vcxproj -> C:\Users\SGA\Documents\GitHub\Mr.HwangTeamProject\Debug\WindowAPI.exe
+﻿  WindowAPI.vcxproj -> C:\Users\Ko Seung\Desktop\Mr.HwangTeamProject\Debug\WindowAPI.exe
+  WindowAPI.vcxproj -> C:\Users\Ko Seung\Desktop\Mr.HwangTeamProject\Debug\WindowAPI.pdb (Full PDB)
