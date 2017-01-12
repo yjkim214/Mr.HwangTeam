@@ -37,6 +37,11 @@ inline void RectangleMake(HDC hdc, int x, int y, int width, int height)
 	Rectangle(hdc, x, y, x + width, y + height);
 }
 
+inline void RectangleMake(HDC hdc, RECT rc)
+{
+	Rectangle(hdc, rc.left, rc.top, rc.right, rc.bottom);
+}
+
 //타원 그리기 (일립스함수 사용)
 inline void EllipseMake(HDC hdc, int x, int y, int width, int height)
 {

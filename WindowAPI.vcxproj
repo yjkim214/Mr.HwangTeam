@@ -142,6 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AlexNoah.h" />
+    <ClInclude Include="battleScene.h" />
+    <ClInclude Include="bsEnemy.h" />
+    <ClInclude Include="bsEnemyManager.h" />
+    <ClInclude Include="bsPlayer.h" />
+    <ClInclude Include="bsPlayerManager.h" />
+    <ClInclude Include="bsSlime.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="enemy.h" />
@@ -176,6 +183,13 @@
     <ClInclude Include="villageScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlexNoah.cpp" />
+    <ClCompile Include="battleScene.cpp" />
+    <ClCompile Include="bsEnemy.cpp" />
+    <ClCompile Include="bsEnemyManager.cpp" />
+    <ClCompile Include="bsPlayer.cpp" />
+    <ClCompile Include="bsPlayerManager.cpp" />
+    <ClCompile Include="bsSlime.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemyManager.cpp" />

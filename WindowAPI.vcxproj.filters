@@ -69,6 +69,15 @@
     <Filter Include="MainGame\마을 씬">
       <UniqueIdentifier>{7f41bc4d-7265-4019-ba2a-a465a8be4063}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MainGame\배틀화면">
+      <UniqueIdentifier>{0026ae73-1fc7-4f47-b0cd-8705b37dcae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\배틀화면\플레이어">
+      <UniqueIdentifier>{1a38689c-491e-4e63-b046-b40771f4a6d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\배틀화면\에너미">
+      <UniqueIdentifier>{4dfebbbc-9b62-4656-a4c1-03104a10a922}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainGame.h">
@@ -167,6 +176,27 @@
     <ClInclude Include="villageScene.h">
       <Filter>MainGame\마을 씬</Filter>
     </ClInclude>
+    <ClInclude Include="battleScene.h">
+      <Filter>MainGame\배틀화면</Filter>
+    </ClInclude>
+    <ClInclude Include="AlexNoah.h">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClInclude>
+    <ClInclude Include="bsPlayer.h">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClInclude>
+    <ClInclude Include="bsPlayerManager.h">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClInclude>
+    <ClInclude Include="bsEnemy.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
+    <ClInclude Include="bsSlime.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
+    <ClInclude Include="bsEnemyManager.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -258,6 +288,27 @@
     </ClCompile>
     <ClCompile Include="villageScene.cpp">
       <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="battleScene.cpp">
+      <Filter>MainGame\배틀화면</Filter>
+    </ClCompile>
+    <ClCompile Include="AlexNoah.cpp">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="bsPlayer.cpp">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="bsPlayerManager.cpp">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="bsEnemy.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="bsSlime.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="bsEnemyManager.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
