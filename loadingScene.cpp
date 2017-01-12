@@ -148,6 +148,8 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("owPlayer_move", "owPlayer_move.bmp", 120, 260, 4, 4, true, RGB(255, 0, 255));
 
 
+	// 인벤토리
+	_loading->loadFrameImage("inven", "inven.bmp", 480, 172, 4, 1, true, RGB(255, 0, 255));
 }
 
 

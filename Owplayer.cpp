@@ -5,7 +5,7 @@
 HRESULT Owplayer::init(void)
 {
 	_playerImg = IMAGEMANAGER->findImage("owPlayer_idle");
-
+	_inven = IMAGEMANAGER->findImage("inven");
 	_x = WINSIZEX / 2;
 	_y = WINSIZEY / 2;
 	_att = 5.0f;
@@ -14,7 +14,7 @@ HRESULT Owplayer::init(void)
 	_state = IDLE;
 	_lookat = DOWN;
 	_animcount = 0;
-
+	_invenRect = RectMakeCenter(WINSIZEX / 2 + 50, WINSIZEY-25, 50, 50);
 
 	return S_OK;
 }
@@ -28,14 +28,30 @@ void Owplayer::update(void)
 	playerstate();
 	playersetstate();
 	animation();
+
+	_invenRect = RectMakeCenter(WINSIZEX / 2 + 50, WINSIZEY-25, 50, 50);
+
+	if ((PtInRect(&_invenRect, _ptMouse))&&KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+	{
+		_isinven = true;
+	}
 }
 
 void Owplayer::render(void)
 {
 	_playerImg->frameRender(getMemDC(), _x, _y);
 
+	Rectangle(getMemDC(), _invenRect.left, _invenRect.top, _invenRect.right, _invenRect.bottom);
+
+
 	if (KEYMANAGER->isToggleKey('0')) {
 		Rectangle(getMemDC(), _camera.left, _camera.top, _camera.right, _camera.bottom);
+		
+	}
+
+	if (_isinven == true)
+	{
+		_inven->frameRender(getMemDC(), WINSIZEX/2, WINSIZEY/2);
 	}
 }
 
@@ -183,4 +199,11 @@ void Owplayer::animation()
 			_animcount = 0;
 		}
 	}
+}
+
+void Owplayer::inventory()
+{
+	
+	
+
 }

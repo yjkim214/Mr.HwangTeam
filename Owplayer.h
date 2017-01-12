@@ -34,7 +34,9 @@ private:
 	int _dex;
 	int _animcount;
 	RECT _camera;
-
+	bool _isinven;
+	image*_inven;
+	RECT _invenRect;
 
 
 public:
@@ -49,7 +51,7 @@ public:
 	void playerstate();
 	void playersetstate();
 	void animation();
-
+	void inventory();
 
 	//겟셋함수 만들어놓기
 	image* getPlayerImg() { return _playerImg; }
