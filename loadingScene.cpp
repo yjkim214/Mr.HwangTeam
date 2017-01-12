@@ -56,13 +56,12 @@ void loadingScene::loadingImage(void)
 //¸Êµé
 	_loading->loadImage("BossRoom", "BossRoom.bmp", 800, 1000, true, RGB(255, 0, 255));								
 	_loading->loadImage("BossRoomSky", "BossRoomSky.bmp", 800, 1000, true, RGB(255, 0, 255));						
-	_loading->loadImage("dieTempest", "dieTempest.bmp", 110, 64, true, RGB(255, 0, 255));							
-	_loading->loadImage("hotel1", "hotel1.bmp", 800, 700, true,RGB(255,0,255));										
-	_loading->loadImage("hotel2", "hotel2.bmp", 950, 700, true, RGB(255, 0, 255));									
-	_loading->loadImage("house1", "house1.bmp", 900, 700, true, RGB(255, 0, 255));									
-	_loading->loadImage("house2", "house2.bmp", 1000, 600, true, RGB(255, 0, 255));									
-	_loading->loadImage("house3", "house3.bmp", 1000, 700, true, RGB(255, 0, 255));									
-	_loading->loadImage("house4", "house4.bmp", 1200, 800, true, RGB(255, 0, 255));									
+	_loading->loadImage("hotel1", "hotel1.bmp", 800, 600, true,RGB(255,0,255));										
+	_loading->loadImage("hotel2", "hotel2.bmp", 800, 600, true, RGB(255, 0, 255));									
+	_loading->loadImage("house1", "house1.bmp", 800, 600, true, RGB(255, 0, 255));									
+	_loading->loadImage("house2", "house2.bmp", 800, 600, true, RGB(255, 0, 255));									
+	_loading->loadImage("house3", "house3.bmp", 800, 600, true, RGB(255, 0, 255));									
+	_loading->loadImage("house4", "house4.bmp", 800, 600, true, RGB(255, 0, 255));									
 	_loading->loadImage("mouseCursor", "mouseCursor.bmp", 23, 30, true, RGB(255, 0, 255));							
 	_loading->loadImage("shop", "shop.bmp", 800, 600, true, RGB(255, 0, 255));										
 	_loading->loadImage("strore", "strore.bmp", 500, 458, true, RGB(255, 0, 255));
@@ -70,6 +69,7 @@ void loadingScene::loadingImage(void)
 //¾ËÆÄ·»´õ ½ÃÅ³ °Ç¹°µé(Á¦Æ®¿À´õ???) 
 	_loading->loadImage("dungeon_tree", "dungeon_tree.bmp", 1600, 1200, true, RGB(255, 0, 255));
 	_loading->loadImage("village_building", "village_building.bmp", 1600, 1200, true, RGB(255, 0, 255));
+	_loading->loadImage("village_in", "village_in.bmp", 1600, 1200, true, RGB(255, 0, 255));
 
 //¸ÞÀÎ¸Þ´º ¹× ¾À ¸Êµé ÇÈ¼¿Ãæµ¹ÇÒ¸Êµé 	
 	_loading->loadImage("loadSelect", "loadSelect.bmp", 800, 600,false);											
@@ -81,13 +81,13 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("BossRoomPixel", "BossRoomPixel.bmp", 800, 1000, false);
 	_loading->loadImage("BossRoomPixel", "BossRoomPixel.bmp", 800, 1000, false);
 	_loading->loadImage("dungeonPixel", "dungeonPixel.bmp", 1600, 1200, false);
-	_loading->loadImage("hotel1Pixel", "hotel1Pixel.bmp", 800, 700, false);
-	_loading->loadImage("hotel2Pixel", "hotel2Pixel.bmp", 950, 600, false);
-	_loading->loadImage("house1Pixel", "house1Pixel.bmp", 900, 700, false);
-	_loading->loadImage("house2Pixel", "house2Pixel.bmp", 1000, 600, false);
-	_loading->loadImage("house3Pixel", "house3Pixel.bmp", 1000, 700, false);
-	_loading->loadImage("house4Pixel", "house4Pixel.bmp", 1200, 800, false);
-	_loading->loadImage("shopPixel", "shopPixel.bmp", 800, 60, false);
+	_loading->loadImage("hotel1Pixel", "hotel1Pixel.bmp", 800, 600, false);
+	_loading->loadImage("hotel2Pixel", "hotel2Pixel.bmp", 800, 600, false);
+	_loading->loadImage("house1Pixel", "house1Pixel.bmp", 800, 600, false);
+	_loading->loadImage("house2Pixel", "house2Pixel.bmp", 800, 600, false);
+	_loading->loadImage("house3Pixel", "house3Pixel.bmp", 800, 600, false);
+	_loading->loadImage("house4Pixel", "house4Pixel.bmp", 800, 600, false);
+	_loading->loadImage("shopPixel", "shopPixel.bmp", 800, 600, false);
 	_loading->loadImage("strorePixel", "strorePixel.bmp", 500, 458, false);
 	_loading->loadImage("villagePixel", "villagePixel.bmp", 1600, 1200, false);
 
@@ -99,7 +99,8 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("TempestRight", "TempestRight.bmp", 155, 62, 5, 1, true, RGB(255, 0, 255));			  
 	_loading->loadFrameImage("TempestUp", "TempestUp.bmp", 110, 59, 5, 1, true, RGB(255, 0, 255));					  
 	_loading->loadFrameImage("TempsetAction", "TempsetAction.bmp", 500, 160, 5, 1, true, RGB(255, 0, 255));			  
-	_loading->loadFrameImage("winTempest", "winTempest.bmp", 310, 124, 5, 1, true, RGB(255, 0, 255));				  
+	_loading->loadFrameImage("winTempest", "winTempest.bmp", 310, 124, 5, 1, true, RGB(255, 0, 255));	
+	_loading->loadImage("dieTempest", "dieTempest.bmp", 110, 64, true, RGB(255, 0, 255));
 																													  
 
 }
