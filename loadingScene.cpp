@@ -107,6 +107,41 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("slime_attack", "slime_attack.bmp", 345, 64, 5, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("slime_getdmg", "slime_getdmg.bmp", 120, 52, 2, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("slime_dead", "slime_dead", 60, 60, 1, 1, true, RGB(255, 0, 255));
+
+	//던전 오버월드 몬스터
+	_loading->loadFrameImage("slime", "slime.bmp", 180, 60, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBugUp", "fluffyBugUp.bmp", 120, 48, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBugRight", "fluffyBugRight.bmp", 162, 49, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBugDown", "fluffyBugDown.bmp", 120, 48, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBugLeft", "fluffyBugLeft.bmp", 162, 49, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapperUp", "flytrapperUp.bmp", 246, 90, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapperRight", "flytrapperRight.bmp", 294, 83, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapperDown", "flytrapperDown.bmp", 255, 87, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapperLeft", "flytrapperLeft.bmp", 294, 83, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarianUp", "barbarianUp.bmp", 162, 73, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarianRight", "barbarianRight.bmp", 204, 76, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarianDown", "barbarianDown.bmp", 162, 69, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarianLeft", "barbarianLeft.bmp", 204, 76, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomberUp", "devilBomberUp.bmp", 304, 68, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomberRight", "devilBomberRight.bmp", 268, 66, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomberDown", "devilBomberDown.bmp", 296, 68, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomberLeft", "devilBomberLeft.bmp", 268, 66, 4, 1, true, RGB(255, 0, 255));
+
+	//루나 케릭터 오버월드 및 배틀
+	_loading->loadFrameImage("lunarSkillEffect", "lunarSkillEffect.bmp", 640, 64, 10, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarAttacked", "lunarAttacked.bmp", 400, 500, 32, 54, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarDeath", "lunarDeath.bmp", 450, 500, 54, 34, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarMoveUp", "lunarMoveUp.bmp", 300, 300, 110, 59, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarMoveDown", "lunarMoveDown.bmp", 300, 300, 110, 59, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarMoveLeft", "lunarMoveLeft.bmp", 300, 300, 135, 58, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarMoveRight", "lunarMoveRight.bmp", 300, 300, 135, 59, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarSkillWait", "lunarSkillWait.bmp", 400, 400, 204, 41, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarSkillMotion", "lunarSkillMotion.bmp", 450, 400, 259, 62, 7, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarWait", "lunarWait.bmp", 500, 400, 174, 54, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarWaitStaff", "lunarWaitStaff.bmp", 600, 400, 228, 54, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarWaitStaff", "lunarWaitStaff.bmp", 600, 400, 228, 54, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarVictory", "lunarVictory.bmp", 650, 400, 162, 57, 6, 1, true, RGB(255, 0, 255));
+
 }
 //로딩사운드 함수(이곳에 사운드를 전부 넣어라)
 void loadingScene::loadingSound(void)
