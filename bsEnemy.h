@@ -20,7 +20,14 @@ protected:
 
 protected:
 	image*	_enemyImg;
-	int		_count;
+	int		_currentFrameX;
+	int		_countNotMyTurn;
+	int		_countMyTurn;
+	int		_countTurnEnd;
+
+protected:
+	bool	_isDelay;
+	int		_delayCount;
 
 protected:
 	TURN_STATE _turnState;

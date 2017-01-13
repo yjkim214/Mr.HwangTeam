@@ -25,7 +25,14 @@ HRESULT bsSlime::init(void)
 	_isDead = false;
 
 	_enemyImg = IMAGEMANAGER->findImage("slime_idle");
-	_count = 0;
+	_currentFrameX = 0;
+
+	_countNotMyTurn = 0;
+	_countMyTurn = 0;
+	_countTurnEnd = 0;
+
+	_isDelay = true;
+	_delayCount = 0;
 
 	_turnState = NOTMYTURN;
 
@@ -40,26 +47,25 @@ void bsSlime::release(void)
 
 void bsSlime::update(void)
 {
-	_count++;
-
 	if (_turnState == NOTMYTURN)
 	{
-		if (_count % SLIME_ANI_COUNT == 0)
+		_countNotMyTurn++;
+		if (_countNotMyTurn % SLIME_ANI_COUNT == 0)
 		{
-			_enemyImg->setFrameX(_enemyImg->getFrameX() + 1);
+			_currentFrameX++;
 
 			if (_state == IDLE)
 			{
 				//애니메이션 무한정 반복
-				if (_enemyImg->getFrameX() >= _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					_enemyImg->setFrameX(0);
+					_currentFrameX = 0;
 				}
 			}
 
 			if (_state == GETDMG)
 			{
-				if (_enemyImg->getFrameX() >= _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					//데미지를 받았을 시
 					if (_hp <= 0)
@@ -72,7 +78,7 @@ void bsSlime::update(void)
 					{
 						//아니면 다시 대기 상태로 돌입
 						_enemyImg = IMAGEMANAGER->findImage("slime_idle");
-						_enemyImg->setFrameX(0);
+						_currentFrameX = 0;
 						_state = IDLE;
 					}
 				}
@@ -80,40 +86,51 @@ void bsSlime::update(void)
 
 			if (_state == DEAD)
 			{
-				if (_enemyImg->getFrameX() >= _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					_isDead = true;
 				}
 			}
 
-			_count = 0;
+			_countNotMyTurn = 0;
 		}
 	}
 
 	else if (_turnState == MYTURN)
 	{
-		if (_count % SLIME_ANI_COUNT == 0)
+		_countMyTurn++;
+		if (_countMyTurn % SLIME_ANI_COUNT == 0)
 		{
-			_enemyImg->setFrameX(_enemyImg->getFrameX() + 1);
-
+			_currentFrameX++;
 			if (_state == ATTACK)
 			{
 				//다시 대기 상태로 돌입
-				if (_enemyImg->getFrameX() >= _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					_turnState = TURNEND;
-					_enemyImg = IMAGEMANAGER->findImage("slime_idle");
-					_enemyImg->setFrameX(0);
-					_state = IDLE;
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= 5)
+						{
+							_turnState = TURNEND;
+							_enemyImg = IMAGEMANAGER->findImage("slime_idle");
+							_currentFrameX = 0;
+							_state = IDLE;
+
+							_isDelay = false;
+						}
+					}
 				}
 			}
 
-			_count = 0;
+			_countMyTurn = 0;
 		}
 	}
 
 	else if (_turnState == TURNEND)
 	{
+		_isDelay = true;
+		_delayCount = 0;
 		_turnState = NOTMYTURN;
 	}
 }
@@ -138,13 +155,13 @@ void bsSlime::myTurn()
 {
 	_turnState = MYTURN;
 	_enemyImg = IMAGEMANAGER->findImage("slime_attack");
-	_enemyImg->setFrameX(0);
+	_currentFrameX = 0;
 	_state = ATTACK;
 }
 
 void bsSlime::getDmg(int playerAtt)
 {
 	_enemyImg = IMAGEMANAGER->findImage("slime_getdmg");
-	_enemyImg->setFrameX(0);
+	_currentFrameX = 0;
 	_state = GETDMG;
 }
