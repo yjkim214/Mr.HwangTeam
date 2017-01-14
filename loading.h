@@ -28,12 +28,21 @@ struct tagImageResource
 	bool trans;				//배경지울꺼임?
 	COLORREF transColor;	//어떤색으로?
 };
+//사운드 리소스 구조체
+struct tagSoundResource
+{
+	string keyName;		//사운드 키값
+	string soundName;	//사운드 이름
+	bool bgm;					//배경음임?
+	bool loop;					//루프돌릴거임?
+};
 
 class loadItem
 {
 private:
 	LOAD_KIND _kind;
 	tagImageResource _imageResource;
+	tagSoundResource _soundResource;
 
 public:
 	//빈 비트맵으로 초기화
@@ -44,11 +53,15 @@ public:
 	//프레임 이미지 파일로 초기화(주 사용)
 	HRESULT init(string keyName, const char* fileName, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
 	HRESULT init(string keyName, const char* fileName, float x, float y, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
+	//사운드 초기화
+	HRESULT init(string keyName, string soundName, bool bgm = FALSE, bool loop = FALSE);
 
 	//로딩아이템 종류 가져오기
 	LOAD_KIND getLoadingKind(void) { return _kind; }
 	//이미지 리소스 가져오기
 	tagImageResource getImageResource(void) { return _imageResource; }
+	//사운드 리소스 가져오기
+	tagSoundResource getSoundResource() { return _soundResource; }
 
 	loadItem() {}
 	~loadItem() {}
@@ -91,6 +104,8 @@ public:
 	//프레임 이미지 파일로 초기화(주 사용)
 	void loadFrameImage(string strKey, const char* fileName, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
 	void loadFrameImage(string strKey, const char* fileName, float x, float y, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
+	//사운드 파일 초기화
+	void addSound(string keyName, string soundName, bool bgm = FALSE, bool loop = FALSE);
 
 	/*중요함*/
 	//로딩완료 됐냐?(로딩완료후 화면전환)

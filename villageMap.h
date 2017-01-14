@@ -24,11 +24,25 @@ private:
 	E_MAPSTATE _state;
 	image* _pixelVillage;
 	image* _pixelHouse1;
+	image* _pixelHouse2;
+	image* _pixelStroe;
+	image* _pixelShop;
+	image* _pixelHotel1;
+	image* _pixelHotel2;
+	image* _pixelHouse3;
+	image* _pixelHouse4;
+	image* _pixelDungeon;
+	image* _pixelBoss;
+
+
 	RECT _playeRc;
 	int _loofX;
 	int _bgX;
 	int _bgY;
 
+	bool is1Floor;
+	bool isDungeon;
+	bool isBoss;
 
 	Owplayer* _owPlayer;
 public:
@@ -54,14 +68,27 @@ public:
 
 	void setOWPlayer(Owplayer* owPlayer) { _owPlayer = owPlayer; }
 
-
-
 	int getBgX() { return _bgX; }
-	void setBgX(int bgX) { _bgX = bgX; }
-	int getBgY() { return _bgY; }
-	void setBgY(int bgY) { _bgY = bgY; }
-	E_MAPSTATE getState() { return _state; }
+	void setBgX(int bgX)
+	{
+		_bgX = bgX;
 
+		if (_bgX < 0)
+		{
+			_bgX = 0;
+		}
+	}
+	int getBgY() { return _bgY; }
+	void setBgY(int bgY)
+	{
+		_bgY = bgY;
+		if (_bgY < 0)
+		{
+			_bgY = 0;
+		}
+	}
+	E_MAPSTATE getState() { return _state; }
+	void setState(E_MAPSTATE state) { _state == state; }
 	villageMap() {}
 	~villageMap() {}
 };

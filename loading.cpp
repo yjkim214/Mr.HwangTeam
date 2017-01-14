@@ -83,6 +83,18 @@ HRESULT loadItem::init(string keyName, const char * fileName, float x, float y, 
 	return S_OK;
 }
 
+HRESULT loadItem::init(string keyName, string soundName, bool bgm, bool loop)
+{
+	_kind = LOAD_KIND_SOUND;
+
+	_soundResource.keyName = keyName;
+	_soundResource.soundName = soundName;
+	_soundResource.bgm = bgm;
+	_soundResource.loop = loop;
+	return S_OK;
+
+}
+
 
 //=============================================================
 //	## loading ## (로딩 클래스)
@@ -181,6 +193,13 @@ void loading::loadFrameImage(string strKey, const char * fileName, float x, floa
 	_vLoadItem.push_back(item);
 }
 
+void loading::addSound(string keyName, string soundName, bool bgm, bool loop)
+{
+	loadItem* item = new loadItem;
+	item->init(keyName, soundName, bgm, loop);
+	_vLoadItem.push_back(item);
+}
+
 BOOL loading::loadingDone(void)
 {
 	//로딩이 완료됨
@@ -227,9 +246,13 @@ BOOL loading::loadingDone(void)
 		IMAGEMANAGER->addFrameImage(img.keyName, img.fileName, img.x, img.y, img.width, img.height, img.frameX, img.frameY, img.trans, img.transColor);
 	}
 	break;
-	//나중에 사운드 배우고 난후 알아서...
+
 	case LOAD_KIND_SOUND:
-		break;
+	{
+		tagSoundResource sound = item->getSoundResource();
+		SOUNDMANAGER->addSound(sound.keyName, sound.soundName, sound.bgm, sound.loop);
+	}
+	break;
 	}
 
 	ZeroMemory(dir, sizeof(dir));

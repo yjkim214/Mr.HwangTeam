@@ -149,6 +149,14 @@ void loadingScene::loadingImage(void)
 
 	// 인벤토리
 	_loading->loadFrameImage("inven", "inven.bmp", 480, 172, 4, 1, true, RGB(255, 0, 255));
+
+	//NPC
+	_loading->loadFrameImage("NPC book", "NPC book.bmp", 132, 52, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("NPCkid", "NPCkid.bmp", 132, 96, 6, 2, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("NPCkidW", "NPCkidW.bmp", 150, 96, 6, 2, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("NPCW", "NPCW.bmp", 125, 60, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("SHOP(NPC)", "SHOP(NPC).bmp", 205, 68, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("SHOP(NPC)back", "SHOP(NPC)back.bmp", 225, 70, 5, 1, true, RGB(255, 0, 255));
 }
 
 

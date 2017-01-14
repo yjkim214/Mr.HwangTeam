@@ -1,10 +1,10 @@
 #pragma once
 #include "gameNode.h"
 
-
 class villageMap;
+class inventory;
 
-enum state
+enum OWPLAYER_STATE
 {
 	IDLE,
 	MOVE_LEFT,
@@ -25,23 +25,24 @@ class Owplayer : public gameNode
 {
 private:
 	villageMap* _Scene;
-	state _state;
+	inventory* _inventory;
+	OWPLAYER_STATE _state;
 	Lookat _lookat;
 	image* _playerImg;
 	float _x, _y;
-	float _speed;
+	int _speed;
 	int _att;
 	int _dex;
 	int _animcount;
 	RECT _camera;
-	bool _isinven;
-	image*_inven;
-	RECT _invenRect;
+
 
 	int _proveLeft;
 	int _proveRight;
 	int _proveUp;
 	int _proveDown;
+
+
 
 public:
 	HRESULT init(void);
@@ -51,11 +52,10 @@ public:
 
 	//상호 참조하기위해 만들어놓은 함수
 	void setScene(villageMap* Scene) { _Scene = Scene; }
-
 	void playerstate();
 	void playersetstate();
 	void animation();
-	void inventory();
+
 	void ProveUpdate();
 
 	//겟셋함수 만들어놓기
@@ -75,7 +75,9 @@ public:
 	void setProveUp(int proveUp) { _proveUp = proveUp; }
 	int getProveDown() { return _proveDown; }
 	void setProveDown(int proveDown) { _proveDown = proveDown; }
-
+	OWPLAYER_STATE getPlayerState() { return _state; }
+	RECT getCamera() { return _camera; }
+	float getSpeed() { return _speed; }
 
 	Owplayer() {}
 	~Owplayer() {}
