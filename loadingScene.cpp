@@ -101,7 +101,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("winTempest", "winTempest.bmp", 310, 124, 5, 1, true, RGB(255, 0, 255));	
 	_loading->loadImage("dieTempest", "dieTempest.bmp", 110, 64, true, RGB(255, 0, 255));
 																													  
-	//던전 오버월드 몬스터
+//던전 오버월드 몬스터
 	_loading->loadFrameImage("slime", "slime.bmp", 180, 60, 3, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("fluffyBugUp", "fluffyBugUp.bmp", 120, 48, 3, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("fluffyBugRight", "fluffyBugRight.bmp", 162, 49, 3, 1, true, RGB(255, 0, 255));
@@ -184,6 +184,22 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("devilBomber_dead", "devilBomber_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("devilBomber_skill", "devilBomber_skill.bmp", 1500, 150, 10, 1, true, RGB(255, 0, 255));
 
+	//배틀화면 UI 이미지
+	_loading->loadImage("bsUi_Attack", "bsUi_Attack.bmp", 48, 48, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Skill", "bsUi_Skill.bmp", 48, 48, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Defense", "bsUi_Defense.bmp", 48, 48, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Getaway", "bsUi_Getaway.bmp", 48, 48, true, RGB(255, 0, 255));
+
+	_loading->loadImage("bsUi_Attack_Selected", "bsUi_Attack_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Skill_Selected", "bsUi_Skill_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Defense_Selected", "bsUi_Defense_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
+
+	//배틀화면 알렉스 이미지
+	_loading->loadFrameImage("bsPlayer_idle@2", "bsPlayer_idle@2.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsPlayer_attack@2", "bsPlayer_attack@2.bmp", 1350, 150, 9, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsAlex_skill@2", "bsAlex_skill@2.bmp", 7830, 150, 29, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsPlayer_dead@2", "bsPlayer_dead@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsPlayer_getdmg@2", "bsPlayer_getdmg@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 }
 
 
