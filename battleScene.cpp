@@ -17,7 +17,7 @@ HRESULT battleScene::init(void)
 	_currentEnemyIndex = 0;
 
 	//먼저 에너미 턴부터
-	_bsState = ENEMYTURN;
+	_bsState = PLAYERTURN;
 	_userSelect = INIT;
 
 	_actionSelected = 4;

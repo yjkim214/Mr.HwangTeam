@@ -9,6 +9,8 @@
 #include "mainMenuScene.h"
 #include "introScene.h"
 #include "villageScene.h"
+#include "battleScene.h"
+
 class mainGame : public gameNode
 {
 public:

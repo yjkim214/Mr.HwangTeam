@@ -23,6 +23,8 @@ protected:
 protected:
 	image*	_enemyImg;
 	int		_currentFrameX;
+
+protected:
 	int		_countNotMyTurn;
 	int		_countMyTurn;
 	int		_countTurnEnd;

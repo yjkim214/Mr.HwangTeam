@@ -5,7 +5,7 @@
 #define SLIME_DEF		2
 #define SLIME_MAXHP		50
 #define SLIME_MAXMP		10
-#define SLIME_ANI_COUNT	10
+#define SLIME_ANI_COUNT	5
 
 HRESULT bsSlime::init(void)
 {
@@ -78,7 +78,7 @@ void bsSlime::update(void)
 
 					else
 					{
-						if (!_isDelay)
+						if (_isDelay)
 						{
 							_delayCount++;
 							if (_delayCount >= 5)
@@ -89,7 +89,7 @@ void bsSlime::update(void)
 								_currentFrameX = 0;
 								_state = IDLE;
 
-								_isDelay = true;
+								_isDelay = false;
 							}
 						}
 					}
@@ -205,4 +205,5 @@ void bsSlime::getDmg(int playerAtt)
 	_enemyImg = IMAGEMANAGER->findImage("slime_getdmg");
 	_currentFrameX = 0;
 	_state = GETDMG;
+	_hp -= playerAtt;
 }

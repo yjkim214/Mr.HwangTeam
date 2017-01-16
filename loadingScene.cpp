@@ -28,7 +28,7 @@ void loadingScene::update(void)
 	if (_loading->loadingDone())
 	{
 		//로딩이 완료 됐으니 씬변경
-		SCENEMANAGER->changeScene("메인메뉴");
+		SCENEMANAGER->changeScene("배틀화면");
 	}
 }
 
@@ -195,11 +195,11 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsUi_Defense_Selected", "bsUi_Defense_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 
 	//배틀화면 알렉스 이미지
-	_loading->loadFrameImage("bsPlayer_idle@2", "bsPlayer_idle@2.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("bsPlayer_attack@2", "bsPlayer_attack@2.bmp", 1350, 150, 9, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsAlex_idle@2", "bsAlex_idle@2.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsAlex_attack@2", "bsAlex_attack@2.bmp", 1350, 150, 9, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("bsAlex_skill@2", "bsAlex_skill@2.bmp", 7830, 150, 29, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("bsPlayer_dead@2", "bsPlayer_dead@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("bsPlayer_getdmg@2", "bsPlayer_getdmg@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsAlex_dead@2", "bsAlex_dead@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsAlex_getdmg@2", "bsAlex_getdmg@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 }
 
 

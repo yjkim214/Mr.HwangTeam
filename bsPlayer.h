@@ -20,13 +20,13 @@ protected:
 	int		_currentFrameX;
 
 protected:
-	bool	_isDelay;
-	int		_delayCount;
-
-protected:
 	int		_countNotMyTurn;
 	int		_countMyTurn;
 	int		_countTurnEnd;
+
+protected:
+	bool	_isDelay;
+	int		_delayCount;
 
 protected:
 	bool	_isAttack;
@@ -59,7 +59,7 @@ public:
 	void setPrevPos(float x, float y);
 	POINT getPrevPos();
 
-	bool getIsAttack() { return _turnState; }
+	bool getIsAttack() { return _isAttack; }
 	void setIsAttack(bool isAttack) { _isAttack = isAttack; }
 	bool getIsDead() { return _isDead; }
 

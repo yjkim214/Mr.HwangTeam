@@ -18,6 +18,7 @@ HRESULT mainGame::init(void)
 	SCENEMANAGER->addScene("메인메뉴", new mainMenuScene);
 	SCENEMANAGER->addScene("인트로", new introScene);
 	SCENEMANAGER->addScene("마을", new villageScene);
+	SCENEMANAGER->addScene("배틀화면", new battleScene);
 
 	/*현재씬 설정*/
 	SCENEMANAGER->changeScene("인트로");

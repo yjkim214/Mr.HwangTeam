@@ -5,7 +5,7 @@
 #define ALEXNOAH_DEF		5
 #define ALEXNOAH_MAXHP		100
 #define ALEXNOAH_MAXMP		20
-#define ALEXNOAH_ANI_COUNT	10
+#define ALEXNOAH_ANI_COUNT	5
 
 HRESULT AlexNoah::init(void)
 {
@@ -22,8 +22,15 @@ HRESULT AlexNoah::init(void)
 	_destX = 0;
 	_destY = 0;
 
-	_playerImg = IMAGEMANAGER->findImage("bsPlayer_idle@2");
+	_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 	_currentFrameX = 0;
+
+	_countNotMyTurn = 0;
+	_countMyTurn = 0;
+	_countTurnEnd = 0;
+
+	_isDelay = true;
+	_delayCount = 0;
 
 	_isAttack = false;
 	_isDead = false;
@@ -82,7 +89,7 @@ void AlexNoah::update(void)
 						if (_delayCount >= 5)
 						{
 							_turnState = TURNEND;
-							_playerImg = IMAGEMANAGER->findImage("bsPlayer_idle@2");
+							_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 							_currentFrameX = 0;
 							_state = IDLE;
 
@@ -107,7 +114,7 @@ void AlexNoah::update(void)
 						if (_delayCount >= 5)
 						{
 							_turnState = TURNEND;
-							_playerImg = IMAGEMANAGER->findImage("bsPlayer_idle@2");
+							_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 							_currentFrameX = 0;
 							_state = IDLE;
 
@@ -127,10 +134,23 @@ void AlexNoah::update(void)
 	}
 }
 
+void AlexNoah::render(void)
+{
+	if (_turnState == NOTMYTURN)
+	{
+		_playerImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
+	}
+
+	if (_turnState == MYTURN)
+	{
+		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
+	}
+}
+
 void AlexNoah::myTurnAttack(int enemyIndex)
 {
 	_turnState = MYTURN;
-	_playerImg = IMAGEMANAGER->findImage("bsPlayer_attack@2");
+	_playerImg = IMAGEMANAGER->findImage("bsAlex_attack@2");
 	_currentFrameX = 0;
 	_state = ATTACK;
 	_destX = WINSIZEX * 0.3f;
