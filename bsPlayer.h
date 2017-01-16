@@ -16,13 +16,20 @@ protected:
 	float	_destX, _destY;
 
 protected:
-	RECT	_rc;
-
-protected:
 	image*	_playerImg;
-	int		_count;
+	int		_currentFrameX;
 
 protected:
+	bool	_isDelay;
+	int		_delayCount;
+
+protected:
+	int		_countNotMyTurn;
+	int		_countMyTurn;
+	int		_countTurnEnd;
+
+protected:
+	bool	_isAttack;
 	bool	_isDead;
 
 protected:
@@ -37,7 +44,8 @@ public:
 	virtual void update(void) = 0;
 	virtual void render(void) = 0;
 
-	virtual void myTurn() = 0;
+	virtual void myTurnAttack(int enemyIndex) = 0;
+	virtual void myTurnSkill(int enemyIndex) = 0;
 	virtual void getDmg(int enemyAtt) = 0;
 
 	//=============================================================
@@ -51,7 +59,11 @@ public:
 	void setPrevPos(float x, float y);
 	POINT getPrevPos();
 
+	bool getIsAttack() { return _turnState; }
+	void setIsAttack(bool isAttack) { _isAttack = isAttack; }
 	bool getIsDead() { return _isDead; }
+
+	TURN_STATE getTurnState() { return _turnState; }
 
 public:
 	bsPlayer() {}

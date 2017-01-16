@@ -18,7 +18,8 @@ public:
 	void addSlime(float prevX, float prevY);
 
 	vector<bsEnemy*> getVEnemyList() { return _vEnemyList; }
-
+	void selectedEnemy(int select);
+	void endSelect();
 public:
 	bsEnemyManager() {}
 	~bsEnemyManager() {}

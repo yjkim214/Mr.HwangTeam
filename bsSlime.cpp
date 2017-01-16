@@ -22,6 +22,8 @@ HRESULT bsSlime::init(void)
 	_destX = 0;
 	_destY = 0;
 
+	_isSelected = true;
+	_isAttack = false;
 	_isDead = false;
 
 	_enemyImg = IMAGEMANAGER->findImage("slime_idle");
@@ -76,10 +78,20 @@ void bsSlime::update(void)
 
 					else
 					{
-						//아니면 다시 대기 상태로 돌입
-						_enemyImg = IMAGEMANAGER->findImage("slime_idle");
-						_currentFrameX = 0;
-						_state = IDLE;
+						if (!_isDelay)
+						{
+							_delayCount++;
+							if (_delayCount >= 5)
+							{
+								_turnState = TURNEND;
+								//아니면 다시 대기 상태로 돌입
+								_enemyImg = IMAGEMANAGER->findImage("slime_idle");
+								_currentFrameX = 0;
+								_state = IDLE;
+
+								_isDelay = true;
+							}
+						}
 					}
 				}
 			}
@@ -104,6 +116,11 @@ void bsSlime::update(void)
 			_currentFrameX++;
 			if (_state == ATTACK)
 			{
+				//에너미 몇 프레임에서 공격을 할 지 정한다
+				if (_currentFrameX == 3)
+				{
+					_isAttack = true;
+				}
 				//다시 대기 상태로 돌입
 				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
@@ -141,22 +158,46 @@ void bsSlime::render(void)
 	{
 		if (_turnState == MYTURN)
 		{
-			_enemyImg->frameRender(getMemDC(), _destX, _destY);
+			_enemyImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 		}
 
 		else if (_turnState == NOTMYTURN)
 		{
-			_enemyImg->frameRender(getMemDC(), _prevX, _prevY);
+			if (_isSelected)
+			{
+				_enemyImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
+			}
+
+			else
+			{
+				_enemyImg->frameAlphaRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0, 100);
+			}
 		}
 	}
 }
 
-void bsSlime::myTurn()
+void bsSlime::myTurnAttack(int playerIndex)
 {
 	_turnState = MYTURN;
 	_enemyImg = IMAGEMANAGER->findImage("slime_attack");
 	_currentFrameX = 0;
 	_state = ATTACK;
+	//어택시 에너미 위치 잡아주는 코드
+	_destX = WINSIZEX * 0.5f;
+	if (playerIndex == 0)
+	{
+		_destY = 0;
+	}
+
+	else if (playerIndex == 1)
+	{
+		_destY = WINSIZEY * 0.25f;
+	}
+
+	else
+	{
+		_destY = WINSIZEY * 0.5f;
+	}
 }
 
 void bsSlime::getDmg(int playerAtt)

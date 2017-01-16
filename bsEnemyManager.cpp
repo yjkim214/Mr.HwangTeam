@@ -51,3 +51,31 @@ void bsEnemyManager::addSlime(float prevX, float prevY)
 	newSlime->setPrevPos(prevX, prevY);
 	_vEnemyList.push_back(newSlime);
 }
+
+void bsEnemyManager::selectedEnemy(int select)
+{
+	for (int i = 0; i < _vEnemyList.size(); i++)
+	{
+		if (i == select)
+		{
+			_vEnemyList[i]->setIsSelected(true);
+		}
+
+		else
+		{
+			_vEnemyList[i]->setIsSelected(false);
+		}
+	}
+}
+
+void bsEnemyManager::endSelect()
+{
+	//모두 트루로
+	for (int i = 0; i < _vEnemyList.size(); i++)
+	{
+		if (!_vEnemyList[i]->getIsDead())
+		{
+			_vEnemyList[i]->setIsSelected(true);
+		}
+	}
+}

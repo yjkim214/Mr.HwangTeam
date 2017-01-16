@@ -16,6 +16,8 @@ protected:
 	float	_destX, _destY;
 
 protected:
+	bool	_isSelected;
+	bool	_isAttack;
 	bool	_isDead;
 
 protected:
@@ -38,7 +40,7 @@ public:
 	virtual void update(void) = 0;
 	virtual void render(void) = 0;
 
-	virtual void myTurn() = 0;
+	virtual void myTurnAttack(int playerIndex) = 0;
 	virtual void getDmg(int playerAtt) = 0;
 
 	//=============================================================
@@ -56,6 +58,9 @@ public:
 	void setDestPos(float x, float y);
 
 public:
+	bool getIsAttack() { return _isAttack; }
+	void setIsAttack(bool isAttack) { _isAttack = isAttack; }
+	void setIsSelected(bool isSelect) { _isSelected = isSelect; }
 	bool getIsDead() { return _isDead; }
 
 public:

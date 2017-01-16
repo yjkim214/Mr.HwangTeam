@@ -20,7 +20,7 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurn();
+	virtual void myTurnAttack(int playerIndex);
 	virtual void getDmg(int playerAtt);
 
 	bsSlime() {}

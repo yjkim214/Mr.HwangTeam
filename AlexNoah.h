@@ -5,6 +5,7 @@ enum ALEXNOAH_STATE
 {
 	IDLE,
 	ATTACK,
+	SKILL, 
 	GETDMG,
 	DEAD,
 };
@@ -20,7 +21,8 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurn();
+	virtual void myTurnAttack(int enemyIndex);
+	virtual void myTurnSkill(int enemyIndex);
 	virtual void getDmg(int enemyAtt);
 
 	AlexNoah() {}
