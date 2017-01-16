@@ -79,10 +79,10 @@ void villageMap::update(void)
 		house4PixelCol();
 	}
 	break;
-	case DUNGEON:
-	{
-		dungeonPixelCol();
-	}
+	//case DUNGEON:
+	//{
+	//	dungeonPixelCol();
+	//}
 	break;
 	case BOSSROOM:
 	{
@@ -182,15 +182,15 @@ void villageMap::render(void)
 		}
 	}
 	break;
-	case DUNGEON:
-	{
-		IMAGEMANAGER->render("dungeon", getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
-		if (KEYMANAGER->isToggleKey('A'))
-		{
-			_pixelDungeon->render(getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
-		}
-	}
-	break;
+	//case DUNGEON:
+	//{
+	//	IMAGEMANAGER->render("dungeon", getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
+	//	if (KEYMANAGER->isToggleKey('A'))
+	//	{
+	//		_pixelDungeon->render(getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
+	//	}
+	//}
+	//break;
 	case BOSSROOM:
 	{
 		IMAGEMANAGER->loopRender("BossRoomSky", getMemDC(), &RectMake(0, 0, 800, 1600), _loofX, 0);
@@ -378,11 +378,11 @@ void villageMap::villagePixelCol()
 		}
 	}
 
-	if (isDungeon == true)
-	{
-		_owPlayer->setLookat(UP);
-		isDungeon = false;
-	}
+	//if (isDungeon == true)
+	//{
+	//	_owPlayer->setLookat(UP);
+	//	isDungeon = false;
+	//}
 
 	if (isBoss == true)
 	{

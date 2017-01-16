@@ -19,6 +19,8 @@ private:
 	villageMap* _villageMap;
 	Owplayer* _Owplayer;
 	tagNPC _npc[5];
+
+	int time;
 public:
 	HRESULT init(void);
 	void release(void);

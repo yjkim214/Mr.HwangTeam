@@ -14,6 +14,8 @@ HRESULT villageScene::init(void)
 
 	npcinit();
 
+	time = 0;
+
 	return S_OK;
 }
 
@@ -28,10 +30,51 @@ void villageScene::release(void)
 
 void villageScene::update(void)
 {
+	time++;
+
 	camera();
 	_villageMap->update();
 	_Owplayer->update();
 	npcUpdate();
+
+	if (_villageMap->getState() == VILLAGE)
+	{
+		if (time < 10)
+		{
+			_Owplayer->setX(PLAYERDATA->getPlayerX());
+			_Owplayer->setY(PLAYERDATA->getPlayerY());
+			_villageMap->setBgX(PLAYERDATA->getBgX());
+			_villageMap->setBgY(PLAYERDATA->getBgY());
+		}
+	}
+
+	if (_villageMap->getState() == DUNGEON)
+	{
+		PLAYERDATA->setSlimeDie(false);
+		PLAYERDATA->setFluffyBugDie(false);
+		PLAYERDATA->setFlytrapperDie(false);
+		PLAYERDATA->setBarbarianDie(false);
+		PLAYERDATA->setDevilBomberDie(false);
+		PLAYERDATA->setMonsterX(100);
+		PLAYERDATA->setMonsterY(150);
+		PLAYERDATA->setBackX(0);
+		PLAYERDATA->setBackY(0);
+		PLAYERDATA->setSlimeX(279);
+		PLAYERDATA->setSlimeY(619);
+		PLAYERDATA->setFluffyBugX(411);
+		PLAYERDATA->setFluffyBugY(1037);
+		PLAYERDATA->setFlytrapperX(1420);
+		PLAYERDATA->setFlytrapperY(1018);
+		PLAYERDATA->setBarbarianX(711);
+		PLAYERDATA->setBarbarianY(253);
+		PLAYERDATA->setDevilBomberX(1191);
+		PLAYERDATA->setDevilBomberY(219);
+		PLAYERDATA->setPlayerX(532);
+		PLAYERDATA->setPlayerY(435);
+		PLAYERDATA->setBgX(210);
+		PLAYERDATA->setBgY(603);
+		SCENEMANAGER->changeScene("´øÀü");
+	}
 }
 
 void villageScene::render(void)
@@ -49,11 +92,11 @@ void villageScene::render(void)
 			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
 	}
 
-	if (_villageMap->getState() == DUNGEON)
-	{
-		IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
-			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
-	}
+	//if (_villageMap->getState() == DUNGEON)
+	//{
+	//	IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
+	//		1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
+	//}
 }
 
 void villageScene::camera()
@@ -523,7 +566,7 @@ void villageScene::camera()
 
 		}
 		break;
-	case DUNGEON:
+	/*case DUNGEON:
 		if (_Owplayer->getPlayerState() == MOVE_LEFT)
 		{
 			if (_Owplayer->getCamera().left <= 0 && _villageMap->getBgX() > 0)
@@ -576,7 +619,7 @@ void villageScene::camera()
 
 		}
 
-		break;
+		break;*/
 	case BOSSROOM:
 		if (_Owplayer->getPlayerState() == MOVE_LEFT)
 		{

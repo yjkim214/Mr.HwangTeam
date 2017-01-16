@@ -88,7 +88,7 @@ public:
 		}
 	}
 	E_MAPSTATE getState() { return _state; }
-	void setState(E_MAPSTATE state) { _state == state; }
+	void setState(E_MAPSTATE state) { _state = state; }
 	villageMap() {}
 	~villageMap() {}
 };

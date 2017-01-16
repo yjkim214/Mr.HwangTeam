@@ -200,6 +200,9 @@
     <ClInclude Include="Owplayer.h">
       <Filter>MainGame\마을 씬</Filter>
     </ClInclude>
+    <ClInclude Include="owDungeon.h">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -314,6 +317,9 @@
       <Filter>MainGame\배틀화면\에너미</Filter>
     </ClCompile>
     <ClCompile Include="Owplayer.cpp">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="owDungeon.cpp">
       <Filter>MainGame\마을 씬</Filter>
     </ClCompile>
   </ItemGroup>

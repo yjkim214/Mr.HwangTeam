@@ -165,6 +165,7 @@
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="mainMenuScene.h" />
     <ClInclude Include="minion.h" />
+    <ClInclude Include="owDungeon.h" />
     <ClInclude Include="Owplayer.h" />
     <ClInclude Include="pixelCollision.h" />
     <ClInclude Include="player.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mainMenuScene.cpp" />
     <ClCompile Include="minion.cpp" />
+    <ClCompile Include="owDungeon.cpp" />
     <ClCompile Include="Owplayer.cpp" />
     <ClCompile Include="pixelCollision.cpp" />
     <ClCompile Include="player.cpp" />

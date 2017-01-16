@@ -28,7 +28,7 @@ void loadingScene::update(void)
 	if (_loading->loadingDone())
 	{
 		//로딩이 완료 됐으니 씬변경
-		SCENEMANAGER->changeScene("배틀화면");
+		SCENEMANAGER->changeScene("메인메뉴");
 	}
 }
 

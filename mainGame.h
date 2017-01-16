@@ -10,6 +10,7 @@
 #include "introScene.h"
 #include "villageScene.h"
 #include "battleScene.h"
+#include "owDungeon.h"
 
 class mainGame : public gameNode
 {
