@@ -101,12 +101,6 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("winTempest", "winTempest.bmp", 310, 124, 5, 1, true, RGB(255, 0, 255));	
 	_loading->loadImage("dieTempest", "dieTempest.bmp", 110, 64, true, RGB(255, 0, 255));
 																													  
-//배틀화면 슬라임 애니메이션
-	_loading->loadFrameImage("slime_idle", "slime_idle.bmp", 180, 60, 3, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("slime_attack", "slime_attack.bmp", 345, 64, 5, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("slime_getdmg", "slime_getdmg.bmp", 120, 52, 2, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("slime_dead", "slime_dead", 60, 60, 1, 1, true, RGB(255, 0, 255));
-
 	//던전 오버월드 몬스터
 	_loading->loadFrameImage("slime", "slime.bmp", 180, 60, 3, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("fluffyBugUp", "fluffyBugUp.bmp", 120, 48, 3, 1, true, RGB(255, 0, 255));
@@ -157,6 +151,39 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("NPCW", "NPCW.bmp", 125, 60, 5, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("SHOP(NPC)", "SHOP(NPC).bmp", 205, 68, 5, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("SHOP(NPC)back", "SHOP(NPC)back.bmp", 225, 70, 5, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 슬라임 애니메이션
+	_loading->loadFrameImage("slime_idle", "slime_idle.bmp", 450, 150, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_attack", "slime_attack.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_getdmg", "slime_getdmg.bmp", 300, 150, 2, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_dead", "slime_dead", 150, 150, 1, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 플러피버그 애니메이션
+	_loading->loadFrameImage("fluffyBug_idle", "fluffyBug_idle.bmp", 450, 150, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBug_attack", "fluffyBug_attack.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBug_getdmg", "fluffyBug_getdmg.bmp", 300, 150, 2, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("fluffyBug_dead", "fluffyBug_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 플라이트렙퍼 애니메이션
+	_loading->loadFrameImage("flytrapper_idle", "flytrapper_idle.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapper_attack", "flytrapper_attack.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapper_getdmg", "flytrapper_getdmg.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapper_dead", "flytrapper_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("flytrapper_skill", "flytrapper_skill.bmp", 1050, 150, 7, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 바바리안 애니메이션
+	_loading->loadFrameImage("barbarian_idle", "barbarian_idle.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarian_attack", "barbarian_attack.bmp", 900, 150, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarian_getdmg", "barbarian_getdmg.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("barbarian_dead", "barbarian_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 데블붐버 애니메이션
+	_loading->loadFrameImage("devilBomber_idle", "devilBomber_idle.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomber_attack", "devilBomber_attack.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomber_getdmg", "devilBomber_getdmg.bmp", 300, 150, 2, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomber_dead", "devilBomber_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("devilBomber_skill", "devilBomber_skill.bmp", 1500, 150, 10, 1, true, RGB(255, 0, 255));
+
 }
 
 
