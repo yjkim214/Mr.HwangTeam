@@ -1201,7 +1201,7 @@ void owDungeon::render(void)
 	{
 		IMAGEMANAGER->render("dungeonPixel", getMemDC(), 0, 0, _backX, _backY, 800, 600);
 	}
-	IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _backX, _backY, 800, 600, 100);
+	
 
 	if (KEYMANAGER->isToggleKey(VK_SPACE))
 	{
@@ -1261,6 +1261,7 @@ void owDungeon::render(void)
 		IMAGEMANAGER->frameRender("owPlayer_idle", getMemDC(), _monster.x - (_monster.w) / 2, _monster.y - (_monster.h) / 2, 2, 0);
 	}
 
+	IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _backX, _backY, 800, 600, 100);
 
 	RECT temp;
 	if (_slime.isDie == false)
