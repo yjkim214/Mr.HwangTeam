@@ -17,6 +17,7 @@ struct tagMONSTER
 	bool isRight;
 	bool isUp;
 	bool isDown;
+	bool isFace;
 };
 
 class owDungeon : public gameNode

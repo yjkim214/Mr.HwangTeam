@@ -86,6 +86,7 @@ HRESULT owDungeon::init(void)
 	_monster.isRight = false;
 	_monster.isUp = false;
 	_monster.isDown = false;
+	_monster.isFace = true;
 
 	//============================================================================================
 	//															몬스터 초기화
@@ -100,7 +101,7 @@ HRESULT owDungeon::init(void)
 	_slime.currentFrameY = 0;
 	_slime.rc = RectMakeCenter(_slime.x, _slime.y, _slime.w, _slime.h);
 	_slime.rcExplore = RectMakeCenter(_slime.x, _slime.y, 300, 300);
-	_slime.isDie = false;
+	_slime.isDie = PLAYERDATA->getSlimeDie();
 
 	_fluffyBug.x = PLAYERDATA->getFluffyBugX();
 	_fluffyBug.y = PLAYERDATA->getFluffyBugY();
@@ -112,7 +113,7 @@ HRESULT owDungeon::init(void)
 	_fluffyBug.currentFrameY = 0;
 	_fluffyBug.rc = RectMakeCenter(_fluffyBug.x, _fluffyBug.y, _fluffyBug.w, _fluffyBug.h);
 	_fluffyBug.rcExplore = RectMakeCenter(_fluffyBug.x, _fluffyBug.y, 300, 300);
-	_fluffyBug.isDie = false;
+	_fluffyBug.isDie = PLAYERDATA->getFluffyBugDie();
 
 	_flytrapper.x = PLAYERDATA->getFlytrapperX();
 	_flytrapper.y = PLAYERDATA->getFlytrapperY();
@@ -124,7 +125,7 @@ HRESULT owDungeon::init(void)
 	_flytrapper.currentFrameY = 0;
 	_flytrapper.rc = RectMakeCenter(_flytrapper.x, _flytrapper.y, _flytrapper.w, _flytrapper.h);
 	_flytrapper.rcExplore = RectMakeCenter(_flytrapper.x, _flytrapper.y, 300, 300);
-	_flytrapper.isDie = false;
+	_flytrapper.isDie = PLAYERDATA->getFlytrapperDie();
 
 	_barbarian.x = PLAYERDATA->getBarbarianX();
 	_barbarian.y = PLAYERDATA->getBarbarianY();
@@ -136,7 +137,7 @@ HRESULT owDungeon::init(void)
 	_barbarian.currentFrameY = 0;
 	_barbarian.rc = RectMakeCenter(_barbarian.x, _barbarian.y, _barbarian.w, _barbarian.h);
 	_barbarian.rcExplore = RectMakeCenter(_barbarian.x, _barbarian.y, 300, 300);
-	_barbarian.isDie = false;
+	_barbarian.isDie = PLAYERDATA->getBarbarianDie();
 
 	_devilBomber.x = PLAYERDATA->getDevilBomberX();
 	_devilBomber.y = PLAYERDATA->getDevilBomberY();
@@ -148,7 +149,7 @@ HRESULT owDungeon::init(void)
 	_devilBomber.currentFrameY = 0;
 	_devilBomber.rc = RectMakeCenter(_devilBomber.x, _devilBomber.y, _devilBomber.w, _devilBomber.h);
 	_devilBomber.rcExplore = RectMakeCenter(_devilBomber.x, _devilBomber.y, 300, 300);
-	_devilBomber.isDie = false;
+	_devilBomber.isDie = PLAYERDATA->getDevilBomberDie();
 
 	return S_OK;
 }
@@ -830,24 +831,10 @@ void owDungeon::update(void)
 	{
 		isUpCollision5 = true;
 	}
-	if (KEYMANAGER->isOnceKeyUp(VK_LEFT))
-	{
-		_monster.isLeft = true;
-	}
-	if (KEYMANAGER->isOnceKeyUp(VK_RIGHT))
-	{
-		_monster.isRight = true;
-	}
-	if (KEYMANAGER->isOnceKeyUp(VK_UP))
-	{
-		_monster.isUp = true;
-	}
-	if (KEYMANAGER->isOnceKeyUp(VK_DOWN))
-	{
-		_monster.isDown = true;
-	}
+
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT))
 	{
+		_monster.isFace = false;
 		_monster.isLeft = false;
 		_monster.isRight = false;
 		_monster.isUp = false;
@@ -895,6 +882,7 @@ void owDungeon::update(void)
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_RIGHT))
 	{
+		_monster.isFace = false;
 		_monster.isLeft = false;
 		_monster.isRight = false;
 		_monster.isUp = false;
@@ -942,6 +930,7 @@ void owDungeon::update(void)
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_UP))
 	{
+		_monster.isFace = false;
 		_monster.isLeft = false;
 		_monster.isRight = false;
 		_monster.isUp = false;
@@ -989,6 +978,7 @@ void owDungeon::update(void)
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_DOWN))
 	{
+		_monster.isFace = false;
 		_monster.isLeft = false;
 		_monster.isRight = false;
 		_monster.isUp = false;
@@ -1034,6 +1024,24 @@ void owDungeon::update(void)
 		PLAYERDATA->setDevilBomberX(_devilBomber.x);
 		PLAYERDATA->setDevilBomberY(_devilBomber.y);
 	}
+
+	if (KEYMANAGER->isOnceKeyUp(VK_LEFT))
+	{
+		_monster.isLeft = true;
+	}
+	if (KEYMANAGER->isOnceKeyUp(VK_RIGHT))
+	{
+		_monster.isRight = true;
+	}
+	if (KEYMANAGER->isOnceKeyUp(VK_UP))
+	{
+		_monster.isUp = true;
+	}
+	if (KEYMANAGER->isOnceKeyUp(VK_DOWN))
+	{
+		_monster.isDown = true;
+	}
+
 	_monster.rc = RectMakeCenter(_monster.x, _monster.y, _monster.w, _monster.h);
 
 
@@ -1041,7 +1049,7 @@ void owDungeon::update(void)
 	//															몬스터 이동
 	//============================================================================================
 	RECT temp;
-	_slime.isDie = PLAYERDATA->getSlimeDie();
+
 	if (_slime.isDie == false)
 	{
 		if (IntersectRect(&temp, &_monster.rc, &_slime.rcExplore))
@@ -1201,7 +1209,7 @@ void owDungeon::render(void)
 	{
 		IMAGEMANAGER->render("dungeonPixel", getMemDC(), 0, 0, _backX, _backY, 800, 600);
 	}
-	
+
 
 	if (KEYMANAGER->isToggleKey(VK_SPACE))
 	{
@@ -1210,10 +1218,22 @@ void owDungeon::render(void)
 		{
 			RectangleMake(getMemDC(), _slime.rcExplore);
 		}
-		RectangleMake(getMemDC(), _fluffyBug.rcExplore);
-		RectangleMake(getMemDC(), _flytrapper.rcExplore);
-		RectangleMake(getMemDC(), _barbarian.rcExplore);
-		RectangleMake(getMemDC(), _devilBomber.rcExplore);
+		if (_fluffyBug.isDie == false)
+		{
+			RectangleMake(getMemDC(), _fluffyBug.rcExplore);
+		}
+		if (_flytrapper.isDie == false)
+		{
+			RectangleMake(getMemDC(), _flytrapper.rcExplore);
+		}
+		if (_barbarian.isDie == false)
+		{
+			RectangleMake(getMemDC(), _barbarian.rcExplore);
+		}
+		if (_devilBomber.isDie == false)
+		{
+			RectangleMake(getMemDC(), _devilBomber.rcExplore);
+		}
 	}
 
 	if (KEYMANAGER->isToggleKey(VK_SPACE))
@@ -1222,10 +1242,27 @@ void owDungeon::render(void)
 		{
 			RectangleMake(getMemDC(), _slime.rc);
 		}
-		RectangleMake(getMemDC(), _fluffyBug.rc);
-		RectangleMake(getMemDC(), _flytrapper.rc);
-		RectangleMake(getMemDC(), _barbarian.rc);
-		RectangleMake(getMemDC(), _devilBomber.rc);
+		if (_fluffyBug.isDie == false)
+		{
+			RectangleMake(getMemDC(), _fluffyBug.rc);
+		}
+		if (_flytrapper.isDie == false)
+		{
+			RectangleMake(getMemDC(), _flytrapper.rc);
+		}
+		if (_barbarian.isDie == false)
+		{
+			RectangleMake(getMemDC(), _barbarian.rc);
+		}
+		if (_devilBomber.isDie == false)
+		{
+			RectangleMake(getMemDC(), _devilBomber.rc);
+		}
+	}
+
+	if (_monster.isFace == true)
+	{
+		IMAGEMANAGER->frameRender("owPlayer_idle", getMemDC(), _monster.x - (_monster.w) / 2, _monster.y - (_monster.h) / 2, 2, 0);
 	}
 
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT))
@@ -1399,25 +1436,41 @@ void owDungeon::render(void)
 		RectangleMakeCenter(getMemDC(), _probeX02, _monster.y, 20, 20);
 		RectangleMakeCenter(getMemDC(), _monster.x, _probeY01, 20, 20);
 		RectangleMakeCenter(getMemDC(), _monster.x, _probeY02, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX11, _slime.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX12, _slime.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _slime.x, _probeY11, 20, 20);
-		RectangleMakeCenter(getMemDC(), _slime.x, _probeY12, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX21, _fluffyBug.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX22, _fluffyBug.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _fluffyBug.x, _probeY21, 20, 20);
-		RectangleMakeCenter(getMemDC(), _fluffyBug.x, _probeY22, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX31, _flytrapper.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX32, _flytrapper.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _flytrapper.x, _probeY31, 20, 20);
-		RectangleMakeCenter(getMemDC(), _flytrapper.x, _probeY32, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX41, _barbarian.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX42, _barbarian.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _barbarian.x, _probeY41, 20, 20);
-		RectangleMakeCenter(getMemDC(), _barbarian.x, _probeY42, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX51, _devilBomber.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _probeX52, _devilBomber.y, 20, 20);
-		RectangleMakeCenter(getMemDC(), _devilBomber.x, _probeY51, 20, 20);
-		RectangleMakeCenter(getMemDC(), _devilBomber.x, _probeY52, 20, 20);
+
+		if (_slime.isDie == false)
+		{
+			RectangleMakeCenter(getMemDC(), _probeX11, _slime.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _probeX12, _slime.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _slime.x, _probeY11, 20, 20);
+			RectangleMakeCenter(getMemDC(), _slime.x, _probeY12, 20, 20);
+		}
+		if (_fluffyBug.isDie == false)
+		{
+			RectangleMakeCenter(getMemDC(), _probeX21, _fluffyBug.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _probeX22, _fluffyBug.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _fluffyBug.x, _probeY21, 20, 20);
+			RectangleMakeCenter(getMemDC(), _fluffyBug.x, _probeY22, 20, 20);
+		}
+		if (_flytrapper.isDie == false)
+		{
+			RectangleMakeCenter(getMemDC(), _probeX31, _flytrapper.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _probeX32, _flytrapper.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _flytrapper.x, _probeY31, 20, 20);
+			RectangleMakeCenter(getMemDC(), _flytrapper.x, _probeY32, 20, 20);
+		}
+		if (_barbarian.isDie == false)
+		{
+			RectangleMakeCenter(getMemDC(), _probeX41, _barbarian.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _probeX42, _barbarian.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _barbarian.x, _probeY41, 20, 20);
+			RectangleMakeCenter(getMemDC(), _barbarian.x, _probeY42, 20, 20);
+		}
+		if (_devilBomber.isDie == false)
+		{
+			RectangleMakeCenter(getMemDC(), _probeX51, _devilBomber.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _probeX52, _devilBomber.y, 20, 20);
+			RectangleMakeCenter(getMemDC(), _devilBomber.x, _probeY51, 20, 20);
+			RectangleMakeCenter(getMemDC(), _devilBomber.x, _probeY52, 20, 20);
+		}
 	}
 }

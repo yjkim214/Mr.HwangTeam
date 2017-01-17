@@ -90,7 +90,8 @@ private:
 	char imgStr[1024];
 	char soundStr[1024];
 	char imgDir[1024];
-	char soundDir[1024];
+	char Dir[1024];
+	bool isImage;
 
 public:
 	HRESULT init(void);

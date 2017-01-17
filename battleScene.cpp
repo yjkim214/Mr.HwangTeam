@@ -60,7 +60,27 @@ void battleScene::update(void)
 	//플레이어가 이겼을시
 	if (_em->getVEnemyList()[0]->getIsDead() && _em->getVEnemyList()[1]->getIsDead() && _em->getVEnemyList()[2]->getIsDead())
 	{
-
+		if (PLAYERDATA->getMonsterNumber() == 1)
+		{
+			PLAYERDATA->setSlimeDie(true);
+		}
+		if (PLAYERDATA->getMonsterNumber() == 2)
+		{
+			PLAYERDATA->setFluffyBugDie(true);
+		}
+		if (PLAYERDATA->getMonsterNumber() == 3)
+		{
+			PLAYERDATA->setFlytrapperDie(true);
+		}
+		if (PLAYERDATA->getMonsterNumber() == 4)
+		{
+			PLAYERDATA->setBarbarianDie(true);
+		}
+		if (PLAYERDATA->getMonsterNumber() == 5)
+		{
+			PLAYERDATA->setDevilBomberDie(true);
+		}
+		SCENEMANAGER->changeScene("던전");
 	}
 
 	else if (_pm->getVPlayerList()[0]->getIsDead() && _pm->getVPlayerList()[1]->getIsDead() && _pm->getVPlayerList()[2]->getIsDead())
@@ -201,7 +221,30 @@ void battleScene::update(void)
 
 			if (_userSelect == GETAWAY)
 			{
-				_userSelect = INIT;
+				if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+				{
+					if (PLAYERDATA->getMonsterNumber() == 1)
+					{
+						PLAYERDATA->setSlimeDie(true);
+					}
+					if (PLAYERDATA->getMonsterNumber() == 2)
+					{
+						PLAYERDATA->setFluffyBugDie(true);
+					}
+					if (PLAYERDATA->getMonsterNumber() == 3)
+					{
+						PLAYERDATA->setFlytrapperDie(true);
+					}
+					if (PLAYERDATA->getMonsterNumber() == 4)
+					{
+						PLAYERDATA->setBarbarianDie(true);
+					}
+					if (PLAYERDATA->getMonsterNumber() == 5)
+					{
+						PLAYERDATA->setDevilBomberDie(true);
+					}
+					SCENEMANAGER->changeScene("던전");
+				}
 			}
 		}
 
@@ -473,7 +516,8 @@ void battleScene::setUiImage()
 
 	if (_actionSelected == 3)
 	{
-
+		_uiGetaway = IMAGEMANAGER->findImage("bsUi_Getaway_Selected");
+		_uiGetaway->setCenter(750, 50);
 	}
 
 	else

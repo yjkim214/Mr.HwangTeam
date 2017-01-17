@@ -196,6 +196,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsUi_Attack_Selected", "bsUi_Attack_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 	_loading->loadImage("bsUi_Skill_Selected", "bsUi_Skill_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 	_loading->loadImage("bsUi_Defense_Selected", "bsUi_Defense_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
+	_loading->loadImage("bsUi_Getaway_Selected", "bsUi_Getaway_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 
 	//배틀화면 알렉스 이미지
 	_loading->loadFrameImage("bsAlex_idle@2", "bsAlex_idle@2.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));

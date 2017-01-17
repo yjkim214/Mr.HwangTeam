@@ -1,0 +1,136 @@
+﻿  owDungeon.cpp
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(84): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(102): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(114): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(115): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(126): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(138): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(139): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(150): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(151): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(213): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(215): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(235): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(237): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(257): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(259): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(284): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(286): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(306): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(308): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(328): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(330): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(350): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(352): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(372): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(374): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(394): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(396): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(416): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(418): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(438): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(440): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(460): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(462): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(482): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(484): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(504): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(506): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(526): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(528): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(548): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(550): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(570): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(572): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(592): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(594): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(614): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(616): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(636): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(638): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(658): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(660): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(680): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(682): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(702): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(704): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(724): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(726): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1045): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1060): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1061): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1072): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1073): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1084): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1085): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1096): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1097): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1108): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1109): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1207): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1210): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1265): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1270): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1274): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1278): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1282): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1286): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1290): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1294): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1298): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1301): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1308): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1312): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1322): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1326): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1330): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1334): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1339): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1349): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1353): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1357): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1361): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1366): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1376): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1380): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1384): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1388): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1393): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1403): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1407): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1411): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1415): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1420): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1435): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1436): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1437): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1438): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1442): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1443): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1444): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1445): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1449): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1450): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1451): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1452): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1456): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1457): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1458): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1459): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1463): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1464): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1465): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1466): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1470): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1471): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1472): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1473): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1427): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\desktop\mr.hwangteamproject\owdungeon.cpp(1430): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  WindowAPI.vcxproj -> C:\Users\SGA\Desktop\Mr.HwangTeamProject\Debug\WindowAPI.exe

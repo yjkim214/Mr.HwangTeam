@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "loading.h"
 //=============================================================
-//	## loadItem ## (로드아이템 클래스)
+// ## loadItem ## (로드아이템 클래스)
 //=============================================================
 HRESULT loadItem::init(string keyName, int width, int height)
 {
@@ -98,7 +98,7 @@ HRESULT loadItem::init(string keyName, string soundName, bool bgm, bool loop)
 
 
 //=============================================================
-//	## loading ## (로딩 클래스)
+// ## loading ## (로딩 클래스)
 //=============================================================
 
 HRESULT loading::init(void)
@@ -113,6 +113,7 @@ HRESULT loading::init(void)
 	_loadingBar->setGauge(0, 0);
 	//현재 게이지 초기화
 	_currentGauge = 0;
+	isImage = false;
 
 	//로딩음악
 	//SOUNDMANAGER->addSound("loadingMusic", "loadingMusic.mid", true, true);
@@ -221,6 +222,7 @@ BOOL loading::loadingDone(void)
 	{
 		tagImageResource img = item->getImageResource();
 		IMAGEMANAGER->addImage(img.keyName, img.width, img.height);
+		isImage = true;
 	}
 	break;
 
@@ -228,6 +230,7 @@ BOOL loading::loadingDone(void)
 	{
 		tagImageResource img = item->getImageResource();
 		IMAGEMANAGER->addImage(img.keyName, img.fileName, img.width, img.height, img.trans, img.transColor);
+		isImage = true;
 	}
 	break;
 
@@ -235,6 +238,7 @@ BOOL loading::loadingDone(void)
 	{
 		tagImageResource img = item->getImageResource();
 		IMAGEMANAGER->addImage(img.keyName, img.fileName, img.x, img.y, img.width, img.height, img.trans, img.transColor);
+		isImage = true;
 	}
 	break;
 
@@ -242,6 +246,7 @@ BOOL loading::loadingDone(void)
 	{
 		tagImageResource img = item->getImageResource();
 		IMAGEMANAGER->addFrameImage(img.keyName, img.fileName, img.width, img.height, img.frameX, img.frameY, img.trans, img.transColor);
+		isImage = true;
 	}
 	break;
 
@@ -249,6 +254,7 @@ BOOL loading::loadingDone(void)
 	{
 		tagImageResource img = item->getImageResource();
 		IMAGEMANAGER->addFrameImage(img.keyName, img.fileName, img.x, img.y, img.width, img.height, img.frameX, img.frameY, img.trans, img.transColor);
+		isImage = true;
 	}
 	break;
 
@@ -256,21 +262,27 @@ BOOL loading::loadingDone(void)
 	{
 		tagSoundResource sound = item->getSoundResource();
 		SOUNDMANAGER->addSound(sound.keyName, sound.soundName, sound.bgm, sound.loop);
+		isImage = false;
 	}
 	break;
 	}
 
-	ZeroMemory(imgDir, sizeof(imgDir));
-	ZeroMemory(soundDir, sizeof(soundDir));
+	//ZeroMemory(imgDir, sizeof(imgDir));
+	ZeroMemory(Dir, sizeof(Dir));
 	ZeroMemory(imgStr, sizeof(imgStr));
 	ZeroMemory(soundStr, sizeof(soundStr));
-	GetCurrentDirectory(1024, imgDir);
-	GetCurrentDirectory(1024, soundDir);
-
-	sprintf(imgStr, "\\%s.bmp", _vLoadItem[_currentGauge]->getImageResource().keyName.c_str());
-	strcat(imgDir, imgStr);
-	sprintf(soundStr, "\\%s.mp3", _vLoadItem[_currentGauge]->getSoundResource().keyName.c_str());
-	strcat(soundDir, soundStr);
+	GetCurrentDirectory(1024, Dir);
+	//GetCurrentDirectory(1024, Dir);
+	if (isImage == true)
+	{
+		sprintf(imgStr, "\\%s.bmp", _vLoadItem[_currentGauge]->getImageResource().keyName.c_str());
+		strcat(Dir, imgStr);
+	}
+	if (isImage == false)
+	{
+		sprintf(soundStr, "\\%s.mp3", _vLoadItem[_currentGauge]->getSoundResource().keyName.c_str());
+		strcat(Dir, soundStr);
+	}
 
 
 	//현재게이지 증가
@@ -287,7 +299,7 @@ void loading::fileNameText()
 	//SelectObject(getMemDC(), myfont);
 	//SetTextColor(getMemDC(), RGB(0, 255, 255));
 	SetBkMode(getMemDC(), TRANSPARENT);
-	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, imgDir, strlen(imgDir));
-	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, soundDir, strlen(soundDir));
+	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, Dir, strlen(Dir));
+	//TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, Dir, strlen(Dir));
 	//DeleteObject(myfont);
 }
