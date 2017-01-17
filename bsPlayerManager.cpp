@@ -69,3 +69,5 @@ void bsPlayerManager::addTempest(float prevX, float prevY)
 	newTempest->setPrevPos(prevX, prevY);
 	_vPlayerList.push_back(newTempest);
 }
+
+

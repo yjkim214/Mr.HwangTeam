@@ -6,8 +6,10 @@ enum class TEMPEST_STATE
 	IDLE,
 	ATTACK,
 	SKILL,
+	DEFENSE, 
 	GETDMG,
 	DEAD,
+	VICTORY, 
 };
 
 class Tempest : public bsPlayer
@@ -23,7 +25,10 @@ public:
 
 	virtual void myTurnAttack(int enemyIndex);
 	virtual void myTurnSkill(int enemyIndex);
+	virtual void myTurnDefense();
+	virtual void victoryBattle();
 	virtual void getDmg(int enemyAtt);
+
 	virtual bullet* getBullet() { return _bullet; }
 
 	Tempest() {}

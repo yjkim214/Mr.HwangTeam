@@ -6,8 +6,10 @@ enum class LUNAR_STATE
 	IDLE,
 	ATTACK,
 	SKILL,
+	DEFENSE, 
 	GETDMG,
 	DEAD,
+	VICTORY, 
 };
 
 class Lunar : public bsPlayer
@@ -23,6 +25,8 @@ public:
 
 	virtual void myTurnAttack(int enemyIndex);
 	virtual void myTurnSkill(int enemyIndex);
+	virtual void myTurnDefense();
+	virtual void victoryBattle();
 	virtual void getDmg(int enemyAtt);
 
 	Lunar() {}

@@ -16,7 +16,7 @@ enum USER_SELECT
 	SKILL,
 	DEFENSE,
 	GETAWAY,
-	SELECTED,
+	SELECT,
 	INIT,
 };
 
@@ -61,6 +61,7 @@ private:
 
 private:
 	image* _background;
+
 public:
 	HRESULT init(void);
 	void release(void);

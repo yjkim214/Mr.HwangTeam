@@ -66,32 +66,80 @@ void battleScene::update(void)
 		{
 			PLAYERDATA->setSlimeDie(true);
 		}
-		if (PLAYERDATA->getMonsterNumber() == 2)
+
+		else if (PLAYERDATA->getMonsterNumber() == 2)
 		{
 			PLAYERDATA->setFluffyBugDie(true);
 		}
-		if (PLAYERDATA->getMonsterNumber() == 3)
+
+		else if (PLAYERDATA->getMonsterNumber() == 3)
 		{
 			PLAYERDATA->setFlytrapperDie(true);
 		}
-		if (PLAYERDATA->getMonsterNumber() == 4)
+
+		else if (PLAYERDATA->getMonsterNumber() == 4)
 		{
 			PLAYERDATA->setBarbarianDie(true);
 		}
-		if (PLAYERDATA->getMonsterNumber() == 5)
+
+		else if (PLAYERDATA->getMonsterNumber() == 5)
 		{
 			PLAYERDATA->setDevilBomberDie(true);
 		}
-		if (SOUNDMANAGER->isPlaySound("battleMusic"))
+
+		else if (SOUNDMANAGER->isPlaySound("battleMusic"))
 		{
 			SOUNDMANAGER->stop("battleMusic");
 		}
-		SCENEMANAGER->changeScene("던전");
+
+		for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+		{
+			if (!_pm->getVPlayerList()[i]->getIsDead())
+			{
+				if (_pm->getVPlayerList()[i]->getTurnState() == NOTMYTURN)
+				{
+					_pm->getVPlayerList()[i]->victoryBattle();
+				}
+			}
+		}
+
+		if (_pm->getVPlayerList()[0]->getIsVictory() && _pm->getVPlayerList()[1]->getIsVictory() && _pm->getVPlayerList()[2]->getIsVictory())
+		{
+			SCENEMANAGER->changeScene("던전");
+		}
 	}
 
 	else if (_pm->getVPlayerList()[0]->getIsDead() && _pm->getVPlayerList()[1]->getIsDead() && _pm->getVPlayerList()[2]->getIsDead())
 	{
+		if (PLAYERDATA->getMonsterNumber() == 1)
+		{
+			PLAYERDATA->setSlimeDie(true);
+		}
 
+		else if (PLAYERDATA->getMonsterNumber() == 2)
+		{
+			PLAYERDATA->setFluffyBugDie(true);
+		}
+
+		else if (PLAYERDATA->getMonsterNumber() == 3)
+		{
+			PLAYERDATA->setFlytrapperDie(true);
+		}
+
+		else if (PLAYERDATA->getMonsterNumber() == 4)
+		{
+			PLAYERDATA->setBarbarianDie(true);
+		}
+
+		else if (PLAYERDATA->getMonsterNumber() == 5)
+		{
+			PLAYERDATA->setDevilBomberDie(true);
+		}
+
+		else if (SOUNDMANAGER->isPlaySound("battleMusic"))
+		{
+			SOUNDMANAGER->stop("battleMusic");
+		}
 	}
 
 	else
@@ -110,7 +158,7 @@ void battleScene::update(void)
 					_actionSelected = 0;
 				}
 
-				_userSelect = SELECTED;
+				_userSelect = SELECT;
 			}
 
 			selectAction();
@@ -356,7 +404,7 @@ void battleScene::setPlayerIndex()
 
 void battleScene::selectAction()
 {
-	if (_userSelect == SELECTED)
+	if (_userSelect == SELECT)
 	{
 		if (KEYMANAGER->isOnceKeyDown(VK_RIGHT))
 		{

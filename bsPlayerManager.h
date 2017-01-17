@@ -16,10 +16,12 @@ public:
 	void update(void);
 	void render(void);
 
+public:
 	void addAlexNoah(float prevX, float prevY);
 	void addLunar(float prevX, float prevY);
 	void addTempest(float prevX, float prevY);
 
+public:
 	vector<bsPlayer*> getVPlayerList() { return _vPlayerList; }
 
 	bsPlayerManager() {}

@@ -18,26 +18,7 @@ HRESULT Tempest::init(void)
 	_mp = Tempest_MAXMP;
 	_maxMp = Tempest_MAXMP;
 
-	_prevX = 0;
-	_prevY = 0;
-	_destX = 0;
-	_destY = 0;
-
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_idle");
-	_currentFrameX = 0;
-
-	_countNotMyTurn = 0;
-	_countMyTurn = 0;
-	_countTurnEnd = 0;
-
-	_isDelay = true;
-	_delayCount = 0;
-
-	_isAttack = false;
-	_isHeal = false;
-	_isDead = false;
-
-	_turnState = NOTMYTURN;
 
 	_state = TEMPEST_STATE::IDLE;
 
@@ -108,6 +89,7 @@ void Tempest::update(void)
 					_isDead = true;
 				}
 			}
+
 			_countNotMyTurn = 0;
 		}
 	}
@@ -115,7 +97,6 @@ void Tempest::update(void)
 	else if (_turnState == MYTURN)
 	{
 		_countMyTurn++;
-
 		if (_countMyTurn % Tempest_ANI_COUNT == 0)
 		{
 			_currentFrameX++;
@@ -178,6 +159,44 @@ void Tempest::update(void)
 					}
 				}
 			}
+
+			if (_state == TEMPEST_STATE::DEFENSE)
+			{
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= DELAYTIME)
+						{
+							_turnState = TURNEND;
+
+							_playerImg = IMAGEMANAGER->findImage("bsTempest_idle");
+							_currentFrameX = 0;
+							_state = TEMPEST_STATE::IDLE;
+
+							_isDelay = false;
+						}
+					}
+				}
+			}
+
+			if (_state == TEMPEST_STATE::VICTORY)
+			{
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= DELAYTIME)
+						{
+							_turnState = TURNEND;
+							_isVictory = true;
+							_isDelay = false;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -198,7 +217,7 @@ void Tempest::render(void)
 		_playerImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 	}
 
-	if (_turnState == MYTURN)
+	else if (_turnState == MYTURN)
 	{
 		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
@@ -254,11 +273,44 @@ void Tempest::myTurnSkill(int enemyIndex)
 	}
 }
 
+void Tempest::myTurnDefense()
+{
+	_turnState = MYTURN;
+	_playerImg = IMAGEMANAGER->findImage("bsTempest_defense");
+	_currentFrameX = 0;
+	_state = TEMPEST_STATE::DEFENSE;
+	_isDefense = true;
+	_destX = _prevX;
+	_destY = _prevY;
+}
+
+void Tempest::victoryBattle()
+{
+	_turnState = MYTURN;
+	_playerImg = IMAGEMANAGER->findImage("bsTempest_victory");
+	_currentFrameX = 0;
+	_state = TEMPEST_STATE::VICTORY;
+	_destX = _prevX;
+	_destY = _prevY;
+}
+
 void Tempest::getDmg(int enemyAtt)
 {
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_getdmg");
 	_currentFrameX = 0;
 	_state = TEMPEST_STATE::GETDMG;
-	_hp -= (enemyAtt * enemyAtt / _def + 1);
-	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight()), "bsEffect_attack");
+
+	if (_isDefense)
+	{
+		_hp -= (enemyAtt * enemyAtt / _def + 1);
+	}
+
+	else
+	{
+		_hp -= (enemyAtt * enemyAtt / (_def * 2) + 1);
+	}
+
+	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
+	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());
+	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
 }

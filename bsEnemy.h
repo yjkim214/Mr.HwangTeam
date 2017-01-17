@@ -49,10 +49,10 @@ public:
 	//	## enemy ## (접근자 / 설정자)
 	//=============================================================
 public:
-	int getAtt() { return _att; }
-	int getDef() { return _def; }
-	int getHp() { return _hp; }
-	int getMp() { return _mp; }
+	float getAtt() { return _att; }
+	float getDef() { return _def; }
+	float getHp() { return _hp; }
+	float getMp() { return _mp; }
 	image* getImg() { return _enemyImg; }
 
 public:
