@@ -1,15 +1,17 @@
 #pragma once
 #include "gameNode.h"
+#include "bullet.h"
+
 class bsPlayer : public gameNode
 {
 protected:
-	int		_att;
-	int		_def;
+	float	_att;
+	float	_def;
 
-	int		_hp;
-	int		_maxHp;
-	int		_mp;
-	int		_maxMp;
+	float	_hp;
+	float	_maxHp;
+	float	_mp;
+	float	_maxMp;
 
 protected:
 	float	_prevX, _prevY;
@@ -30,11 +32,14 @@ protected:
 
 protected:
 	bool	_isAttack;
+	bool	_isHeal;
 	bool	_isDead;
 
 protected:
 	TURN_STATE _turnState;
 
+protected:
+	bullet*	_bullet;
 public:
 	//=============================================================
 	//	## player ## (순수 가상 함수)
@@ -48,6 +53,7 @@ public:
 	virtual void myTurnSkill(int enemyIndex) = 0;
 	virtual void getDmg(int enemyAtt) = 0;
 
+	virtual bullet* getBullet() { return NULL; }
 	//=============================================================
 	//	## player ## (접근자 / 설정자)
 	//=============================================================
@@ -61,6 +67,8 @@ public:
 
 	bool getIsAttack() { return _isAttack; }
 	void setIsAttack(bool isAttack) { _isAttack = isAttack; }
+	bool getIsHeal() { return _isHeal; }
+	void setIsHeal(bool isHeal) { _isHeal = isHeal; }
 	bool getIsDead() { return _isDead; }
 
 	TURN_STATE getTurnState() { return _turnState; }

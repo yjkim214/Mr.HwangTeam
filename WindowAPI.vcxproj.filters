@@ -221,6 +221,15 @@
     <ClInclude Include="bsBarbarian.h">
       <Filter>MainGame\배틀화면\에너미</Filter>
     </ClInclude>
+    <ClInclude Include="effectManager.h">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="Lunar.h">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClInclude>
+    <ClInclude Include="Tempest.h">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -357,6 +366,15 @@
     </ClCompile>
     <ClCompile Include="bsFluffyBug.cpp">
       <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="effectManager.cpp">
+      <Filter>MainGame\로딩화면</Filter>
+    </ClCompile>
+    <ClCompile Include="Lunar.cpp">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="Tempest.cpp">
+      <Filter>MainGame\배틀화면\플레이어</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

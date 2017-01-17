@@ -46,6 +46,7 @@ void mainGame::update(void)
 
 	//¾À¸Å´ÏÁ® ¾÷µ¥ÀÌÆ®
 	SCENEMANAGER->update();
+	EFFECTMANAGER->update();
 }
 //=============================================================
 //	## render(void) ## ·»´õ

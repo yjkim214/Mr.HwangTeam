@@ -19,14 +19,29 @@ HRESULT battleScene::init(void)
 	//먼저 에너미 턴부터
 	_bsState = PLAYERTURN;
 	_userSelect = INIT;
+	_enemyTurnState = ENEMYTURNSTATE::START;
+	_playerTurnState = PLAYERTURNSTATE::START;
 
 	_actionSelected = 4;
 	_enemySelected = 0;
+	_playerSelected = 0;
 
 	_uiAttack = IMAGEMANAGER->findImage("bsUi_Attack");
 	_uiSkill = IMAGEMANAGER->findImage("bsUi_Skill");
 	_uiDefense = IMAGEMANAGER->findImage("bsUi_Defense");
 	_uiGetaway = IMAGEMANAGER->findImage("bsUi_Getaway");
+
+	int rand = RND->getInt(2);
+	
+	if (rand == 0)
+	{
+		_background = IMAGEMANAGER->findImage("bsBackground01");
+	}
+
+	else if (rand == 1)
+	{
+		_background = IMAGEMANAGER->findImage("bsBackground02");
+	}
 
 	return S_OK;
 }
@@ -42,14 +57,13 @@ void battleScene::release(void)
 
 void battleScene::update(void)
 {
-
 	//플레이어가 이겼을시
 	if (_em->getVEnemyList()[0]->getIsDead() && _em->getVEnemyList()[1]->getIsDead() && _em->getVEnemyList()[2]->getIsDead())
 	{
 
 	}
 
-	if (_pm->getVPlayerList()[0]->getIsDead() && _pm->getVPlayerList()[1]->getIsDead() && _pm->getVPlayerList()[2]->getIsDead())
+	else if (_pm->getVPlayerList()[0]->getIsDead() && _pm->getVPlayerList()[1]->getIsDead() && _pm->getVPlayerList()[2]->getIsDead())
 	{
 
 	}
@@ -58,7 +72,10 @@ void battleScene::update(void)
 	{
 		if (_bsState == PLAYERTURN)
 		{
-			setPlayerIndex();
+			if (_playerTurnState == PLAYERTURNSTATE::START)
+			{
+				setPlayerIndex();
+			}
 
 			if (_userSelect == INIT)
 			{
@@ -87,6 +104,20 @@ void battleScene::update(void)
 
 				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
 				{
+					if (_pm->getVPlayerList()[_currentPlayerIndex]->getBullet() != NULL)
+					{
+						for (int i = 0; i < _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet().size(); i++)
+						{
+							RECT bulletRc = _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet()[i].rc;
+							RECT enemyRc = _em->getVEnemyList()[_enemySelected]->getImg()->boundingBoxWithFrame();
+							if (bulletRc.left < enemyRc.right - 30)
+							{
+								_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(true);
+								_pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->removeBullet(i);
+							}
+						}
+					}
+
 					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
 					{
 						_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
@@ -126,6 +157,19 @@ void battleScene::update(void)
 
 				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
 				{
+					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsHeal())
+					{
+						for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+						{
+							if (!_pm->getVPlayerList()[i]->getIsDead())
+							{
+								EFFECTMANAGER->addEffect(_pm->getVPlayerList()[i]->getPrevPos().x + 43, _pm->getVPlayerList()[i]->getPrevPos().y + 25, "bsLunar_skillEffect");
+							}
+						}
+
+						_pm->getVPlayerList()[_currentPlayerIndex]->setIsHeal(false);
+					}
+
 					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
 					{
 						_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
@@ -163,47 +207,56 @@ void battleScene::update(void)
 
 		else if (_bsState == ENEMYTURN)
 		{
-			while (true)
+			if (_enemyTurnState == ENEMYTURNSTATE::START)
 			{
-				if (_em->getVEnemyList()[_currentEnemyIndex]->getIsDead())
-				{
-					_currentEnemyIndex++;
-				}
-
-				else
-				{
-					break;
-				}
+				setEnemyIndex();
+				_enemyTurnState = ENEMYTURNSTATE::UPDATE;
 			}
 
-			if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == NOTMYTURN)
+			else if (_enemyTurnState == ENEMYTURNSTATE::UPDATE)
 			{
-				int rand = 0;
-
-				while (true)
+				if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == NOTMYTURN)
 				{
-					rand = RND->getInt(_pm->getVPlayerList().size());
+					_playerSelected = 0;
 
-					if (!_pm->getVPlayerList()[rand]->getIsDead())
+					while (true)
 					{
-						break;
+						_playerSelected = RND->getInt(_pm->getVPlayerList().size());
+
+						if (!_pm->getVPlayerList()[_playerSelected]->getIsDead())
+						{
+							break;
+						}
+					}
+
+					_em->getVEnemyList()[_currentEnemyIndex]->myTurnAttack(_playerSelected);
+				}
+
+				else if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == MYTURN)
+				{
+					if (!_em->getVEnemyList()[_currentEnemyIndex]->getIsDead())
+					{
+						if (_em->getVEnemyList()[_currentEnemyIndex]->getIsAttack())
+						{
+							_pm->getVPlayerList()[_playerSelected]->getDmg(_em->getVEnemyList()[_currentEnemyIndex]->getAtt());
+							_em->getVEnemyList()[_currentEnemyIndex]->setIsAttack(false);
+						}
 					}
 				}
 
-				_em->getVEnemyList()[_currentEnemyIndex]->myTurnAttack(rand);
-			}
-
-			else if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == TURNEND)
-			{
-				if (_currentEnemyIndex + 1 < _em->getVEnemyList().size())
+				else if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == TURNEND)
 				{
-					_currentEnemyIndex++;
-				}
+					if (_currentEnemyIndex + 1 < _em->getVEnemyList().size())
+					{
+						_currentEnemyIndex++;
+					}
 
-				else
-				{
-					_currentEnemyIndex = 0;
-					_bsState = PLAYERTURN;
+					else
+					{
+						_currentEnemyIndex = 0;
+						_bsState = PLAYERTURN;
+						_enemyTurnState = ENEMYTURNSTATE::START;
+					}
 				}
 			}
 		}
@@ -213,12 +266,18 @@ void battleScene::update(void)
 
 	_pm->update();
 	_em->update();
+
+	EFFECTMANAGER->update();
 }
 
 void battleScene::render(void)
 {
+	_background->render(getMemDC());
+
 	_pm->render();
 	_em->render();
+
+	EFFECTMANAGER->render(getMemDC());
 
 	_uiAttack->render(getMemDC());
 	_uiSkill->render(getMemDC());
@@ -279,7 +338,15 @@ void battleScene::selectEnemy()
 	{
 		if (_em->getVEnemyList()[_enemySelected]->getIsDead())
 		{
-			_enemySelected++;
+			if (_enemySelected >= _em->getVEnemyList().size() - 1)
+			{
+				_enemySelected = 0;
+			}
+
+			else
+			{
+				_enemySelected++;
+			}
 		}
 
 		else
@@ -298,7 +365,12 @@ void battleScene::selectEnemy()
 			{
 				if (_em->getVEnemyList()[_enemySelected]->getIsDead())
 				{
-					if (_enemySelected > 0)
+					if (_enemySelected <= 0)
+					{
+						_enemySelected = 2;
+					}
+
+					else if (_enemySelected > 0)
 					{
 						_enemySelected--;
 					}
@@ -322,7 +394,12 @@ void battleScene::selectEnemy()
 			{
 				if (_em->getVEnemyList()[_enemySelected]->getIsDead())
 				{
-					if (_enemySelected > 0)
+					if (_enemySelected >= _em->getVEnemyList().size() - 1)
+					{
+						_enemySelected = 0;
+					}
+
+					else if (_enemySelected > 0)
 					{
 						_enemySelected++;
 					}

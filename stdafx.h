@@ -33,15 +33,17 @@ using namespace std;
 #include "keyManager.h"
 #include "randomFunction.h"
 #include "imageManager.h"
+
 #include "util.h"
 using namespace MY_UTIL;
+
 #include "playerData.h"
 #include "txtData.h"
 #include "iniData.h"
 #include "sceneManager.h"
 #include "timeManager.h"
 #include "soundManager.h"
-
+#include "effectManager.h"
 
 //====================================================================
 //			## 싱글톤을 이곳에 추가한다 ##
@@ -55,6 +57,7 @@ using namespace MY_UTIL;
 #define INIDATA iniData::getSingleton()
 #define TIMEMANAGER timeManager::getSingleton()
 #define SOUNDMANAGER soundManager::getSingleton()
+#define EFFECTMANAGER effectManager::getSingleton()
 
 //====================================================================
 //			## 디파인문 - 메크로 ## (윈도우창 초기화)

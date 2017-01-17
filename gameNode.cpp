@@ -63,6 +63,8 @@ void gameNode::release(void)
 		//사운드매니져 해제, 싱글톤 해제
 		SOUNDMANAGER->release();
 		SOUNDMANAGER->releaseSingleton();
+		//이펙트매니져 싱글톤 해제
+		EFFECTMANAGER->releaseSingleton();
 	}
 
 	//DC 해제

@@ -1,11 +1,11 @@
 #pragma once
 #include "bsPlayer.h"
 
-enum ALEXNOAH_STATE
+enum class ALEXNOAH_STATE
 {
 	IDLE,
 	ATTACK,
-	SKILL, 
+	SKILL,
 	GETDMG,
 	DEAD,
 };

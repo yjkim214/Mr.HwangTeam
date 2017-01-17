@@ -53,6 +53,7 @@ public:
 	int getDef() { return _def; }
 	int getHp() { return _hp; }
 	int getMp() { return _mp; }
+	image* getImg() { return _enemyImg; }
 
 public:
 	void setPrevPos(float x, float y);

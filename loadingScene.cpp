@@ -204,6 +204,30 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("bsAlex_dead@2", "bsAlex_dead@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("bsAlex_getdmg@2", "bsAlex_getdmg@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 
+	//배틀화면 루나 이미지
+	_loading->loadFrameImage("bsLunar_idle", "bsLunar_idle.bmp", 900, 150, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_attack", "bsLunar_attack.bmp", 1500, 150, 10, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_skill", "bsLunar_skill.bmp", 1050, 150, 7, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_dead", "bsLunar_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_getdmg", "bsLunar_getdmg.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_victory", "bsLunar_getvictory.bmp", 900, 150, 6, 1, true, RGB(255, 0, 255));
+
+	//배틀화면 템페스트 이미지
+	_loading->loadFrameImage("bsTempest_idle", "bsTempest_idle.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsTempest_attack", "bsTempest_attack.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsTempest_skill", "bsTempest_skill.bmp", 1800, 150, 12, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsTempest_dead", "bsTempest_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsTempest_getdmg", "bsTempest_getdmg.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsTempest_victory", "bsTempest_getvictory.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
+
+	//템페스트 스킬 이펙트
+	_loading->loadFrameImage("bsTempest_skilEffect", "bsTempest_skilEffect.bmp", 1240, 30, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsEffect_attack", "bsEffect_attack.bmp", 105, 40, 3, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsLunar_skillEffect", "bsLunar_skillEffect.bmp", 640, 64, 10, 1, true, RGB(255, 0, 255));
+
+	//배틀씬 배경화면
+	_loading->loadImage("bsBackground01", "bsBackground01.bmp", 800, 600);
+	_loading->loadImage("bsBackground02", "bsBackground02.bmp", 800, 600);
 	//대화창 UI
 	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));
 

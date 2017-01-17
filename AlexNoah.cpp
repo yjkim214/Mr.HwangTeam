@@ -3,9 +3,10 @@
 
 #define ALEXNOAH_ATT		5
 #define ALEXNOAH_DEF		5
-#define ALEXNOAH_MAXHP		100
+#define ALEXNOAH_MAXHP		2
 #define ALEXNOAH_MAXMP		20
 #define ALEXNOAH_ANI_COUNT	5
+#define DELAYTIME			10
 
 HRESULT AlexNoah::init(void)
 {
@@ -33,11 +34,14 @@ HRESULT AlexNoah::init(void)
 	_delayCount = 0;
 
 	_isAttack = false;
+	_isHeal = false;
 	_isDead = false;
 
 	_turnState = NOTMYTURN;
 
-	_state = IDLE;
+	_bullet = NULL;
+
+	_state = ALEXNOAH_STATE::IDLE;
 
 	return S_OK;
 }
@@ -55,13 +59,53 @@ void AlexNoah::update(void)
 		{
 			_currentFrameX++;
 
-			if (_state == IDLE)
+			if (_state == ALEXNOAH_STATE::IDLE)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
 					_currentFrameX = 0;
 				}
 			}
+
+			if (_state == ALEXNOAH_STATE::GETDMG)
+			{
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= DELAYTIME)
+						{
+							_turnState = TURNEND;
+
+							if (_hp <= 0)
+							{
+								_playerImg = IMAGEMANAGER->findImage("bsAlex_dead@2");
+								_currentFrameX = 0;
+								_state = ALEXNOAH_STATE::DEAD;
+							}
+
+							else
+							{
+								_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
+								_currentFrameX = 0;
+								_state = ALEXNOAH_STATE::IDLE;
+							}
+
+							_isDelay = false;
+						}
+					}
+				}
+			}
+
+			if (_state == ALEXNOAH_STATE::DEAD)
+			{
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					_isDead = true;
+				}
+			}
+
 			_countNotMyTurn = 0;
 		}
 	}
@@ -74,7 +118,7 @@ void AlexNoah::update(void)
 		{
 			_currentFrameX++;
 
-			if (_state == ATTACK)
+			if (_state == ALEXNOAH_STATE::ATTACK)
 			{
 				if (_currentFrameX == 4)
 				{
@@ -86,12 +130,12 @@ void AlexNoah::update(void)
 					if (_isDelay)
 					{
 						_delayCount++;
-						if (_delayCount >= 5)
+						if (_delayCount >= DELAYTIME)
 						{
 							_turnState = TURNEND;
 							_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 							_currentFrameX = 0;
-							_state = IDLE;
+							_state = ALEXNOAH_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -99,7 +143,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == SKILL)
+			if (_state == ALEXNOAH_STATE::SKILL)
 			{
 				if (_currentFrameX == 2 || _currentFrameX == 9 || _currentFrameX == 15 || _currentFrameX == 19 || _currentFrameX == 20 || _currentFrameX == 21 || _currentFrameX == 22 || _currentFrameX == 23 || _currentFrameX == 24)
 				{
@@ -111,12 +155,12 @@ void AlexNoah::update(void)
 					if (_isDelay)
 					{
 						_delayCount++;
-						if (_delayCount >= 5)
+						if (_delayCount >= DELAYTIME)
 						{
 							_turnState = TURNEND;
 							_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 							_currentFrameX = 0;
-							_state = IDLE;
+							_state = ALEXNOAH_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -152,7 +196,7 @@ void AlexNoah::myTurnAttack(int enemyIndex)
 	_turnState = MYTURN;
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_attack@2");
 	_currentFrameX = 0;
-	_state = ATTACK;
+	_state = ALEXNOAH_STATE::ATTACK;
 	_destX = WINSIZEX * 0.3f;
 
 	if (enemyIndex == 0)
@@ -176,7 +220,7 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 	_turnState = MYTURN;
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_skill@2");
 	_currentFrameX = 0;
-	_state = SKILL;
+	_state = ALEXNOAH_STATE::SKILL;
 	_destX = -50;
 
 	if (enemyIndex == 0)
@@ -197,4 +241,8 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 
 void AlexNoah::getDmg(int enemyAtt)
 {
+	_playerImg = IMAGEMANAGER->findImage("bsAlex_getdmg@2");
+	_currentFrameX = 0;
+	_state = ALEXNOAH_STATE::GETDMG;
+	_hp -= (enemyAtt * enemyAtt / _def + 1);
 }

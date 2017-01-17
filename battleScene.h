@@ -12,12 +12,24 @@ enum BS_STATE
 
 enum USER_SELECT
 {
-	ATTACK, 
-	SKILL, 
-	DEFENSE, 
-	GETAWAY, 
-	SELECTED, 
-	INIT, 
+	ATTACK,
+	SKILL,
+	DEFENSE,
+	GETAWAY,
+	SELECTED,
+	INIT,
+};
+
+enum class ENEMYTURNSTATE
+{
+	START,
+	UPDATE,
+};
+
+enum class PLAYERTURNSTATE
+{
+	START,
+	UPDATE,
 };
 
 class battleScene : public gameNode
@@ -29,6 +41,8 @@ private:
 private:
 	BS_STATE _bsState;
 	USER_SELECT _userSelect;
+	ENEMYTURNSTATE _enemyTurnState;
+	PLAYERTURNSTATE _playerTurnState;
 
 private:
 	int _currentPlayerIndex;
@@ -37,6 +51,7 @@ private:
 private:
 	int _actionSelected;
 	int _enemySelected;
+	int _playerSelected;
 
 private:
 	image* _uiAttack;
@@ -44,6 +59,8 @@ private:
 	image* _uiDefense;
 	image* _uiGetaway;
 
+private:
+	image* _background;
 public:
 	HRESULT init(void);
 	void release(void);

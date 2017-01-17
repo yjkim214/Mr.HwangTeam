@@ -2,6 +2,8 @@
 #include "bsPlayerManager.h"
 #include "bsPlayer.h"
 #include "AlexNoah.h"
+#include "Lunar.h"
+#include "Tempest.h"
 
 #define PLAYER_PREVPOS_X	WINSIZEX * 0.7f
 #define PLAYER_PREVPOS_Y1	WINSIZEY * 0.1f
@@ -11,8 +13,8 @@
 HRESULT bsPlayerManager::init(void)
 {
 	addAlexNoah(PLAYER_PREVPOS_X, PLAYER_PREVPOS_Y1);
-	addAlexNoah(PLAYER_PREVPOS_X, PLAYER_PREVPOS_Y2);
-	addAlexNoah(PLAYER_PREVPOS_X, PLAYER_PREVPOS_Y3);
+	addLunar(PLAYER_PREVPOS_X, PLAYER_PREVPOS_Y2);
+	addTempest(PLAYER_PREVPOS_X, PLAYER_PREVPOS_Y3);
 
 	return S_OK;
 }
@@ -50,4 +52,20 @@ void bsPlayerManager::addAlexNoah(float prevX, float prevY)
 	newAlexNoah->init();
 	newAlexNoah->setPrevPos(prevX, prevY);
 	_vPlayerList.push_back(newAlexNoah);
+}
+
+void bsPlayerManager::addLunar(float prevX, float prevY)
+{
+	Lunar* newLunar = new Lunar;
+	newLunar->init();
+	newLunar->setPrevPos(prevX, prevY);
+	_vPlayerList.push_back(newLunar);
+}
+
+void bsPlayerManager::addTempest(float prevX, float prevY)
+{
+	Tempest* newTempest = new Tempest;
+	newTempest->init();
+	newTempest->setPrevPos(prevX, prevY);
+	_vPlayerList.push_back(newTempest);
 }

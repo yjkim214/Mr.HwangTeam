@@ -1,7 +1,10 @@
-
 #include "gameNode.h"
+
 class bsPlayer;
-class AlexNoah;
+class AlexNoah; 
+class Lunar;
+class Tempest;
+
 class bsPlayerManager : public gameNode
 {
 private:
@@ -14,6 +17,8 @@ public:
 	void render(void);
 
 	void addAlexNoah(float prevX, float prevY);
+	void addLunar(float prevX, float prevY);
+	void addTempest(float prevX, float prevY);
 
 	vector<bsPlayer*> getVPlayerList() { return _vPlayerList; }
 
