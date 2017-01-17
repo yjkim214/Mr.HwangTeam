@@ -14,6 +14,9 @@
 
 class mainGame : public gameNode
 {
+private:
+	mainMenuScene* _mainMenu;
+	villageScene* _villageScene;
 public:
 	HRESULT init(void);
 	void release(void);

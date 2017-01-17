@@ -4,6 +4,8 @@
 HRESULT introScene::init(void)
 {
 	_startImage = IMAGEMANAGER->addFrameImage("intro", "intro.bmp", 1599, WINSIZEY, 2, 1, false);
+	SOUNDMANAGER->addSound("introMusic", "introMusic.MID", true, true);
+	SOUNDMANAGER->play("introMusic");
 	frameX = 0;
 	time = 0;
 	return S_OK;
@@ -27,6 +29,10 @@ void introScene::update(void)
 	if (KEYMANAGER->isOnceKeyDown(VK_RETURN))
 	{
 		SCENEMANAGER->changeScene("로딩화면");
+		if (SOUNDMANAGER->isPlaySound("introMusic"))
+		{
+			SOUNDMANAGER->stop("introMusic");
+		}
 	}
 }
 

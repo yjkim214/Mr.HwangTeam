@@ -64,7 +64,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("house4", "house4.bmp", 800, 600, true, RGB(255, 0, 255));									
 	_loading->loadImage("mouseCursor", "mouseCursor.bmp", 23, 30, true, RGB(255, 0, 255));							
 	_loading->loadImage("shop", "shop.bmp", 800, 600, true, RGB(255, 0, 255));										
-	_loading->loadImage("strore", "strore.bmp", 500, 458, true, RGB(255, 0, 255));
+	_loading->loadImage("strore", "strore.bmp", 800, 600, true, RGB(255, 0, 255));
 
 //알파렌더 시킬 건물들(제트오더???) 
 	_loading->loadImage("dungeon_tree", "dungeon_tree.bmp", 1600, 1200, true, RGB(255, 0, 255));
@@ -87,7 +87,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("house3Pixel", "house3Pixel.bmp", 800, 600, false);
 	_loading->loadImage("house4Pixel", "house4Pixel.bmp", 800, 600, false);
 	_loading->loadImage("shopPixel", "shopPixel.bmp", 800, 600, false);
-	_loading->loadImage("strorePixel", "strorePixel.bmp", 500, 458, false);
+	_loading->loadImage("strorePixel", "strorePixel.bmp", 800, 600, false);
 	_loading->loadImage("villagePixel", "villagePixel.bmp", 1600, 1200, false);
 
 // 템페스트(활) 애니메이션 
@@ -148,9 +148,12 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("NPC book", "NPC book.bmp", 132, 52, 4, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("NPCkid", "NPCkid.bmp", 132, 96, 6, 2, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("NPCkidW", "NPCkidW.bmp", 150, 96, 6, 2, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("NPCW", "NPCW.bmp", 125, 60, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("NPCW", "NPCW.bmp", 188, 85, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("NPCWalpha", "NPCWalpha.bmp", 188, 64, 4, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("SHOP(NPC)", "SHOP(NPC).bmp", 205, 68, 5, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("SHOP(NPC)back", "SHOP(NPC)back.bmp", 225, 70, 5, 1, true, RGB(255, 0, 255));
+	_loading->loadImage("Althena", "Althena.bmp", 227, 300, true, RGB(255, 0, 255));
+	_loading->loadImage("AlthenaText", "AlthenaText.bmp", 131, 30, true, RGB(255, 0, 255));
 
 	//배틀화면 슬라임 애니메이션
 	_loading->loadFrameImage("slime_idle", "slime_idle.bmp", 450, 150, 3, 1, true, RGB(255, 0, 255));
@@ -200,10 +203,26 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("bsAlex_skill@2", "bsAlex_skill@2.bmp", 7830, 150, 29, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("bsAlex_dead@2", "bsAlex_dead@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("bsAlex_getdmg@2", "bsAlex_getdmg@2.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+
+	//대화창 UI
+	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));
+
+	//메뉴 선택 
+	_loading->loadImage("menu", "menu.bmp", 800, 600, true, RGB(255, 0, 255));
+	_loading->loadImage("saveSelect", "saveSelect.bmp", 800, 600, true, RGB(255, 0, 255));
+	_loading->loadImage("menuSelect", "menuSelect.bmp", 800, 600, true, RGB(255, 0, 255));
 }
 
 
 //로딩사운드 함수(이곳에 사운드를 전부 넣어라)
 void loadingScene::loadingSound(void)
 {
+	//사운드 추가
+	_loading->loadSound("villageMusic", "villageMusic.MID", true, true);
+	_loading->loadSound("마을ver2", "마을ver2.MID", true, true);
+	_loading->loadSound("mainMenuSound", "mainMenuSound.MID", true, true);
+	_loading->loadSound("dungeonSound", "dungeonSound.MID", true, true);
+	_loading->loadSound("bossRoomSound", "bossRoomSound.MID", true, true);
+	_loading->loadSound("NPCchatMusic", "NPCchatMusic.WAV");
 }
+

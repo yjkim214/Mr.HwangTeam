@@ -37,6 +37,10 @@ HRESULT playerData::init(void)
 	_bgX = 0;
 	_bgY = 0;
 
+	_npcX = 750;
+	_npcY = 600;
+
+
 	return S_OK;
 }
 

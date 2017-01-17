@@ -91,6 +91,7 @@ HRESULT loadItem::init(string keyName, string soundName, bool bgm, bool loop)
 	_soundResource.soundName = soundName;
 	_soundResource.bgm = bgm;
 	_soundResource.loop = loop;
+
 	return S_OK;
 
 }
@@ -112,6 +113,10 @@ HRESULT loading::init(void)
 	_loadingBar->setGauge(0, 0);
 	//현재 게이지 초기화
 	_currentGauge = 0;
+
+	//로딩음악
+	//SOUNDMANAGER->addSound("loadingMusic", "loadingMusic.mid", true, true);
+	//SOUNDMANAGER->play("loadingMusic");
 
 	return S_OK;
 }
@@ -193,7 +198,7 @@ void loading::loadFrameImage(string strKey, const char * fileName, float x, floa
 	_vLoadItem.push_back(item);
 }
 
-void loading::addSound(string keyName, string soundName, bool bgm, bool loop)
+void loading::loadSound(string keyName, string soundName, bool bgm, bool loop)
 {
 	loadItem* item = new loadItem;
 	item->init(keyName, soundName, bgm, loop);
@@ -255,12 +260,18 @@ BOOL loading::loadingDone(void)
 	break;
 	}
 
-	ZeroMemory(dir, sizeof(dir));
-	ZeroMemory(str, sizeof(str));
-	GetCurrentDirectory(1024, dir);
+	ZeroMemory(imgDir, sizeof(imgDir));
+	ZeroMemory(soundDir, sizeof(soundDir));
+	ZeroMemory(imgStr, sizeof(imgStr));
+	ZeroMemory(soundStr, sizeof(soundStr));
+	GetCurrentDirectory(1024, imgDir);
+	GetCurrentDirectory(1024, soundDir);
 
-	sprintf(str, "\\%s.bmp", _vLoadItem[_currentGauge]->getImageResource().keyName.c_str());
-	strcat(dir, str);
+	sprintf(imgStr, "\\%s.bmp", _vLoadItem[_currentGauge]->getImageResource().keyName.c_str());
+	strcat(imgDir, imgStr);
+	sprintf(soundStr, "\\%s.mp3", _vLoadItem[_currentGauge]->getSoundResource().keyName.c_str());
+	strcat(soundDir, soundStr);
+
 
 	//현재게이지 증가
 	_currentGauge++;
@@ -275,8 +286,8 @@ void loading::fileNameText()
 	//HFONT myfont = CreateFont(10, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 0, 0, 0, 0, "THE노란코끼리M");
 	//SelectObject(getMemDC(), myfont);
 	//SetTextColor(getMemDC(), RGB(0, 255, 255));
-	//SetBkMode(getMemDC(), TRANSPARENT);
-	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, dir, strlen(dir));
-
+	SetBkMode(getMemDC(), TRANSPARENT);
+	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, imgDir, strlen(imgDir));
+	TextOut(getMemDC(), 55, _loadingBar->getRect().top + 2, soundDir, strlen(soundDir));
 	//DeleteObject(myfont);
 }

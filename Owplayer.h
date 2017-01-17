@@ -76,6 +76,7 @@ public:
 	int getProveDown() { return _proveDown; }
 	void setProveDown(int proveDown) { _proveDown = proveDown; }
 	OWPLAYER_STATE getPlayerState() { return _state; }
+	void setPlayerState(OWPLAYER_STATE state) { _state = state; }
 	RECT getCamera() { return _camera; }
 	float getSpeed() { return _speed; }
 

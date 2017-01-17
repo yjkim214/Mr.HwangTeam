@@ -1,36 +1,29 @@
 #pragma once
 #include "gameNode.h"
+#include "mainMenuScene.h"
 #include "villageMap.h"
 #include "Owplayer.h"
-struct tagNPC
-{
-	float x, y;
-	float ealryX;
-	float ealryY;
-	float endX;
-	float endY;
-	bool isLeft;
-	bool isDown;
-	RECT rc;
-};
+#include "NPC.h"
+
 class villageScene : public gameNode
 {
 private:
 	villageMap* _villageMap;
 	Owplayer* _Owplayer;
-	tagNPC _npc[5];
+	NPC* _npc;
+	mainMenuScene* _mainMenu;
 
 	int time;
+
 public:
 	HRESULT init(void);
 	void release(void);
 	void update(void);
 	void render(void);
 
-	void camera();
-	void npcinit();
-	void npcUpdate();
-	void npcRender();
+	void setMain(mainMenuScene* main) { _mainMenu = main; }
+
+	void Load();
 
 	villageScene() {}
 	~villageScene() {}

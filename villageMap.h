@@ -21,7 +21,7 @@ class Owplayer;
 class villageMap : public gameNode
 {
 private:
-	E_MAPSTATE _state;
+	int _state;
 	image* _pixelVillage;
 	image* _pixelHouse1;
 	image* _pixelHouse2;
@@ -36,6 +36,7 @@ private:
 
 
 	RECT _playeRc;
+	RECT _selectRc[2];
 	int _loofX;
 	int _bgX;
 	int _bgY;
@@ -43,6 +44,11 @@ private:
 	bool is1Floor;
 	bool isDungeon;
 	bool isBoss;
+
+	bool _isMenu;
+	bool _isSaveSelect;
+	bool _isMenuSelect;
+
 
 	Owplayer* _owPlayer;
 public:
@@ -63,8 +69,11 @@ public:
 	void hotel2PixelCol();
 	void house3PixelCol();
 	void house4PixelCol();
-	void dungeonPixelCol();
+	//void dungeonPixelCol();
 	void bossRoomPixelCol();
+
+	void menuSelect();
+	void menuRender();
 
 	void setOWPlayer(Owplayer* owPlayer) { _owPlayer = owPlayer; }
 
@@ -87,8 +96,10 @@ public:
 			_bgY = 0;
 		}
 	}
-	E_MAPSTATE getState() { return _state; }
-	void setState(E_MAPSTATE state) { _state = state; }
+	int getState() { return _state; }
+	void setState(int state) { _state = state; }
+	image* getPixelVillage() { return _pixelVillage; }
+	bool getIsMenu() { return _isMenu; }
 	villageMap() {}
 	~villageMap() {}
 };

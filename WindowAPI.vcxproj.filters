@@ -203,6 +203,12 @@
     <ClInclude Include="owDungeon.h">
       <Filter>MainGame\마을 씬</Filter>
     </ClInclude>
+    <ClInclude Include="chat.h">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -320,6 +326,12 @@
       <Filter>MainGame\마을 씬</Filter>
     </ClCompile>
     <ClCompile Include="owDungeon.cpp">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="chat.cpp">
+      <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
       <Filter>MainGame\마을 씬</Filter>
     </ClCompile>
   </ItemGroup>

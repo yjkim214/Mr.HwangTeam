@@ -21,6 +21,10 @@ private:
 	float _backX;
 	float _backY;
 
+
+	float _npcX;
+	float _npcY;
+
 	tagMonster _monster;
 	tagMonster _slime;
 	tagMonster _fluffyBug;
@@ -94,6 +98,10 @@ public:
 	void setBgX(float x) { _bgX = x; }
 	void setBgY(float y) { _bgY = y; }
 
+	float getNpcX() { return _npcX; }
+	void setNpcX(float x) { _npcX = x; }
+	float getNpcY() { return _npcY; }
+	void setNpcY(float y) { _npcY = y; }
 
 	playerData() {}
 	~playerData() {}

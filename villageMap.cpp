@@ -22,6 +22,13 @@ HRESULT villageMap::init(void)
 	is1Floor = false;
 	isDungeon = false;
 	isBoss = false;
+
+	_isMenu = false;
+	_isSaveSelect = false;
+	_isMenuSelect = false;
+
+	_selectRc[0] = RectMake(271, 298, 244, 73);
+	_selectRc[1] = RectMake(271, 409, 244, 73);
 	return S_OK;
 }
 
@@ -79,10 +86,10 @@ void villageMap::update(void)
 		house4PixelCol();
 	}
 	break;
-	//case DUNGEON:
-	//{
-	//	dungeonPixelCol();
-	//}
+	case DUNGEON:
+	{
+		//dungeonPixelCol();
+	}
 	break;
 	case BOSSROOM:
 	{
@@ -94,6 +101,7 @@ void villageMap::update(void)
 		break;
 	}
 
+	menuSelect();
 }
 
 
@@ -182,15 +190,15 @@ void villageMap::render(void)
 		}
 	}
 	break;
-	//case DUNGEON:
-	//{
-	//	IMAGEMANAGER->render("dungeon", getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
-	//	if (KEYMANAGER->isToggleKey('A'))
-	//	{
-	//		_pixelDungeon->render(getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
-	//	}
-	//}
-	//break;
+	case DUNGEON:
+	{
+		IMAGEMANAGER->render("dungeon", getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
+		if (KEYMANAGER->isToggleKey('A'))
+		{
+			_pixelDungeon->render(getMemDC(), 0, 0, _bgX, _bgY, 1600 - _bgX, 1200 - _bgY);
+		}
+	}
+	break;
 	case BOSSROOM:
 	{
 		IMAGEMANAGER->loopRender("BossRoomSky", getMemDC(), &RectMake(0, 0, 800, 1600), _loofX, 0);
@@ -204,20 +212,11 @@ void villageMap::render(void)
 	default:
 		break;
 	}
-
-
-
-	//char str[256];
-	//sprintf(str, "bgX : %d", _bgX);
-	//TextOut(getMemDC(), 10, 200, str, strlen(str));
-	//sprintf(str, "bgY : %d", _bgY);
-	////HFONT myfont = CreateFont(20, 0, 0, 0, 0, 0, 0, 0, DEFAULT_CHARSET, 0, 0, 0, 0, "궁서");
-	////SelectObject(getMemDC(), myfont);
-	////SetTextColor(getMemDC(), RGB(0, 0, 0));
-	//TextOut(getMemDC(), 10, 250, str, strlen(str));
-	////check();
-	////DeleteObject(myfont);
-
+	if (KEYMANAGER->isToggleKey('S'))
+	{
+		RectangleMake(getMemDC(), _owPlayer->getPlayerImg()->boundingBoxWithFrame());
+	}
+	//check();
 }
 
 void villageMap::check()
@@ -226,7 +225,11 @@ void villageMap::check()
 	sprintf(str, "ptMouseX : %d, ptMouseY : %d", _ptMouse.x, _ptMouse.y);
 	TextOut(getMemDC(), 10, 10, str, strlen(str));
 
+	sprintf(str, "bgX : %d", _bgX);
+	TextOut(getMemDC(), 10, 200, str, strlen(str));
 
+	sprintf(str, "bgY : %d", _bgY);
+	TextOut(getMemDC(), 10, 250, str, strlen(str));
 }
 
 void villageMap::villagePixelCol()
@@ -378,11 +381,11 @@ void villageMap::villagePixelCol()
 		}
 	}
 
-	//if (isDungeon == true)
-	//{
-	//	_owPlayer->setLookat(UP);
-	//	isDungeon = false;
-	//}
+	if (isDungeon == true)
+	{
+		_owPlayer->setLookat(UP);
+		isDungeon = false;
+	}
 
 	if (isBoss == true)
 	{
@@ -840,58 +843,58 @@ void villageMap::house4PixelCol()
 
 }
 
-void villageMap::dungeonPixelCol()
-{
-	COLORREF colorL = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getProveLeft(), _bgY + _owPlayer->getY() + 50);
-	int rL = GetRValue(colorL);
-	int gL = GetGValue(colorL);
-	int bL = GetBValue(colorL);
-
-	if (rL == 255 && gL == 0 && bL == 0 || rL == 0 && gL == 255 && bL == 0)
-	{
-		_owPlayer->setX(_owPlayer->getProveLeft() + _owPlayer->getPlayerImg()->getFrameWidth() - 20);
-	}
-
-	if (rL == 0 && gL == 0 && bL == 255)
-	{
-		_state = VILLAGE;
-		_bgX = 201;
-		_bgY = 603;
-		_owPlayer->setX(539);
-		_owPlayer->setY(443);
-		isDungeon = true;
-	}
-
-	COLORREF colorR = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getProveRight() + 5, _bgY + _owPlayer->getY() + 50);
-	int rR = GetRValue(colorR);
-	int gR = GetGValue(colorR);
-	int bR = GetBValue(colorR);
-	if (rR == 255 && gR == 0 && bR == 0 || rR == 0 && gR == 255 && bR == 0)
-	{
-		_owPlayer->setX(_owPlayer->getProveRight() - _owPlayer->getPlayerImg()->getFrameWidth() + 13);
-	}
-
-	COLORREF colorU = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getX() + 15, _bgY + _owPlayer->getProveUp());
-	int rU = GetRValue(colorU);
-	int gU = GetGValue(colorU);
-	int bU = GetBValue(colorU);
-	if (rU == 255 && gU == 0 && bU == 0 || rU == 0 && gU == 255 && bU == 0)
-	{
-		_owPlayer->setY(_owPlayer->getProveUp() + _owPlayer->getPlayerImg()->getFrameHeight() - 87);
-	}
-
-
-	//아래 검사
-	COLORREF colorD = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getX() + 15, _bgY + _owPlayer->getProveDown() + 10);
-	int rD = GetRValue(colorD);
-	int gD = GetGValue(colorD);
-	int bD = GetBValue(colorD);
-	if (rD == 255 && gD == 0 && bD == 0 || rD == 0 && gD == 255 && bD == 0)
-	{
-		_owPlayer->setY(_owPlayer->getProveDown() - _owPlayer->getPlayerImg()->getFrameHeight() + 13);
-	}
-
-}
+//void villageMap::dungeonPixelCol()
+//{
+//	COLORREF colorL = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getProveLeft(), _bgY + _owPlayer->getY() + 50);
+//	int rL = GetRValue(colorL);
+//	int gL = GetGValue(colorL);
+//	int bL = GetBValue(colorL);
+//
+//	if (rL == 255 && gL == 0 && bL == 0 || rL == 0 && gL == 255 && bL == 0)
+//	{
+//		_owPlayer->setX(_owPlayer->getProveLeft() + _owPlayer->getPlayerImg()->getFrameWidth() - 20);
+//	}
+//
+//	if (rL == 0 && gL == 0 && bL == 255)
+//	{
+//		_state = VILLAGE;
+//		_bgX = 201;
+//		_bgY = 603;
+//		_owPlayer->setX(539);
+//		_owPlayer->setY(443);
+//		isDungeon = true;
+//	}
+//
+//	COLORREF colorR = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getProveRight() + 5, _bgY + _owPlayer->getY() + 50);
+//	int rR = GetRValue(colorR);
+//	int gR = GetGValue(colorR);
+//	int bR = GetBValue(colorR);
+//	if (rR == 255 && gR == 0 && bR == 0 || rR == 0 && gR == 255 && bR == 0)
+//	{
+//		_owPlayer->setX(_owPlayer->getProveRight() - _owPlayer->getPlayerImg()->getFrameWidth() + 13);
+//	}
+//
+//	COLORREF colorU = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getX() + 15, _bgY + _owPlayer->getProveUp());
+//	int rU = GetRValue(colorU);
+//	int gU = GetGValue(colorU);
+//	int bU = GetBValue(colorU);
+//	if (rU == 255 && gU == 0 && bU == 0 || rU == 0 && gU == 255 && bU == 0)
+//	{
+//		_owPlayer->setY(_owPlayer->getProveUp() + _owPlayer->getPlayerImg()->getFrameHeight() - 87);
+//	}
+//
+//
+//	//아래 검사
+//	COLORREF colorD = GetPixel(_pixelDungeon->getMemDC(), _bgX + _owPlayer->getX() + 15, _bgY + _owPlayer->getProveDown() + 10);
+//	int rD = GetRValue(colorD);
+//	int gD = GetGValue(colorD);
+//	int bD = GetBValue(colorD);
+//	if (rD == 255 && gD == 0 && bD == 0 || rD == 0 && gD == 255 && bD == 0)
+//	{
+//		_owPlayer->setY(_owPlayer->getProveDown() - _owPlayer->getPlayerImg()->getFrameHeight() + 13);
+//	}
+//
+//}
 
 void villageMap::bossRoomPixelCol()
 {
@@ -948,5 +951,102 @@ void villageMap::bossRoomPixelCol()
 	}
 
 
+}
+
+void villageMap::menuSelect()
+{
+	if (KEYMANAGER->isOnceKeyDown('M'))
+	{
+		if (_isMenu == false)
+		{
+			_isMenu = true;
+		}
+
+		else if (_isMenu == true)
+		{
+			_isMenu = false;
+		}
+
+	}
+
+	//save 내용들  :  빌리지 상태, 캐릭터 좌표, 캐릭터 레벨, 캐릭터 공격력, 캐릭터 방어력, 아이템? 
+	//세이브클릭했을때~~~~~
+	if (PtInRect(&_selectRc[0], _ptMouse))
+	{
+		_isSaveSelect = true;
+		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+		{
+			char state[256];
+			sprintf(state, "%d", _state);
+			INIDATA->addData("VILLAGEMAP", "villageMapState", state);
+
+			char bgX[256];
+			sprintf(bgX, "%d", _bgX);
+			INIDATA->addData("VILLAGEMAP", "villageMapBgX", bgX);
+
+			char bgY[256];
+			sprintf(bgY, "%d", _bgY);
+			INIDATA->addData("VILLAGEMAP", "villageMapBgY", bgY);
+
+			char playerX[256];
+			sprintf(playerX, "%f", _owPlayer->getX());
+			INIDATA->addData("PLAYER", "playerX", playerX);
+
+			char playerY[256];
+			sprintf(playerY, "%f", _owPlayer->getY());
+			INIDATA->addData("PLAYER", "playerY", playerY);
+
+			//char playerAtt[256];
+			//sprintf(playerAtt, "%d", _owPlayer->getAtt());
+			//INIDATA->addData("PLAYER", "playerAtt", playerAtt);
+			//
+			//char playerDex[256];
+			//sprintf(playerDex, "%d", _owPlayer->getDex());
+			//INIDATA->addData("PLAYER", "playerDex", playerDex);
+
+			INIDATA->saveINI("RunarSilverStorySave");
+		}
+	}
+	else
+	{
+		_isSaveSelect = false;
+	}
+
+
+	if (PtInRect(&_selectRc[1], _ptMouse))
+	{
+		_isMenuSelect = true;
+		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+		{
+			SCENEMANAGER->changeScene("메인메뉴");
+		}
+	}
+	else
+	{
+		_isMenuSelect = false;
+	}
+
+
+}
+
+void villageMap::menuRender()
+{
+	if (_isMenu == true)
+	{
+		//for (int i = 0; i < 2; i++)
+		//{
+		//	RectangleMake(getMemDC(), _selectRc[i]);
+		//}
+		IMAGEMANAGER->render("menu", getMemDC());
+
+		if (_isSaveSelect == true)
+		{
+			IMAGEMANAGER->render("saveSelect", getMemDC());
+		}
+		if (_isMenuSelect == true)
+		{
+			IMAGEMANAGER->render("menuSelect", getMemDC());
+		}
+	}
 }
 

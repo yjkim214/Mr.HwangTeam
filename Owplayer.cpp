@@ -39,7 +39,8 @@ void Owplayer::update(void)
 	animation();
 
 
-
+	_playerImg->setX(_x);
+	_playerImg->setY(_y);
 	ProveUpdate();
 	//_inventory->update();
 }

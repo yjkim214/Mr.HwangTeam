@@ -10,16 +10,20 @@ HRESULT mainGame::init(void)
 	//앞으로 메인게임 클래스 안에서는 씬들만 관리한다
 	//그리고 각각의 씬들이 메인게임역할을 하면 된다
 	/*씬추가*/
+	_mainMenu = new mainMenuScene;
+	_villageScene = new villageScene;
 	SCENEMANAGER->addScene("씬테스트", new sceneTest);
 	SCENEMANAGER->addScene("픽셀충돌", new pixelCollision);
 	SCENEMANAGER->addScene("ini", new iniTestScene);
 	SCENEMANAGER->addScene("로딩화면", new loadingScene);
 	SCENEMANAGER->addScene("사운드", new soundTestScene);
-	SCENEMANAGER->addScene("메인메뉴", new mainMenuScene);
+	SCENEMANAGER->addScene("메인메뉴", _mainMenu);
 	SCENEMANAGER->addScene("인트로", new introScene);
-	SCENEMANAGER->addScene("마을", new villageScene);
+	SCENEMANAGER->addScene("마을", _villageScene);
 	SCENEMANAGER->addScene("배틀화면", new battleScene);
 	SCENEMANAGER->addScene("던전", new owDungeon);
+
+	_villageScene->setMain(_mainMenu);
 
 	/*현재씬 설정*/
 	SCENEMANAGER->changeScene("인트로");

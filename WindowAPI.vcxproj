@@ -150,6 +150,7 @@
     <ClInclude Include="bsPlayerManager.h" />
     <ClInclude Include="bsSlime.h" />
     <ClInclude Include="bullet.h" />
+    <ClInclude Include="chat.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemyManager.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="mainMenuScene.h" />
     <ClInclude Include="minion.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="owDungeon.h" />
     <ClInclude Include="Owplayer.h" />
     <ClInclude Include="pixelCollision.h" />
@@ -193,6 +195,7 @@
     <ClCompile Include="bsPlayerManager.cpp" />
     <ClCompile Include="bsSlime.cpp" />
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="chat.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemyManager.cpp" />
     <ClCompile Include="gameNode.cpp" />
@@ -207,6 +210,7 @@
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mainMenuScene.cpp" />
     <ClCompile Include="minion.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="owDungeon.cpp" />
     <ClCompile Include="Owplayer.cpp" />
     <ClCompile Include="pixelCollision.cpp" />

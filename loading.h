@@ -33,8 +33,8 @@ struct tagSoundResource
 {
 	string keyName;		//사운드 키값
 	string soundName;	//사운드 이름
-	bool bgm;					//배경음임?
-	bool loop;					//루프돌릴거임?
+	bool bgm;			//배경음임?
+	bool loop;			//루프돌릴거임?
 };
 
 class loadItem
@@ -87,8 +87,10 @@ private:
 	image* _loadingPersent;
 	progressBar* _loadingBar;
 	int _currentGauge;
-	char str[1024];
-	char dir[1024];
+	char imgStr[1024];
+	char soundStr[1024];
+	char imgDir[1024];
+	char soundDir[1024];
 
 public:
 	HRESULT init(void);
@@ -105,7 +107,7 @@ public:
 	void loadFrameImage(string strKey, const char* fileName, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
 	void loadFrameImage(string strKey, const char* fileName, float x, float y, int width, int height, int maxFrameX, int maxFrameY, BOOL isTrans = FALSE, COLORREF transColor = RGB(0, 0, 0));
 	//사운드 파일 초기화
-	void addSound(string keyName, string soundName, bool bgm = FALSE, bool loop = FALSE);
+	void loadSound(string keyName, string soundName, bool bgm = FALSE, bool loop = FALSE);
 
 	/*중요함*/
 	//로딩완료 됐냐?(로딩완료후 화면전환)
