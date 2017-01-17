@@ -3,7 +3,7 @@
 
 #define LUNAR_ATT		5
 #define LUNAR_DEF		5
-#define LUNAR_MAXHP		2
+#define LUNAR_MAXHP		50
 #define LUNAR_MAXMP		50
 #define LUNAR_ANI_COUNT	5
 #define DELAYTIME		10
@@ -202,17 +202,17 @@ void Lunar::myTurnAttack(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else if (enemyIndex == 2)
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -232,4 +232,5 @@ void Lunar::getDmg(int enemyAtt)
 	_currentFrameX = 0;
 	_state = LUNAR_STATE::GETDMG;
 	_hp -= (enemyAtt * enemyAtt / _def + 1);
+	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight()), "bsEffect_attack");
 }

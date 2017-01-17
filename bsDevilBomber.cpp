@@ -223,19 +223,19 @@ void bsDevilBomber::myTurnAttack(int playerIndex)
 
 	//어택시 에너미 위치 잡아주는 코드
 	_destX = WINSIZEX * 0.5f;
-	if(playerIndex == 0)
+	if (playerIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
-	else if(playerIndex == 1)
+	else if (playerIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -245,4 +245,5 @@ void bsDevilBomber::getDmg(int playerAtt)
 	_currentFrameX = 0;
 	_state5 = GETDMG5;
 	_hp -= playerAtt * playerAtt / _def + 1;
+	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight()), "bsEffect_attack");
 }

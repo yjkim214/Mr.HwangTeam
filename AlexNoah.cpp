@@ -3,7 +3,7 @@
 
 #define ALEXNOAH_ATT		5
 #define ALEXNOAH_DEF		5
-#define ALEXNOAH_MAXHP		2
+#define ALEXNOAH_MAXHP		100
 #define ALEXNOAH_MAXMP		20
 #define ALEXNOAH_ANI_COUNT	5
 #define DELAYTIME			10
@@ -201,17 +201,17 @@ void AlexNoah::myTurnAttack(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else if (enemyIndex == 2)
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -225,17 +225,17 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else if (enemyIndex == 2)
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -245,4 +245,5 @@ void AlexNoah::getDmg(int enemyAtt)
 	_currentFrameX = 0;
 	_state = ALEXNOAH_STATE::GETDMG;
 	_hp -= (enemyAtt * enemyAtt / _def + 1);
+	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight()), "bsEffect_attack");
 }

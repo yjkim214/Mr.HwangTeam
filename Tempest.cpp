@@ -3,7 +3,7 @@
 
 #define Tempest_ATT			10
 #define Tempest_DEF			5
-#define Tempest_MAXHP		2
+#define Tempest_MAXHP		75
 #define Tempest_MAXMP		20
 #define Tempest_ANI_COUNT	5
 #define DELAYTIME			10
@@ -216,17 +216,17 @@ void Tempest::myTurnAttack(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else if (enemyIndex == 2)
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -240,17 +240,17 @@ void Tempest::myTurnSkill(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = 0;
+		_destY = WINSIZEY * 0.1f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.25f;
+		_destY = WINSIZEY * 0.4f;
 	}
 
 	else if (enemyIndex == 2)
 	{
-		_destY = WINSIZEY * 0.5f;
+		_destY = WINSIZEY * 0.7f;
 	}
 }
 
@@ -260,4 +260,5 @@ void Tempest::getDmg(int enemyAtt)
 	_currentFrameX = 0;
 	_state = TEMPEST_STATE::GETDMG;
 	_hp -= (enemyAtt * enemyAtt / _def + 1);
+	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight()), "bsEffect_attack");
 }
