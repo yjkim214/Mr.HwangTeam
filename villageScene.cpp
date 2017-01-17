@@ -95,7 +95,7 @@ void villageScene::update(void)
 		if (SOUNDMANAGER->isPlaySound("villageMusic"))
 		{
 			SOUNDMANAGER->stop("villageMusic");
-			SOUNDMANAGER->play("dungeonSound");
+			/*SOUNDMANAGER->play("dungeonSound");*/
 		}
 		SCENEMANAGER->changeScene("´øÀü");
 	}
@@ -127,11 +127,11 @@ void villageScene::render(void)
 		IMAGEMANAGER->frameAlphaRender("NPCWalpha", getMemDC(), _npc->getNpc(0).x, _npc->getNpc(0).y, _npc->getNpc(0).frameX, _npc->getNpc(0).frameY, 100);
 	}
 
-	if (_villageMap->getState() == DUNGEON)
-	{
-		IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
-			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
-	}
+	//if (_villageMap->getState() == DUNGEON)
+	//{
+	//	IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
+	//		1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
+	//}
 
 	_npc->chatRender();
 

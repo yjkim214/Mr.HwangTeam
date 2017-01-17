@@ -151,6 +151,8 @@ HRESULT owDungeon::init(void)
 	_devilBomber.rcExplore = RectMakeCenter(_devilBomber.x, _devilBomber.y, 300, 300);
 	_devilBomber.isDie = PLAYERDATA->getDevilBomberDie();
 
+	SOUNDMANAGER->play("dungeonSound");
+
 	return S_OK;
 }
 
@@ -1161,6 +1163,8 @@ void owDungeon::update(void)
 		if (IntersectRect(&temp, &_monster.rc, &_slime.rc))
 		{
 			PLAYERDATA->setMonsterNumber(1);
+
+			SOUNDMANAGER->stop("dungeonSound");
 			SCENEMANAGER->changeScene("배틀화면");
 		}
 	}

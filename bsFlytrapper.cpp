@@ -219,7 +219,7 @@ void bsFlytrapper::myTurnAttack(int playerIndex)
 	}
 	_currentFrameX = 0;
 	//어택시 에너미 위치 잡아주는 코드
-	_destX = WINSIZEX * 0.5f;
+	_destX = WINSIZEX * 0.6f;
 	if (playerIndex == 0)
 	{
 		_destY = WINSIZEY * 0.1f;

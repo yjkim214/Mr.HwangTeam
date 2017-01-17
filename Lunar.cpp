@@ -198,7 +198,7 @@ void Lunar::myTurnAttack(int enemyIndex)
 	_playerImg = IMAGEMANAGER->findImage("bsLunar_attack");
 	_currentFrameX = 0;
 	_state = LUNAR_STATE::ATTACK;
-	_destX = WINSIZEX * 0.3f;
+	_destX = WINSIZEX * 0.2f;
 
 	if (enemyIndex == 0)
 	{

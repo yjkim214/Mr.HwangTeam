@@ -249,5 +249,6 @@ void loadingScene::loadingSound(void)
 	_loading->loadSound("dungeonSound", "dungeonSound.MID", true, true);
 	_loading->loadSound("bossRoomSound", "bossRoomSound.MID", true, true);
 	_loading->loadSound("NPCchatMusic", "NPCchatMusic.WAV");
+	_loading->loadSound("battleMusic", "battleMusic.MID",true,true);
 }
 

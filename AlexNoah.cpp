@@ -197,7 +197,7 @@ void AlexNoah::myTurnAttack(int enemyIndex)
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_attack@2");
 	_currentFrameX = 0;
 	_state = ALEXNOAH_STATE::ATTACK;
-	_destX = WINSIZEX * 0.3f;
+	_destX = WINSIZEX * 0.2f;
 
 	if (enemyIndex == 0)
 	{
@@ -221,7 +221,7 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_skill@2");
 	_currentFrameX = 0;
 	_state = ALEXNOAH_STATE::SKILL;
-	_destX = -50;
+	_destX = 35;
 
 	if (enemyIndex == 0)
 	{

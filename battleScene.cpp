@@ -43,6 +43,8 @@ HRESULT battleScene::init(void)
 		_background = IMAGEMANAGER->findImage("bsBackground02");
 	}
 
+	SOUNDMANAGER->play("battleMusic");
+
 	return S_OK;
 }
 
@@ -79,6 +81,10 @@ void battleScene::update(void)
 		if (PLAYERDATA->getMonsterNumber() == 5)
 		{
 			PLAYERDATA->setDevilBomberDie(true);
+		}
+		if (SOUNDMANAGER->isPlaySound("battleMusic"))
+		{
+			SOUNDMANAGER->stop("battleMusic");
 		}
 		SCENEMANAGER->changeScene("던전");
 	}
@@ -242,6 +248,10 @@ void battleScene::update(void)
 					if (PLAYERDATA->getMonsterNumber() == 5)
 					{
 						PLAYERDATA->setDevilBomberDie(true);
+					}
+					if (SOUNDMANAGER->isPlaySound("battleMusic"))
+					{
+						SOUNDMANAGER->stop("battleMusic");
 					}
 					SCENEMANAGER->changeScene("던전");
 				}
