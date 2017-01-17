@@ -188,15 +188,18 @@ void Lunar::update(void)
 
 	else if (_turnState == TURNEND)
 	{
-		_isDelay = true;
-		_delayCount = 0;
-		_turnState = NOTMYTURN;
+		if (!_isVictory)
+		{
+			_isDelay = true;
+			_delayCount = 0;
+			_turnState = NOTMYTURN;
+		}
 	}
 }
 
 void Lunar::render(void)
 {
-	if (_turnState == NOTMYTURN)
+	if (_turnState == NOTMYTURN || _turnState == TURNEND)
 	{
 		_playerImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 	}
@@ -244,9 +247,10 @@ void Lunar::myTurnSkill(int enemyIndex)
 void Lunar::myTurnDefense()
 {
 	_turnState = MYTURN;
-	_playerImg = IMAGEMANAGER->findImage("bsLunar_skill");
+	_playerImg = IMAGEMANAGER->findImage("bsLunar_defense");
 	_currentFrameX = 0;
-	_state = LUNAR_STATE::SKILL;
+	_state = LUNAR_STATE::DEFENSE;
+	_isDefense = true;
 	_destX = _prevX;
 	_destY = _prevY;
 }
@@ -254,10 +258,9 @@ void Lunar::myTurnDefense()
 void Lunar::victoryBattle()
 {
 	_turnState = MYTURN;
-	_playerImg = IMAGEMANAGER->findImage("bsLunar_defense");
+	_playerImg = IMAGEMANAGER->findImage("bsLunar_victory");
 	_currentFrameX = 0;
-	_state = LUNAR_STATE::DEFENSE;
-	_isDefense = true;
+	_state = LUNAR_STATE::VICTORY;
 	_destX = _prevX;
 	_destY = _prevY;
 }

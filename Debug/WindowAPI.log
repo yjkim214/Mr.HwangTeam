@@ -1,0 +1,14 @@
+﻿  Tempest.cpp
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(220): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(225): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(316): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(317): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(318): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  AlexNoah.cpp
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(206): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(211): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(300): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(301): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(302): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  WindowAPI.vcxproj -> C:\Users\dydwo\Desktop\20170110_0\Debug\WindowAPI.exe

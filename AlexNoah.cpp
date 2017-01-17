@@ -190,15 +190,18 @@ void AlexNoah::update(void)
 
 	else if (_turnState == TURNEND)
 	{
-		_isDelay = true;
-		_delayCount = 0;
-		_turnState = NOTMYTURN;
+		if (!_isVictory)
+		{
+			_isDelay = true;
+			_delayCount = 0;
+			_turnState = NOTMYTURN;
+		}
 	}
 }
 
 void AlexNoah::render(void)
 {
-	if (_turnState == NOTMYTURN)
+	if (_turnState == NOTMYTURN || _turnState == TURNEND)
 	{
 		_playerImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 	}

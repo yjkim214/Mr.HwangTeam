@@ -136,7 +136,7 @@ void Tempest::update(void)
 					EFFECTMANAGER->addEffect(_destX - 248, _destY + 75, "bsTempest_skilEffect");
 				}
 
-				if (_currentFrameX == 11)
+				if (_currentFrameX == 7 || _currentFrameX == 9 || _currentFrameX == 11)
 				{
 					_isAttack = true;
 				}
@@ -202,9 +202,12 @@ void Tempest::update(void)
 
 	else if (_turnState == TURNEND)
 	{
-		_isDelay = true;
-		_delayCount = 0;
-		_turnState = NOTMYTURN;
+		if (!_isVictory)
+		{
+			_isDelay = true;
+			_delayCount = 0;
+			_turnState = NOTMYTURN;
+		}
 	}
 
 	_bullet->update();
@@ -212,7 +215,7 @@ void Tempest::update(void)
 
 void Tempest::render(void)
 {
-	if (_turnState == NOTMYTURN)
+	if (_turnState == NOTMYTURN || _turnState == TURNEND)
 	{
 		_playerImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 	}

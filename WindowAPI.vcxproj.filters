@@ -367,14 +367,14 @@
     <ClCompile Include="bsFluffyBug.cpp">
       <Filter>MainGame\배틀화면\에너미</Filter>
     </ClCompile>
-    <ClCompile Include="effectManager.cpp">
-      <Filter>MainGame\로딩화면</Filter>
-    </ClCompile>
     <ClCompile Include="Lunar.cpp">
       <Filter>MainGame\배틀화면\플레이어</Filter>
     </ClCompile>
     <ClCompile Include="Tempest.cpp">
       <Filter>MainGame\배틀화면\플레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="effectManager.cpp">
+      <Filter>GameFramework2D\매니져</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

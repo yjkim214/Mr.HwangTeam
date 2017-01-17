@@ -84,12 +84,14 @@ void bsSlime::update(void)
 								//hp°¡ ¹Ù´ÚÀÌ¸é Á×Àº »óÅÂ·Î ¹Ù²Þ
 								_state = DEAD;
 							}
+
 							else
 							{
 								_enemyImg = IMAGEMANAGER->findImage("slime_idle");
 								_currentFrameX = 0;
 								_state = IDLE;
 							}
+
 							_isDelay = false;
 						}
 					}

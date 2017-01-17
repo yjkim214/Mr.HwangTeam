@@ -62,6 +62,17 @@ void battleScene::update(void)
 	//플레이어가 이겼을시
 	if (_em->getVEnemyList()[0]->getIsDead() && _em->getVEnemyList()[1]->getIsDead() && _em->getVEnemyList()[2]->getIsDead())
 	{
+		for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+		{
+			if (!_pm->getVPlayerList()[i]->getIsDead())
+			{
+				if (_pm->getVPlayerList()[i]->getTurnState() == NOTMYTURN)
+				{
+					_pm->getVPlayerList()[i]->victoryBattle();
+				}
+			}
+		}
+
 		if (PLAYERDATA->getMonsterNumber() == 1)
 		{
 			PLAYERDATA->setSlimeDie(true);
@@ -90,17 +101,6 @@ void battleScene::update(void)
 		else if (SOUNDMANAGER->isPlaySound("battleMusic"))
 		{
 			SOUNDMANAGER->stop("battleMusic");
-		}
-
-		for (int i = 0; i < _pm->getVPlayerList().size(); i++)
-		{
-			if (!_pm->getVPlayerList()[i]->getIsDead())
-			{
-				if (_pm->getVPlayerList()[i]->getTurnState() == NOTMYTURN)
-				{
-					_pm->getVPlayerList()[i]->victoryBattle();
-				}
-			}
 		}
 
 		if (_pm->getVPlayerList()[0]->getIsVictory() && _pm->getVPlayerList()[1]->getIsVictory() && _pm->getVPlayerList()[2]->getIsVictory())
