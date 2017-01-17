@@ -2,6 +2,10 @@
 #include "bsEnemyManager.h"
 #include "bsEnemy.h"
 #include "bsSlime.h"
+#include "bsFluffyBug.h"
+#include "bsFlytrapper.h"
+#include "bsBarbarian.h"
+#include "bsDevilBomber.h"
 
 #define ENEMY_PREVPOS_X		WINSIZEX * 0.1f
 #define ENEMY_PREVPOS_Y1	WINSIZEY * 0.1f
@@ -10,9 +14,40 @@
 
 HRESULT bsEnemyManager::init(void)
 {
-	addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
-	addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
-	addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	if(PLAYERDATA->getMonsterNumber() == 1)
+	{
+		addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
+		addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
+		addSlime(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
+
+	if(PLAYERDATA->getMonsterNumber() == 2)
+	{
+		addFluffyBug(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
+		addFluffyBug(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
+		addFluffyBug(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
+
+	if(PLAYERDATA->getMonsterNumber() == 3)
+	{
+		addFlytrapper(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
+		addFlytrapper(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
+		addFlytrapper(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
+
+	if(PLAYERDATA->getMonsterNumber() == 4)
+	{
+		addBarbarian(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
+		addBarbarian(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
+		addBarbarian(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
+
+	if(PLAYERDATA->getMonsterNumber() == 5)
+	{
+		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
+		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
+		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
 
 	return S_OK;
 }
@@ -50,6 +85,38 @@ void bsEnemyManager::addSlime(float prevX, float prevY)
 	newSlime->init();
 	newSlime->setPrevPos(prevX, prevY);
 	_vEnemyList.push_back(newSlime);
+}
+
+void bsEnemyManager::addFluffyBug(float prevX, float prevY)
+{
+	bsFluffyBug* newFluffyBug = new bsFluffyBug;
+	newFluffyBug->init();
+	newFluffyBug->setPrevPos(prevX, prevY);
+	_vEnemyList.push_back(newFluffyBug);
+}
+
+void bsEnemyManager::addFlytrapper(float prevX, float prevY)
+{
+	bsFlytrapper* newFlytrapper = new bsFlytrapper;
+	newFlytrapper->init();
+	newFlytrapper->setPrevPos(prevX, prevY);
+	_vEnemyList.push_back(newFlytrapper);
+}
+
+void bsEnemyManager::addBarbarian(float prevX, float prevY)
+{
+	bsBarbarian* newBarbarian = new bsBarbarian;
+	newBarbarian->init();
+	newBarbarian->setPrevPos(prevX, prevY);
+	_vEnemyList.push_back(newBarbarian);
+}
+
+void bsEnemyManager::addDevilBomber(float prevX, float prevY)
+{
+	bsDevilBomber* newDevilBomber = new bsDevilBomber;
+	newDevilBomber->init();
+	newDevilBomber->setPrevPos(prevX, prevY);
+	_vEnemyList.push_back(newDevilBomber);
 }
 
 void bsEnemyManager::selectedEnemy(int select)

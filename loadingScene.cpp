@@ -159,7 +159,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("slime_idle", "slime_idle.bmp", 450, 150, 3, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("slime_attack", "slime_attack.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("slime_getdmg", "slime_getdmg.bmp", 300, 150, 2, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("slime_dead", "slime_dead", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("slime_dead", "slime_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 
 	//배틀화면 플러피버그 애니메이션
 	_loading->loadFrameImage("fluffyBug_idle", "fluffyBug_idle.bmp", 450, 150, 3, 1, true, RGB(255, 0, 255));

@@ -5,7 +5,7 @@
 #define SLIME_DEF		2
 #define SLIME_MAXHP		50
 #define SLIME_MAXMP		10
-#define SLIME_ANI_COUNT	5
+#define SLIME_ANI_COUNT	10
 
 HRESULT bsSlime::init(void)
 {
@@ -22,7 +22,7 @@ HRESULT bsSlime::init(void)
 	_destX = 0;
 	_destY = 0;
 
-	_isSelected = true;
+	_isDead = false;
 	_isAttack = false;
 	_isDead = false;
 
@@ -49,56 +49,56 @@ void bsSlime::release(void)
 
 void bsSlime::update(void)
 {
-	if (_turnState == NOTMYTURN)
+	if(_turnState == NOTMYTURN)
 	{
 		_countNotMyTurn++;
-		if (_countNotMyTurn % SLIME_ANI_COUNT == 0)
+		if(_countNotMyTurn % SLIME_ANI_COUNT == 0)
 		{
 			_currentFrameX++;
 
-			if (_state == IDLE)
+			if(_state == IDLE)
 			{
 				//애니메이션 무한정 반복
-				if (_currentFrameX > _enemyImg->getMaxFrameX())
+				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					_currentFrameX = 0;
 				}
 			}
 
-			if (_state == GETDMG)
+			if(_state == GETDMG)
 			{
-				if (_currentFrameX > _enemyImg->getMaxFrameX())
+				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					//데미지를 받았을 시
-					if (_hp <= 0)
+					if(_isDelay)
 					{
-						//hp가 바닥이면 죽은 상태로 바꿈
-						_state = DEAD;
-					}
-
-					else
-					{
-						if (_isDelay)
+						_delayCount++;
+						if(_delayCount >= 5)
 						{
-							_delayCount++;
-							if (_delayCount >= 5)
+							_turnState = TURNEND;
+
+							//데미지를 받았을 시
+							if(_hp <= 0)
 							{
-								_turnState = TURNEND;
-								//아니면 다시 대기 상태로 돌입
+								_enemyImg = IMAGEMANAGER->findImage("slime_dead");
+								_currentFrameX = 0;
+								//hp가 바닥이면 죽은 상태로 바꿈
+								_state = DEAD;
+							}
+							else
+							{
 								_enemyImg = IMAGEMANAGER->findImage("slime_idle");
 								_currentFrameX = 0;
 								_state = IDLE;
-
-								_isDelay = false;
 							}
+							_isDelay = false;
 						}
 					}
 				}
 			}
 
-			if (_state == DEAD)
+			if(_state == DEAD)
 			{
-				if (_currentFrameX > _enemyImg->getMaxFrameX())
+				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					_isDead = true;
 				}
@@ -108,26 +108,26 @@ void bsSlime::update(void)
 		}
 	}
 
-	else if (_turnState == MYTURN)
+	else if(_turnState == MYTURN)
 	{
 		_countMyTurn++;
-		if (_countMyTurn % SLIME_ANI_COUNT == 0)
+		if(_countMyTurn % SLIME_ANI_COUNT == 0)
 		{
 			_currentFrameX++;
-			if (_state == ATTACK)
+			if(_state == ATTACK)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
-				if (_currentFrameX == 3)
+				if(_currentFrameX == 3)
 				{
 					_isAttack = true;
 				}
 				//다시 대기 상태로 돌입
-				if (_currentFrameX > _enemyImg->getMaxFrameX())
+				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					if (_isDelay)
+					if(_isDelay)
 					{
 						_delayCount++;
-						if (_delayCount >= 5)
+						if(_delayCount >= 5)
 						{
 							_turnState = TURNEND;
 							_enemyImg = IMAGEMANAGER->findImage("slime_idle");
@@ -144,7 +144,7 @@ void bsSlime::update(void)
 		}
 	}
 
-	else if (_turnState == TURNEND)
+	else if(_turnState == TURNEND)
 	{
 		_isDelay = true;
 		_delayCount = 0;
@@ -154,16 +154,16 @@ void bsSlime::update(void)
 
 void bsSlime::render(void)
 {
-	if (!_isDead)
+	if(!_isDead)
 	{
-		if (_turnState == MYTURN)
+		if(_turnState == MYTURN)
 		{
 			_enemyImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 		}
 
-		else if (_turnState == NOTMYTURN)
+		else if(_turnState == NOTMYTURN)
 		{
-			if (_isSelected)
+			if(_isSelected)
 			{
 				_enemyImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 			}
@@ -184,12 +184,12 @@ void bsSlime::myTurnAttack(int playerIndex)
 	_state = ATTACK;
 	//어택시 에너미 위치 잡아주는 코드
 	_destX = WINSIZEX * 0.5f;
-	if (playerIndex == 0)
+	if(playerIndex == 0)
 	{
 		_destY = 0;
 	}
 
-	else if (playerIndex == 1)
+	else if(playerIndex == 1)
 	{
 		_destY = WINSIZEY * 0.25f;
 	}
@@ -205,5 +205,5 @@ void bsSlime::getDmg(int playerAtt)
 	_enemyImg = IMAGEMANAGER->findImage("slime_getdmg");
 	_currentFrameX = 0;
 	_state = GETDMG;
-	_hp -= playerAtt;
+	_hp -= playerAtt * playerAtt / _def + 1;
 }

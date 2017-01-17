@@ -3,6 +3,10 @@
 
 class bsEnemy;
 class bsSlime;
+class bsFluffyBug;
+class bsFlytrapper;
+class bsBarbarian;
+class bsDevilBomber;
 
 class bsEnemyManager : public gameNode
 {
@@ -16,6 +20,10 @@ public:
 	void render(void);
 
 	void addSlime(float prevX, float prevY);
+	void addFluffyBug(float prevX, float prevY);
+	void addFlytrapper(float prevX, float prevY);
+	void addBarbarian(float prevX, float prevY);
+	void addDevilBomber(float prevX, float prevY);
 
 	vector<bsEnemy*> getVEnemyList() { return _vEnemyList; }
 	void selectedEnemy(int select);

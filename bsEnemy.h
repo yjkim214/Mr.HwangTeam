@@ -3,13 +3,13 @@
 class bsEnemy : public gameNode
 {
 protected:
-	int		_att;
-	int		_def;
-
-	int		_hp;
-	int		_maxHp;
-	int		_mp;
-	int		_maxMp;
+	float		_att;
+	float		_def;
+	
+	float		_hp;
+	float		_maxHp;
+	float		_mp;
+	float		_maxMp;
 
 protected:
 	float	_prevX, _prevY;

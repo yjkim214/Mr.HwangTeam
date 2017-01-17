@@ -209,6 +209,18 @@
     <ClInclude Include="NPC.h">
       <Filter>MainGame\마을 씬</Filter>
     </ClInclude>
+    <ClInclude Include="bsFlytrapper.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
+    <ClInclude Include="bsFluffyBug.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
+    <ClInclude Include="bsDevilBomber.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
+    <ClInclude Include="bsBarbarian.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -333,6 +345,18 @@
     </ClCompile>
     <ClCompile Include="NPC.cpp">
       <Filter>MainGame\마을 씬</Filter>
+    </ClCompile>
+    <ClCompile Include="bsFlytrapper.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="bsBarbarian.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="bsDevilBomber.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClCompile>
+    <ClCompile Include="bsFluffyBug.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

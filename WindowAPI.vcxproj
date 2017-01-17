@@ -144,8 +144,12 @@
   <ItemGroup>
     <ClInclude Include="AlexNoah.h" />
     <ClInclude Include="battleScene.h" />
+    <ClInclude Include="bsBarbarian.h" />
+    <ClInclude Include="bsDevilBomber.h" />
     <ClInclude Include="bsEnemy.h" />
     <ClInclude Include="bsEnemyManager.h" />
+    <ClInclude Include="bsFluffyBug.h" />
+    <ClInclude Include="bsFlytrapper.h" />
     <ClInclude Include="bsPlayer.h" />
     <ClInclude Include="bsPlayerManager.h" />
     <ClInclude Include="bsSlime.h" />
@@ -189,8 +193,12 @@
   <ItemGroup>
     <ClCompile Include="AlexNoah.cpp" />
     <ClCompile Include="battleScene.cpp" />
+    <ClCompile Include="bsBarbarian.cpp" />
+    <ClCompile Include="bsDevilBomber.cpp" />
     <ClCompile Include="bsEnemy.cpp" />
     <ClCompile Include="bsEnemyManager.cpp" />
+    <ClCompile Include="bsFluffyBug.cpp" />
+    <ClCompile Include="bsFlytrapper.cpp" />
     <ClCompile Include="bsPlayer.cpp" />
     <ClCompile Include="bsPlayerManager.cpp" />
     <ClCompile Include="bsSlime.cpp" />

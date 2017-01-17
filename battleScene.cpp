@@ -42,6 +42,7 @@ void battleScene::release(void)
 
 void battleScene::update(void)
 {
+
 	//플레이어가 이겼을시
 	if (_em->getVEnemyList()[0]->getIsDead() && _em->getVEnemyList()[1]->getIsDead() && _em->getVEnemyList()[2]->getIsDead())
 	{
