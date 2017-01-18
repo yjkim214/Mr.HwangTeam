@@ -181,6 +181,15 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("devilBomber_dead", "devilBomber_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
 	_loading->loadFrameImage("devilBomber_skill", "devilBomber_skill.bmp", 1500, 150, 10, 1, true, RGB(255, 0, 255));
 
+	//배틀화면 보스 애니메이션
+	_loading->loadFrameImage("bsBoss_idle", "bsBoss_idle.bmp", 600, 150, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_attack", "bsBoss_attack.bmp", 900, 150, 6, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_getdmg", "bsBoss_getdmg.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_dead", "bsBoss_dead.bmp", 150, 150, 1, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_skill01", "bsBoss_skill01.bmp", 2400, 150, 16, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_skill02", "bsBoss_skill02.bmp", 1500, 150, 10, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("bsBoss_skill02_Effect", "bsBoss_skill02_Effect.bmp", 900, 150, 6, 1, true, RGB(255, 0, 255));
+
 	//배틀화면 UI 이미지
 	_loading->loadImage("bsUi_Attack", "bsUi_Attack.bmp", 48, 48, true, RGB(255, 0, 255));
 	_loading->loadImage("bsUi_Skill", "bsUi_Skill.bmp", 48, 48, true, RGB(255, 0, 255));
@@ -191,6 +200,10 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsUi_Skill_Selected", "bsUi_Skill_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 	_loading->loadImage("bsUi_Defense_Selected", "bsUi_Defense_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
 	_loading->loadImage("bsUi_Getaway_Selected", "bsUi_Getaway_Selected.bmp", 66, 66, true, RGB(255, 0, 255));
+	
+	_loading->loadImage("bsAlex_Ui", "bsAlex_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
+	_loading->loadImage("bsLunar_Ui", "bsLunar_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
+	_loading->loadImage("bsTempest_Ui", "bsTempest_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
 
 	//배틀화면 알렉스 이미지
 	_loading->loadFrameImage("bsAlex_idle@2", "bsAlex_idle@2.bmp", 750, 150, 5, 1, true, RGB(255, 0, 255));
@@ -228,11 +241,6 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsBackground01", "bsBackground01.bmp", 800, 600);
 	_loading->loadImage("bsBackground02", "bsBackground02.bmp", 800, 600);
 	
-	//배틀씬 UI
-	_loading->loadImage("bsAlex_Ui", "bsAlex_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
-	_loading->loadImage("bsLunar_Ui", "bsLunar_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
-	_loading->loadImage("bsTempest_Ui", "bsTempest_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
-
 	//대화창 UI
 	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));
 

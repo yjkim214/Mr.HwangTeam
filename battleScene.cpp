@@ -62,7 +62,21 @@ void battleScene::release(void)
 void battleScene::update(void)
 {
 	//플레이어가 이겼을시
-	if (_em->getVEnemyList()[0]->getIsDead() && _em->getVEnemyList()[1]->getIsDead() && _em->getVEnemyList()[2]->getIsDead())
+	bool isPlayerWin = false;
+	for (int i = 0; i < _em->getVEnemyList().size(); i++)
+	{
+		if (i == 0)
+		{
+			isPlayerWin = _em->getVEnemyList()[i]->getIsDead();
+		}
+
+		else
+		{
+			isPlayerWin = isPlayerWin && _em->getVEnemyList()[i]->getIsDead();
+		}
+	}
+
+	if (isPlayerWin)
 	{
 		for (int i = 0; i < _pm->getVPlayerList().size(); i++)
 		{
@@ -100,9 +114,8 @@ void battleScene::update(void)
 			PLAYERDATA->setDevilBomberDie(true);
 		}
 
-			SOUNDMANAGER->stop("battleMusic");
+		SOUNDMANAGER->stop("battleMusic");
 		
-
 		bool isEnd = false;
 		
 		for (int i = 0; i < _pm->getVPlayerList().size() - 1; i++)
@@ -127,6 +140,7 @@ void battleScene::update(void)
 		}
 	}
 
+	//에너미가 이겼을 때
 	else if (_pm->getVPlayerList()[0]->getIsDead() && _pm->getVPlayerList()[1]->getIsDead() && _pm->getVPlayerList()[2]->getIsDead())
 	{
 		if (PLAYERDATA->getMonsterNumber() == 1)
@@ -154,9 +168,7 @@ void battleScene::update(void)
 			PLAYERDATA->setDevilBomberDie(true);
 		}
 
-
-			SOUNDMANAGER->stop("battleMusic");
-		
+		SOUNDMANAGER->stop("battleMusic");
 
 		SCENEMANAGER->changeScene("던전");
 	}
@@ -201,7 +213,16 @@ void battleScene::update(void)
 
 						if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
 						{
-							_pm->getVPlayerList()[_currentPlayerIndex]->myTurnAttack(_enemySelected);
+							if (PLAYERDATA->getMonsterNumber() == 6)
+							{
+								_pm->getVPlayerList()[_currentPlayerIndex]->myTurnAttack(_enemySelected + 1);
+							}
+
+							else
+							{
+								_pm->getVPlayerList()[_currentPlayerIndex]->myTurnAttack(_enemySelected);
+							}
+
 							_em->endSelect();
 						}
 					}
@@ -258,7 +279,16 @@ void battleScene::update(void)
 
 							if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
 							{
-								_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected);
+								if (PLAYERDATA->getMonsterNumber() == 6)
+								{
+									_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected + 1);
+								}
+
+								else
+								{
+									_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected);
+								}
+
 								_em->endSelect();
 							}
 						}
@@ -349,22 +379,27 @@ void battleScene::update(void)
 							}
 						}
 					}
+
 					if(PLAYERDATA->getMonsterNumber() == 1)
 					{
 						PLAYERDATA->setSlimeDie(true);
 					}
+
 					if(PLAYERDATA->getMonsterNumber() == 2)
 					{
 						PLAYERDATA->setFluffyBugDie(true);
 					}
+
 					if(PLAYERDATA->getMonsterNumber() == 3)
 					{
 						PLAYERDATA->setFlytrapperDie(true);
 					}
+
 					if(PLAYERDATA->getMonsterNumber() == 4)
 					{
 						PLAYERDATA->setBarbarianDie(true);
 					}
+
 					if(PLAYERDATA->getMonsterNumber() == 5)
 					{
 						PLAYERDATA->setDevilBomberDie(true);
