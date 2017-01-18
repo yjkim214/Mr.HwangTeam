@@ -240,6 +240,7 @@ void loadingScene::loadingImage(void)
 	//배틀씬 배경화면
 	_loading->loadImage("bsBackground01", "bsBackground01.bmp", 800, 600);
 	_loading->loadImage("bsBackground02", "bsBackground02.bmp", 800, 600);
+	_loading->loadImage("bsBackground_boss", "bsBackground_boss.bmp", 800, 600);
 	
 	//대화창 UI
 	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));

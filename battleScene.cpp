@@ -31,19 +31,27 @@ HRESULT battleScene::init(void)
 	_uiDefense = IMAGEMANAGER->findImage("bsUi_Defense");
 	_uiGetaway = IMAGEMANAGER->findImage("bsUi_Getaway");
 
-	int rand = RND->getInt(2);
-	
-	if (rand == 0)
+	if (PLAYERDATA->getMonsterNumber() != 6)
 	{
-		_background = IMAGEMANAGER->findImage("bsBackground01");
+		int rand = RND->getInt(2);
+
+		if (rand == 0)
+		{
+			_background = IMAGEMANAGER->findImage("bsBackground01");
+		}
+
+		else if (rand == 1)
+		{
+			_background = IMAGEMANAGER->findImage("bsBackground02");
+		}
+
+		SOUNDMANAGER->play("battleMusic");
 	}
 
-	else if (rand == 1)
+	else
 	{
-		_background = IMAGEMANAGER->findImage("bsBackground02");
+		_background = IMAGEMANAGER->findImage("bsBackground_boss");
 	}
-
-	SOUNDMANAGER->play("battleMusic");
 
 	time = 0;
 
