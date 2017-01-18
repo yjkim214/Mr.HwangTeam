@@ -30,7 +30,7 @@ public:
 	virtual void victoryBattle();
 	virtual void getaway();
 	virtual void getDmg(float enemyAtt);
-
+	virtual void saveData();
 	virtual bullet* getBullet() { return _bullet; }
 
 	Tempest() {}

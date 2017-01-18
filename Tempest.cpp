@@ -1,22 +1,18 @@
 #include "stdafx.h"
 #include "Tempest.h"
 
-#define Tempest_ATT			10
-#define Tempest_DEF			5
-#define Tempest_MAXHP		75
-#define Tempest_MAXMP		20
 #define Tempest_ANI_COUNT	5
 #define DELAYTIME			10
 
 HRESULT Tempest::init(void)
 {
-	_att = Tempest_ATT;
-	_def = Tempest_DEF;
+	_att = PLAYERDATA->getTematt();
+	_def = PLAYERDATA->getTemdef();
 
-	_hp = Tempest_MAXHP;
-	_maxHp = Tempest_MAXHP;
-	_mp = Tempest_MAXMP;
-	_maxMp = Tempest_MAXMP;
+	_hp = PLAYERDATA->getTemcurrenthp();
+	_maxHp = PLAYERDATA->getTemMaxhp();
+	_mp = PLAYERDATA->getTemcurrentmp();
+	_maxMp = PLAYERDATA->getTemMaxmp();
 
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_idle");
 
@@ -369,4 +365,14 @@ void Tempest::getDmg(float enemyAtt)
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());
 	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
+}
+
+void Tempest::saveData()
+{
+	PLAYERDATA->setTematt(_att);
+	PLAYERDATA->setTemdef(_def);
+	PLAYERDATA->setTemcurrenthp(_hp);
+	PLAYERDATA->setTemcurrentmp(_mp);
+	PLAYERDATA->setTemMaxhp(_maxHp);
+	PLAYERDATA->setTemMaxmp(_maxMp);
 }

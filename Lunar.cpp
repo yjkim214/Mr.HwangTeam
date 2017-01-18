@@ -1,22 +1,18 @@
 #include "stdafx.h"
 #include "Lunar.h"
 
-#define LUNAR_ATT		5
-#define LUNAR_DEF		5
-#define LUNAR_MAXHP		50
-#define LUNAR_MAXMP		50
 #define LUNAR_ANI_COUNT	5
 #define DELAYTIME		10
 
 HRESULT Lunar::init(void)
 {
-	_att = LUNAR_ATT;
-	_def = LUNAR_DEF;
+	_att = PLAYERDATA->getLunaatt();
+	_def = PLAYERDATA->getLunadef();
 
-	_hp = LUNAR_MAXHP;
-	_maxHp = LUNAR_MAXHP;
-	_mp = LUNAR_MAXMP;
-	_maxMp = LUNAR_MAXMP;
+	_hp = PLAYERDATA->getLunacurrenthp();
+	_maxHp = PLAYERDATA->getLunaMaxhp();
+	_mp = PLAYERDATA->getLunacurrentmp();
+	_maxMp = PLAYERDATA->getLunaMaxmp();
 
 	_playerImg = IMAGEMANAGER->findImage("bsLunar_idle");
 
@@ -335,4 +331,14 @@ void Lunar::getDmg(float enemyAtt)
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());
 	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
+}
+
+void Lunar::saveData()
+{
+	PLAYERDATA->setLunaatt(_att);
+	PLAYERDATA->setLunadef(_def);
+	PLAYERDATA->setLunacurrenthp(_hp);
+	PLAYERDATA->setLunacurrentmp(_mp);
+	PLAYERDATA->setLunaMaxhp(_maxHp);
+	PLAYERDATA->setLunaMaxmp(_maxMp);
 }

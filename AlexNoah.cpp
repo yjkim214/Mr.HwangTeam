@@ -1,22 +1,18 @@
 #include "stdafx.h"
 #include "AlexNoah.h"
 
-#define ALEXNOAH_ATT		5
-#define ALEXNOAH_DEF		5
-#define ALEXNOAH_MAXHP		100
-#define ALEXNOAH_MAXMP		20
 #define ALEXNOAH_ANI_COUNT	5
 #define DELAYTIME			10
 
 HRESULT AlexNoah::init(void)
 {
-	_att = ALEXNOAH_ATT;
-	_def = ALEXNOAH_DEF;
+	_att = PLAYERDATA->getAlexatt();
+	_def = PLAYERDATA->getAlexdef();
 
-	_hp = ALEXNOAH_MAXHP;
-	_maxHp = ALEXNOAH_MAXHP;
-	_mp = ALEXNOAH_MAXMP;
-	_maxMp = ALEXNOAH_MAXMP;
+	_hp = PLAYERDATA->getAlexcurrenthp();
+	_maxHp = PLAYERDATA->getAlexMaxhp();
+	_mp = PLAYERDATA->getAlexcurrentmp();
+	_maxMp = PLAYERDATA->getAlexMaxmp();
 
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 
@@ -349,4 +345,14 @@ void AlexNoah::getDmg(float enemyAtt)
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());
 	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
+}
+
+void AlexNoah::saveData()
+{
+	PLAYERDATA->setAlexatt(_att);
+	PLAYERDATA->setAlexdef(_def);
+	PLAYERDATA->setAlexcurrenthp(_hp);
+	PLAYERDATA->setAlexcurrentmp(_mp);
+	PLAYERDATA->setAlexMaxhp(_maxHp);
+	PLAYERDATA->setAlexMaxmp(_maxMp);
 }

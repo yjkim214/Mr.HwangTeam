@@ -30,6 +30,7 @@ public:
 	virtual void victoryBattle();
 	virtual void getaway();
 	virtual void getDmg(float enemyAtt);
+	virtual void saveData();
 
 	Lunar() {}
 	~Lunar() {}

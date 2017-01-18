@@ -133,6 +133,11 @@ void battleScene::update(void)
 
 		if (isEnd)
 		{
+			for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+			{
+				_pm->getVPlayerList()[i]->saveData();
+			}
+
 			if (PLAYERDATA->getMonsterNumber() != 6)
 			{
 				SCENEMANAGER->changeScene("´øÀü");

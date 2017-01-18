@@ -1,18 +1,89 @@
-﻿  battleScene.cpp
+﻿  bsPlayer.cpp
+c:\users\dydwo\desktop\20170110_0\bsplayer.cpp(13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\bsplayer.cpp(14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  battleScene.cpp
 c:\users\dydwo\desktop\20170110_0\battlescene.cpp(72): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 c:\users\dydwo\desktop\20170110_0\battlescene.cpp(87): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 c:\users\dydwo\desktop\20170110_0\battlescene.cpp(126): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(196): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(249): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(271): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(321): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(326): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(342): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(367): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(385): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(424): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(489): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(591): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(639): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(647): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(136): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(201): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(254): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(276): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(326): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(331): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(347): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(372): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(390): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(429): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(494): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(596): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(644): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(652): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  Tempest.cpp
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(9): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(10): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(248): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(253): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(353): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(359): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(365): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(366): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(367): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(372): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(373): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(374): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(375): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(376): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\tempest.cpp(377): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Lunar.cpp
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(9): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(10): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(233): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(238): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(321): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(327): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(331): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(332): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(333): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(338): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(339): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(340): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(341): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(342): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\lunar.cpp(343): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  AlexNoah.cpp
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(9): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(10): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(14): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(234): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(239): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(335): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(341): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(345): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(346): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(347): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(352): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(353): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(354): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(355): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(356): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(357): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  bsPlayerManager.cpp
+c:\users\dydwo\desktop\20170110_0\bsplayermanager.cpp(24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\bsplayermanager.cpp(35): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\bsplayermanager.cpp(43): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
   WindowAPI.vcxproj -> C:\Users\dydwo\Desktop\20170110_0\Debug\WindowAPI.exe

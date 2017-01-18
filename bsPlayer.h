@@ -64,7 +64,7 @@ public:
 	virtual void victoryBattle() = 0;
 	virtual void getaway() = 0;
 	virtual void getDmg(float enemyAtt) = 0;
-
+	virtual void saveData() = 0;
 public:
 	virtual bullet* getBullet() { return NULL; }
 	//=============================================================
