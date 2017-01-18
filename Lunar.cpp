@@ -25,10 +25,11 @@ HRESULT Lunar::init(void)
 	_uiImage->setY(5);
 
 	_hpBar = new progressBar;
-	_hpBar->init("bsHpbar_front", "bsBar_front", 190, 114, 150, 135);
+	_hpBar->init("bsHpbar_front", "bsBar_back", 190, 114, 75, 8);
 	_hpBar->setGauge(_hp, _maxHp);
+
 	_mpBar = new progressBar;
-	_mpBar->init("bsMpbar_front", "bsBar_front", 190, 127, 150, 135);
+	_mpBar->init("bsMpbar_front", "bsBar_back", 190, 127, 75, 8);
 	_mpBar->setGauge(_mp, _maxMp);
 
 	_state = LUNAR_STATE::IDLE;

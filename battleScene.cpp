@@ -277,6 +277,7 @@ void battleScene::update(void)
 							{
 								if (!_pm->getVPlayerList()[i]->getIsDead())
 								{
+									_pm->getVPlayerList()[i]->setHp(_pm->getVPlayerList()[i]->getHp() + _pm->getVPlayerList()[1]->getAtt() * 5);
 									EFFECTMANAGER->addEffect(_pm->getVPlayerList()[i]->getPrevPos().x + 43, _pm->getVPlayerList()[i]->getPrevPos().y + 25, "bsLunar_skillEffect");
 								}
 							}

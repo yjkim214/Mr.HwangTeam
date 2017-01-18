@@ -1,45 +1,18 @@
-﻿  bsEnemyManager.cpp
-c:\users\dydwo\desktop\20170110_0\bsenemymanager.cpp(63): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\bsenemymanager.cpp(74): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\bsenemymanager.cpp(82): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\bsenemymanager.cpp(138): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\bsenemymanager.cpp(155): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  bsBoss.cpp
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(237): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(244): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(249): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(338): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(339): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\bsboss.cpp(340): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  battleScene.cpp
-c:\users\dydwo\desktop\20170110_0\bsplayer.h(79): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(68): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(83): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(123): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(183): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(226): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(241): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(248): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(289): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(293): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(294): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(303): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(310): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(335): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(355): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(437): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(539): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(587): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(595): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-  AlexNoah.cpp
-c:\users\dydwo\desktop\20170110_0\bsplayer.h(79): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(244): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(251): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(255): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(353): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(359): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(365): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(366): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\alexnoah.cpp(367): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
+﻿  battleScene.cpp
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(67): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(108): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(170): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(213): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(228): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(235): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(276): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(281): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(290): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(297): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(322): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(342): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(424): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(526): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(574): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(582): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
   WindowAPI.vcxproj -> C:\Users\dydwo\Desktop\20170110_0\Debug\WindowAPI.exe
