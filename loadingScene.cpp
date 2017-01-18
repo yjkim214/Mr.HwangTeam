@@ -277,7 +277,10 @@ void loadingScene::loadingImage(void)
 	//Shop
 	_loading->loadImage("Shoping", "Shoping.bmp", 304, 470, true, RGB(0, 0, 0));
 
-
+	//도주 선택시 프레임 이미지
+	_loading->loadFrameImage("alexGetaway", "alexGetaway.bmp", 6000, 150, 40, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("lunarGetaway", "lunarGetaway.bmp", 6000, 150, 40, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("tempestGetaway", "tempestGetaway.bmp", 6000, 150, 40, 1, true, RGB(255, 0, 255));
 
 
 }

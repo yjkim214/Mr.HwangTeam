@@ -8,8 +8,8 @@
 #include "bsDevilBomber.h"
 
 #define ENEMY_PREVPOS_X		WINSIZEX * 0.1f
-#define ENEMY_PREVPOS_Y1	WINSIZEY * 0.1f
-#define ENEMY_PREVPOS_Y2	WINSIZEY * 0.4f
+#define ENEMY_PREVPOS_Y1	WINSIZEY * 0.3f
+#define ENEMY_PREVPOS_Y2	WINSIZEY * 0.5f
 #define ENEMY_PREVPOS_Y3	WINSIZEY * 0.7f
 
 HRESULT bsEnemyManager::init(void)

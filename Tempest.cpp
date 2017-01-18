@@ -37,6 +37,8 @@ HRESULT Tempest::init(void)
 	
 	_state = TEMPEST_STATE::IDLE;
 
+	moveX = 0;
+
 	return S_OK;
 }
 
@@ -209,6 +211,24 @@ void Tempest::update(void)
 					}
 				}
 			}
+
+			if(_state == TEMPEST_STATE::GETAWAY)
+			{
+				moveX += 5;
+				if(_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					if(_isDelay)
+					{
+						_delayCount++;
+						if(_delayCount >= DELAYTIME)
+						{
+							_turnState = TURNEND;
+							_isVictory = true;
+							_isDelay = false;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -240,7 +260,14 @@ void Tempest::render(void)
 
 	else if (_turnState == MYTURN)
 	{
-		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
+		if(_state == TEMPEST_STATE::GETAWAY)
+		{
+			_playerImg->frameRender(getMemDC(), _destX + moveX, _destY, _currentFrameX, 0);
+		}
+		else
+		{
+			_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
+		}
 	}
 
 	_bullet->render();
@@ -261,12 +288,12 @@ void Tempest::myTurnAttack(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = WINSIZEY * 0.1f;
+		_destY = WINSIZEY * 0.3f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.4f;
+		_destY = WINSIZEY * 0.5f;
 	}
 
 	else if (enemyIndex == 2)
@@ -287,12 +314,12 @@ void Tempest::myTurnSkill(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = WINSIZEY * 0.1f;
+		_destY = WINSIZEY * 0.3f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.4f;
+		_destY = WINSIZEY * 0.5f;
 	}
 
 	else if (enemyIndex == 2)
@@ -318,6 +345,16 @@ void Tempest::victoryBattle()
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_victory");
 	_currentFrameX = 0;
 	_state = TEMPEST_STATE::VICTORY;
+	_destX = _prevX;
+	_destY = _prevY;
+}
+
+void Tempest::getaway()
+{
+	_turnState = MYTURN;
+	_playerImg = IMAGEMANAGER->findImage("tempestGetaway");
+	_currentFrameX = 0;
+	_state = TEMPEST_STATE::GETAWAY;
 	_destX = _prevX;
 	_destY = _prevY;
 }

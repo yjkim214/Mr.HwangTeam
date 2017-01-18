@@ -45,6 +45,8 @@ HRESULT battleScene::init(void)
 
 	SOUNDMANAGER->play("battleMusic");
 
+	time = 0;
+
 	return S_OK;
 }
 
@@ -98,10 +100,8 @@ void battleScene::update(void)
 			PLAYERDATA->setDevilBomberDie(true);
 		}
 
-		else if (SOUNDMANAGER->isPlaySound("battleMusic"))
-		{
 			SOUNDMANAGER->stop("battleMusic");
-		}
+		
 
 		bool isEnd = false;
 		
@@ -154,10 +154,9 @@ void battleScene::update(void)
 			PLAYERDATA->setDevilBomberDie(true);
 		}
 
-		else if (SOUNDMANAGER->isPlaySound("battleMusic"))
-		{
+
 			SOUNDMANAGER->stop("battleMusic");
-		}
+		
 
 		SCENEMANAGER->changeScene("던전");
 	}
@@ -335,38 +334,46 @@ void battleScene::update(void)
 					}
 				}
 
-				if (_userSelect == GETAWAY)
+				if(_userSelect == GETAWAY)
 				{
-					if (_userSelect == GETAWAY)
+					time++;
+
+					for(int i = 0; i < _pm->getVPlayerList().size(); i++)
 					{
-						if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+						if(!_pm->getVPlayerList()[i]->getIsDead())
 						{
-							if (PLAYERDATA->getMonsterNumber() == 1)
+							if(_pm->getVPlayerList()[i]->getTurnState() == NOTMYTURN)
 							{
-								PLAYERDATA->setSlimeDie(true);
+								_pm->getVPlayerList()[i]->getaway();
 							}
-							if (PLAYERDATA->getMonsterNumber() == 2)
-							{
-								PLAYERDATA->setFluffyBugDie(true);
-							}
-							if (PLAYERDATA->getMonsterNumber() == 3)
-							{
-								PLAYERDATA->setFlytrapperDie(true);
-							}
-							if (PLAYERDATA->getMonsterNumber() == 4)
-							{
-								PLAYERDATA->setBarbarianDie(true);
-							}
-							if (PLAYERDATA->getMonsterNumber() == 5)
-							{
-								PLAYERDATA->setDevilBomberDie(true);
-							}
-							if (SOUNDMANAGER->isPlaySound("battleMusic"))
-							{
-								SOUNDMANAGER->stop("battleMusic");
-							}
-							SCENEMANAGER->changeScene("던전");
 						}
+					}
+					if(PLAYERDATA->getMonsterNumber() == 1)
+					{
+						PLAYERDATA->setSlimeDie(true);
+					}
+					if(PLAYERDATA->getMonsterNumber() == 2)
+					{
+						PLAYERDATA->setFluffyBugDie(true);
+					}
+					if(PLAYERDATA->getMonsterNumber() == 3)
+					{
+						PLAYERDATA->setFlytrapperDie(true);
+					}
+					if(PLAYERDATA->getMonsterNumber() == 4)
+					{
+						PLAYERDATA->setBarbarianDie(true);
+					}
+					if(PLAYERDATA->getMonsterNumber() == 5)
+					{
+						PLAYERDATA->setDevilBomberDie(true);
+					}
+
+					SOUNDMANAGER->stop("battleMusic");
+
+					if(time>200)
+					{
+						SCENEMANAGER->changeScene("던전");
 					}
 				}
 			}

@@ -10,13 +10,14 @@ enum class TEMPEST_STATE
 	GETDMG,
 	DEAD,
 	VICTORY, 
+	GETAWAY, 
 };
 
 class Tempest : public bsPlayer
 {
 private:
 	TEMPEST_STATE _state;
-
+	int moveX;
 public:
 	virtual HRESULT init(void);
 	virtual void release(void);
@@ -27,6 +28,7 @@ public:
 	virtual void myTurnSkill(int enemyIndex);
 	virtual void myTurnDefense();
 	virtual void victoryBattle();
+	virtual void getaway();
 	virtual void getDmg(float enemyAtt);
 
 	virtual bullet* getBullet() { return _bullet; }

@@ -6,8 +6,8 @@
 #include "Tempest.h"
 
 #define PLAYER_PREVPOS_X	WINSIZEX * 0.7f
-#define PLAYER_PREVPOS_Y1	WINSIZEY * 0.1f
-#define PLAYER_PREVPOS_Y2	WINSIZEY * 0.4f
+#define PLAYER_PREVPOS_Y1	WINSIZEY * 0.3f
+#define PLAYER_PREVPOS_Y2	WINSIZEY * 0.5f
 #define PLAYER_PREVPOS_Y3	WINSIZEY * 0.7f
 
 HRESULT bsPlayerManager::init(void)

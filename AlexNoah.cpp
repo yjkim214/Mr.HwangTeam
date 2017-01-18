@@ -34,6 +34,8 @@ HRESULT AlexNoah::init(void)
 
 	_state = ALEXNOAH_STATE::IDLE;
 
+	moveX = 0;
+
 	return S_OK;
 }
 
@@ -197,6 +199,24 @@ void AlexNoah::update(void)
 					}
 				}
 			}
+
+			if(_state == ALEXNOAH_STATE::GETAWAY)
+			{
+				moveX += 5;
+				if(_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					if(_isDelay)
+					{
+						_delayCount++;
+						if(_delayCount >= DELAYTIME)
+						{
+							_turnState = TURNEND;
+							_isVictory = true;
+							_isDelay = false;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -226,7 +246,14 @@ void AlexNoah::render(void)
 
 	else if (_turnState == MYTURN)
 	{
-		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
+		if(_state == ALEXNOAH_STATE::GETAWAY)
+		{
+			_playerImg->frameRender(getMemDC(), _destX + moveX, _destY, _currentFrameX, 0);
+		}
+		else
+		{
+			_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
+		}
 	}
 
 	_uiImage->render(getMemDC());
@@ -245,12 +272,12 @@ void AlexNoah::myTurnAttack(int enemyIndex)
 
 	if (enemyIndex == 0)
 	{
-		_destY = WINSIZEY * 0.1f;
+		_destY = WINSIZEY * 0.3f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.4f;
+		_destY = WINSIZEY * 0.5f;
 	}
 
 	else if (enemyIndex == 2)
@@ -270,12 +297,12 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 	_destX = 30;
 	if (enemyIndex == 0)
 	{
-		_destY = WINSIZEY * 0.1f;
+		_destY = WINSIZEY * 0.3f;
 	}
 
 	else if (enemyIndex == 1)
 	{
-		_destY = WINSIZEY * 0.4f;
+		_destY = WINSIZEY * 0.5f;
 	}
 
 	else if (enemyIndex == 2)
@@ -301,6 +328,16 @@ void AlexNoah::victoryBattle()
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_victory@2");
 	_currentFrameX = 0;
 	_state = ALEXNOAH_STATE::VICTORY;
+	_destX = _prevX;
+	_destY = _prevY;
+}
+
+void AlexNoah::getaway()
+{
+	_turnState = MYTURN;
+	_playerImg = IMAGEMANAGER->findImage("alexGetaway");
+	_currentFrameX = 0;
+	_state = ALEXNOAH_STATE::GETAWAY;
 	_destX = _prevX;
 	_destY = _prevY;
 }

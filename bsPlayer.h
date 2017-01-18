@@ -61,6 +61,7 @@ public:
 	virtual void myTurnSkill(int enemyIndex) = 0;
 	virtual void myTurnDefense() = 0;
 	virtual void victoryBattle() = 0;
+	virtual void getaway() = 0;
 	virtual void getDmg(float enemyAtt) = 0;
 
 public:

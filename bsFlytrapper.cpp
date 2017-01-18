@@ -222,12 +222,12 @@ void bsFlytrapper::myTurnAttack(int playerIndex)
 	_destX = WINSIZEX * 0.6f;
 	if (playerIndex == 0)
 	{
-		_destY = WINSIZEY * 0.1f;
+		_destY = WINSIZEY * 0.3f;
 	}
 
 	else if (playerIndex == 1)
 	{
-		_destY = WINSIZEY * 0.4f;
+		_destY = WINSIZEY * 0.5f;
 	}
 
 	else
