@@ -44,14 +44,14 @@ HRESULT battleScene::init(void)
 		{
 			_background = IMAGEMANAGER->findImage("bsBackground02");
 		}
-
-		SOUNDMANAGER->play("battleMusic");
 	}
 
 	else
 	{
 		_background = IMAGEMANAGER->findImage("bsBackground_boss");
 	}
+
+	SOUNDMANAGER->play("battleMusic");
 
 	time = 0;
 
