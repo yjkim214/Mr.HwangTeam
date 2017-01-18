@@ -20,6 +20,18 @@ HRESULT AlexNoah::init(void)
 
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_idle@2");
 
+	_uiImage = IMAGEMANAGER->findImage("bsAlex_Ui");
+	_uiImage->setX(0);
+	_uiImage->setY(5);
+
+	_hpBar = new progressBar;
+	_hpBar->init("bsHpbar_front", "bsHpbar_back", 0, 5, 150, 135);
+	_hpBar->setGauge(_hp, _maxHp);
+
+	_mpBar = new progressBar;
+	_mpBar->init("bsMpbar_front", "bsMpbar_back", 0, 5, 150, 135);
+	_mpBar->setGauge(_mp, _maxMp);
+
 	_state = ALEXNOAH_STATE::IDLE;
 
 	return S_OK;
@@ -197,6 +209,12 @@ void AlexNoah::update(void)
 			_turnState = NOTMYTURN;
 		}
 	}
+
+	_hpBar->update();
+	_mpBar->update();
+
+	_hpBar->setGauge(_hp, _maxHp);
+	_mpBar->setGauge(_mp, _maxMp);
 }
 
 void AlexNoah::render(void)
@@ -210,6 +228,11 @@ void AlexNoah::render(void)
 	{
 		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
+
+	_uiImage->render(getMemDC());
+	
+	_hpBar->render();
+	_mpBar->render();
 }
 
 void AlexNoah::myTurnAttack(int enemyIndex)
@@ -281,20 +304,22 @@ void AlexNoah::victoryBattle()
 	_destY = _prevY;
 }
 
-void AlexNoah::getDmg(int enemyAtt)
+void AlexNoah::getDmg(float enemyAtt)
 {
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_getdmg@2");
 	_currentFrameX = 0;
 	_state = ALEXNOAH_STATE::GETDMG;
 
-	if (_isDefense)
+	if (!_isDefense)
 	{
-		_hp -= (enemyAtt * enemyAtt / _def + 1);
+		int damage = (int)(enemyAtt * enemyAtt / _def) + 1.0f;
+		_hp -= damage;
 	}
 
 	else
 	{
-		_hp -= (enemyAtt * enemyAtt / (_def * 2) + 1);
+		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
+		_hp -= damage;
 	}
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);

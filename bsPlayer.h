@@ -1,6 +1,7 @@
 #pragma once
 #include "gameNode.h"
 #include "bullet.h"
+#include "progressBar.h"
 
 class bsPlayer : public gameNode
 {
@@ -42,6 +43,11 @@ protected:
 protected:
 	bullet*	_bullet;
 
+protected:
+	image*			_uiImage;
+	progressBar*	_hpBar;
+	progressBar*	_mpBar;
+
 public:
 	//=============================================================
 	//	## player ## (순수 가상 함수)
@@ -55,7 +61,7 @@ public:
 	virtual void myTurnSkill(int enemyIndex) = 0;
 	virtual void myTurnDefense() = 0;
 	virtual void victoryBattle() = 0;
-	virtual void getDmg(int enemyAtt) = 0;
+	virtual void getDmg(float enemyAtt) = 0;
 
 public:
 	virtual bullet* getBullet() { return NULL; }
@@ -66,6 +72,12 @@ public:
 	float getDef() { return _def; }
 	float getHp() { return _hp; }
 	float getMp() { return _mp; }
+	
+	void setHp(int hp)
+	{
+		_hp = hp;
+		if (_hp >= _maxHp) { _hp = _maxHp; }
+	}
 
 public:
 	void setPrevPos(float x, float y);

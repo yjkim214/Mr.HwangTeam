@@ -20,6 +20,17 @@ HRESULT Lunar::init(void)
 
 	_playerImg = IMAGEMANAGER->findImage("bsLunar_idle");
 
+	_uiImage = IMAGEMANAGER->findImage("bsLunar_Ui");
+	_uiImage->setX(150);
+	_uiImage->setY(5);
+
+	_hpBar = new progressBar;
+	_hpBar->init("bsHpbar_front", "bsHpbar_back", 150, 5, 150, 135);
+	_hpBar->setGauge(_hp, _maxHp);
+	_mpBar = new progressBar;
+	_mpBar->init("bsMpbar_front", "bsMpbar_back", 150, 5, 150, 135);
+	_mpBar->setGauge(_mp, _maxMp);
+
 	_state = LUNAR_STATE::IDLE;
 
 	return S_OK;
@@ -195,6 +206,12 @@ void Lunar::update(void)
 			_turnState = NOTMYTURN;
 		}
 	}
+
+	_hpBar->update();
+	_mpBar->update();
+
+	_hpBar->setGauge(_hp, _maxHp);
+	_mpBar->setGauge(_mp, _maxMp);
 }
 
 void Lunar::render(void)
@@ -208,6 +225,11 @@ void Lunar::render(void)
 	{
 		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
+
+	_uiImage->render(getMemDC());
+
+	_hpBar->render();
+	_mpBar->render();
 }
 
 void Lunar::myTurnAttack(int enemyIndex)
@@ -265,20 +287,22 @@ void Lunar::victoryBattle()
 	_destY = _prevY;
 }
 
-void Lunar::getDmg(int enemyAtt)
+void Lunar::getDmg(float enemyAtt)
 {
 	_playerImg = IMAGEMANAGER->findImage("bsLunar_getdmg");
 	_currentFrameX = 0;
 	_state = LUNAR_STATE::GETDMG;
 	
-	if (_isDefense)
+	if (!_isDefense)
 	{
-		_hp -= (enemyAtt * enemyAtt / _def + 1);
+		int damage = (int)(enemyAtt * enemyAtt / _def) + 1.0f;
+		_hp -= damage;
 	}
 
 	else
 	{
-		_hp -= (enemyAtt * enemyAtt / (_def * 2) + 1);
+		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
+		_hp -= damage;
 	}
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);

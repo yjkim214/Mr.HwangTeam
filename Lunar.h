@@ -27,7 +27,7 @@ public:
 	virtual void myTurnSkill(int enemyIndex);
 	virtual void myTurnDefense();
 	virtual void victoryBattle();
-	virtual void getDmg(int enemyAtt);
+	virtual void getDmg(float enemyAtt);
 
 	Lunar() {}
 	~Lunar() {}

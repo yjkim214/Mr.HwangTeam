@@ -20,10 +20,22 @@ HRESULT Tempest::init(void)
 
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_idle");
 
-	_state = TEMPEST_STATE::IDLE;
-
 	_bullet = new bullet;
 	_bullet->init("arrow", 1, 800);
+
+	_uiImage = IMAGEMANAGER->findImage("bsTempest_Ui");
+	_uiImage->setX(300);
+	_uiImage->setY(5);
+
+	_hpBar = new progressBar;
+	_hpBar->init("bsHpbar_front", "bsHpbar_back", 300, 5, 150, 135);
+	_hpBar->setGauge(_hp, _maxHp);
+	
+	_mpBar = new progressBar;
+	_mpBar->init("bsMpbar_front", "bsMpbar_back", 300, 5, 150, 135);
+	_mpBar->setGauge(_mp, _maxMp);
+	
+	_state = TEMPEST_STATE::IDLE;
 
 	return S_OK;
 }
@@ -211,6 +223,12 @@ void Tempest::update(void)
 	}
 
 	_bullet->update();
+
+	_hpBar->update();
+	_mpBar->update();
+
+	_hpBar->setGauge(_hp, _maxHp);
+	_mpBar->setGauge(_mp, _maxMp);
 }
 
 void Tempest::render(void)
@@ -226,6 +244,11 @@ void Tempest::render(void)
 	}
 
 	_bullet->render();
+
+	_uiImage->render(getMemDC());
+	
+	_hpBar->render();
+	_mpBar->render();
 }
 
 void Tempest::myTurnAttack(int enemyIndex)
@@ -297,20 +320,22 @@ void Tempest::victoryBattle()
 	_destY = _prevY;
 }
 
-void Tempest::getDmg(int enemyAtt)
+void Tempest::getDmg(float enemyAtt)
 {
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_getdmg");
 	_currentFrameX = 0;
 	_state = TEMPEST_STATE::GETDMG;
 
-	if (_isDefense)
+	if (!_isDefense)
 	{
-		_hp -= (enemyAtt * enemyAtt / _def + 1);
+		int damage = (int)(enemyAtt * enemyAtt / _def) + 1.0f;
+		_hp -= damage;
 	}
 
 	else
 	{
-		_hp -= (enemyAtt * enemyAtt / (_def * 2) + 1);
+		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
+		_hp -= damage;
 	}
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);

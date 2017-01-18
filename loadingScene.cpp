@@ -234,6 +234,11 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsBackground01", "bsBackground01.bmp", 800, 600);
 	_loading->loadImage("bsBackground02", "bsBackground02.bmp", 800, 600);
 	
+	//배틀씬 UI
+	_loading->loadImage("bsAlex_Ui", "bsAlex_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
+	_loading->loadImage("bsLunar_Ui", "bsLunar_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
+	_loading->loadImage("bsTempest_Ui", "bsTempest_Ui.bmp", 150, 135, true, RGB(255, 0, 255));
+
 	//대화창 UI
 	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));
 
