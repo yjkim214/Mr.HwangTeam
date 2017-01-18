@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "bsSlime.h"
 
-#define SLIME_ATT		2
-#define SLIME_DEF		2
+#define SLIME_ATT		10
+#define SLIME_DEF		5
 #define SLIME_MAXHP		50
 #define SLIME_MAXMP		10
 #define SLIME_ANI_COUNT	10

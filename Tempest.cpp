@@ -224,11 +224,11 @@ void Tempest::update(void)
 
 	_bullet->update();
 
-	_hpBar->update();
-	_mpBar->update();
-
 	_hpBar->setGauge(_hp, _maxHp);
 	_mpBar->setGauge(_mp, _maxMp);
+
+	_hpBar->update();
+	_mpBar->update();
 }
 
 void Tempest::render(void)
@@ -280,6 +280,8 @@ void Tempest::myTurnSkill(int enemyIndex)
 	_turnState = MYTURN;
 	_playerImg = IMAGEMANAGER->findImage("bsTempest_skill");
 	_currentFrameX = 0;
+	_mp -= 4.0f;
+	_mpBar->setGauge(_mp, _maxMp);
 	_state = TEMPEST_STATE::SKILL;
 	_destX = WINSIZEX * 0.5f;
 
@@ -337,6 +339,8 @@ void Tempest::getDmg(float enemyAtt)
 		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
 		_hp -= damage;
 	}
+
+	_hpBar->setGauge(_hp, _maxHp);
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());

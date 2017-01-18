@@ -210,11 +210,11 @@ void AlexNoah::update(void)
 		}
 	}
 
-	_hpBar->update();
-	_mpBar->update();
-
 	_hpBar->setGauge(_hp, _maxHp);
 	_mpBar->setGauge(_mp, _maxMp);
+
+	_hpBar->update();
+	_mpBar->update();
 }
 
 void AlexNoah::render(void)
@@ -264,9 +264,10 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 	_turnState = MYTURN;
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_skill@2");
 	_currentFrameX = 0;
+	_mp -= 4.0f;
+	_mpBar->setGauge(_mp, _maxMp);
 	_state = ALEXNOAH_STATE::SKILL;
-	_destX = 35;
-
+	_destX = 30;
 	if (enemyIndex == 0)
 	{
 		_destY = WINSIZEY * 0.1f;
@@ -321,6 +322,8 @@ void AlexNoah::getDmg(float enemyAtt)
 		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
 		_hp -= damage;
 	}
+
+	_hpBar->setGauge(_hp, _maxHp);
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());

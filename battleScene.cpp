@@ -103,7 +103,25 @@ void battleScene::update(void)
 			SOUNDMANAGER->stop("battleMusic");
 		}
 
-		if (_pm->getVPlayerList()[0]->getIsVictory() && _pm->getVPlayerList()[1]->getIsVictory() && _pm->getVPlayerList()[2]->getIsVictory())
+		bool isEnd = false;
+		
+		for (int i = 0; i < _pm->getVPlayerList().size() - 1; i++)
+		{
+			if (!_pm->getVPlayerList()[i]->getIsDead())
+			{
+				if (i == 0)
+				{
+					isEnd = _pm->getVPlayerList()[i]->getIsVictory();
+				}
+
+				else
+				{
+					isEnd = isEnd && _pm->getVPlayerList()[i]->getIsVictory();
+				}
+			}
+		}
+
+		if (isEnd)
 		{
 			SCENEMANAGER->changeScene("带傈");
 		}
@@ -140,6 +158,8 @@ void battleScene::update(void)
 		{
 			SOUNDMANAGER->stop("battleMusic");
 		}
+
+		SCENEMANAGER->changeScene("带傈");
 	}
 
 	else
@@ -148,160 +168,206 @@ void battleScene::update(void)
 		{
 			if (_playerTurnState == PLAYERTURNSTATE::START)
 			{
+				for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+				{
+					if (!_pm->getVPlayerList()[i]->getIsDead())
+					{
+						_pm->getVPlayerList()[i]->setIsDefense(false);
+					}
+				}
+				_playerTurnState = PLAYERTURNSTATE::UPDATE;
+			}
+
+			else if (_playerTurnState == PLAYERTURNSTATE::UPDATE)
+			{
 				setPlayerIndex();
-			}
 
-			if (_userSelect == INIT)
-			{
-				if (_actionSelected != 0)
+				if (_userSelect == INIT)
 				{
-					_actionSelected = 0;
-				}
-
-				_userSelect = SELECT;
-			}
-
-			selectAction();
-
-			if (_userSelect == ATTACK)
-			{
-				if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == NOTMYTURN)
-				{
-					selectEnemy();
-
-					if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+					if (_actionSelected != 0)
 					{
-						_pm->getVPlayerList()[_currentPlayerIndex]->myTurnAttack(_enemySelected);
-						_em->endSelect();
+						_actionSelected = 0;
 					}
+
+					_userSelect = SELECT;
 				}
 
-				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
+				selectAction();
+
+				if (_userSelect == ATTACK)
 				{
-					if (_pm->getVPlayerList()[_currentPlayerIndex]->getBullet() != NULL)
+					if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == NOTMYTURN)
 					{
-						for (int i = 0; i < _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet().size(); i++)
+						selectEnemy();
+
+						if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
 						{
-							RECT bulletRc = _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet()[i].rc;
-							RECT enemyRc = _em->getVEnemyList()[_enemySelected]->getImg()->boundingBoxWithFrame();
-							if (bulletRc.left < enemyRc.right - 30)
-							{
-								_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(true);
-								_pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->removeBullet(i);
-							}
+							_pm->getVPlayerList()[_currentPlayerIndex]->myTurnAttack(_enemySelected);
+							_em->endSelect();
 						}
 					}
 
-					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
+					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
 					{
-						_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
-						_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(false);
-					}
-				}
-
-				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
-				{
-					if (_currentPlayerIndex + 1 < _pm->getVPlayerList().size())
-					{
-						_currentPlayerIndex++;
-					}
-
-					else
-					{
-						_currentPlayerIndex = 0;
-						_bsState = ENEMYTURN;
-					}
-
-					_userSelect = INIT;
-				}
-			}
-
-			if (_userSelect == SKILL)
-			{
-				if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == NOTMYTURN)
-				{
-					selectEnemy();
-
-					if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
-					{
-						_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected);
-						_em->endSelect();
-					}
-				}
-
-				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
-				{
-					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsHeal())
-					{
-						for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+						if (_pm->getVPlayerList()[_currentPlayerIndex]->getBullet() != NULL)
 						{
-							if (!_pm->getVPlayerList()[i]->getIsDead())
+							for (int i = 0; i < _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet().size(); i++)
 							{
-								EFFECTMANAGER->addEffect(_pm->getVPlayerList()[i]->getPrevPos().x + 43, _pm->getVPlayerList()[i]->getPrevPos().y + 25, "bsLunar_skillEffect");
+								RECT bulletRc = _pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->getVBullet()[i].rc;
+								RECT enemyRc = _em->getVEnemyList()[_enemySelected]->getImg()->boundingBoxWithFrame();
+
+								if (bulletRc.left < enemyRc.right - 30)
+								{
+									_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(true);
+									_pm->getVPlayerList()[_currentPlayerIndex]->getBullet()->removeBullet(i);
+								}
 							}
 						}
 
-						_pm->getVPlayerList()[_currentPlayerIndex]->setIsHeal(false);
+						if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
+						{
+							_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
+							_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(false);
+						}
 					}
 
-					if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
+					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
 					{
-						_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
-						_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(false);
+						if (_currentPlayerIndex + 1 < _pm->getVPlayerList().size())
+						{
+							_currentPlayerIndex++;
+						}
+
+						else
+						{
+							_currentPlayerIndex = 0;
+							_bsState = ENEMYTURN;
+							_playerTurnState = PLAYERTURNSTATE::START;
+						}
+
+						_userSelect = INIT;
 					}
 				}
 
-				else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
+				if (_userSelect == SKILL)
 				{
-					if (_currentPlayerIndex + 1 < _pm->getVPlayerList().size())
+					if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == NOTMYTURN)
 					{
-						_currentPlayerIndex++;
+ 						if (_currentPlayerIndex != 1)
+						{
+							selectEnemy();
+
+							if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+							{
+								_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected);
+								_em->endSelect();
+							}
+						}
+
+						else
+						{
+							_pm->getVPlayerList()[_currentPlayerIndex]->myTurnSkill(_enemySelected);
+						}
 					}
 
-					else
+					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == MYTURN)
 					{
-						_currentPlayerIndex = 0;
-						_bsState = ENEMYTURN;
+						if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsHeal())
+						{
+							for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+							{
+								if (!_pm->getVPlayerList()[i]->getIsDead())
+								{
+									EFFECTMANAGER->addEffect(_pm->getVPlayerList()[i]->getPrevPos().x + 43, _pm->getVPlayerList()[i]->getPrevPos().y + 25, "bsLunar_skillEffect");
+								}
+							}
+
+							_pm->getVPlayerList()[_currentPlayerIndex]->setIsHeal(false);
+						}
+
+						if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsAttack())
+						{
+							_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
+							_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(false);
+						}
 					}
 
-					_userSelect = INIT;
+					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
+					{
+						if (_currentPlayerIndex + 1 < _pm->getVPlayerList().size())
+						{
+							_currentPlayerIndex++;
+						}
+
+						else
+						{
+							_currentPlayerIndex = 0;
+							_bsState = ENEMYTURN;
+							_playerTurnState = PLAYERTURNSTATE::START;
+						}
+
+						_userSelect = INIT;
+					}
 				}
-			}
 
-			if (_userSelect == DEFENSE)
-			{
-				_userSelect = INIT;
-			}
-
-			if (_userSelect == GETAWAY)
-			{
-				if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+				if (_userSelect == DEFENSE)
 				{
-					if (PLAYERDATA->getMonsterNumber() == 1)
+					if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == NOTMYTURN)
 					{
-						PLAYERDATA->setSlimeDie(true);
+						_pm->getVPlayerList()[_currentPlayerIndex]->myTurnDefense();
 					}
-					if (PLAYERDATA->getMonsterNumber() == 2)
+
+					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
 					{
-						PLAYERDATA->setFluffyBugDie(true);
+						if (_currentPlayerIndex + 1 < _pm->getVPlayerList().size())
+						{
+							_currentPlayerIndex++;
+						}
+
+						else
+						{
+							_currentPlayerIndex = 0;
+							_bsState = ENEMYTURN;
+							_playerTurnState = PLAYERTURNSTATE::START;
+						}
+
+						_userSelect = INIT;
 					}
-					if (PLAYERDATA->getMonsterNumber() == 3)
+				}
+
+				if (_userSelect == GETAWAY)
+				{
+					if (_userSelect == GETAWAY)
 					{
-						PLAYERDATA->setFlytrapperDie(true);
+						if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+						{
+							if (PLAYERDATA->getMonsterNumber() == 1)
+							{
+								PLAYERDATA->setSlimeDie(true);
+							}
+							if (PLAYERDATA->getMonsterNumber() == 2)
+							{
+								PLAYERDATA->setFluffyBugDie(true);
+							}
+							if (PLAYERDATA->getMonsterNumber() == 3)
+							{
+								PLAYERDATA->setFlytrapperDie(true);
+							}
+							if (PLAYERDATA->getMonsterNumber() == 4)
+							{
+								PLAYERDATA->setBarbarianDie(true);
+							}
+							if (PLAYERDATA->getMonsterNumber() == 5)
+							{
+								PLAYERDATA->setDevilBomberDie(true);
+							}
+							if (SOUNDMANAGER->isPlaySound("battleMusic"))
+							{
+								SOUNDMANAGER->stop("battleMusic");
+							}
+							SCENEMANAGER->changeScene("带傈");
+						}
 					}
-					if (PLAYERDATA->getMonsterNumber() == 4)
-					{
-						PLAYERDATA->setBarbarianDie(true);
-					}
-					if (PLAYERDATA->getMonsterNumber() == 5)
-					{
-						PLAYERDATA->setDevilBomberDie(true);
-					}
-					if (SOUNDMANAGER->isPlaySound("battleMusic"))
-					{
-						SOUNDMANAGER->stop("battleMusic");
-					}
-					SCENEMANAGER->changeScene("带傈");
 				}
 			}
 		}
@@ -392,7 +458,17 @@ void battleScene::setPlayerIndex()
 	{
 		if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsDead())
 		{
-			_currentPlayerIndex++;
+			if (_currentPlayerIndex < 2)
+			{
+				_currentPlayerIndex++;
+			}
+
+			else
+			{
+				_currentPlayerIndex = 0;
+				_bsState = ENEMYTURN;
+				_playerTurnState = PLAYERTURNSTATE::START;
+			}
 		}
 
 		else
