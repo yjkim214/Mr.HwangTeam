@@ -89,3 +89,11 @@ enum TURN_STATE
 	TURNEND,
 	NOTMYTURN,
 };
+
+enum ITEM_KIND
+{
+	Weapon_,
+	Equip_,
+	Potion_,
+	Quest_
+};

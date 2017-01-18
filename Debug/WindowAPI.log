@@ -1,18 +1,643 @@
-﻿  battleScene.cpp
-c:\users\dydwo\desktop\20170110_0\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(65): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(108): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(171): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(214): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(229): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(236): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(277): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(281): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(290): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(297): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(322): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(416): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(518): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(566): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\dydwo\desktop\20170110_0\battlescene.cpp(574): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
-  WindowAPI.vcxproj -> C:\Users\dydwo\Desktop\20170110_0\Debug\WindowAPI.exe
+﻿  stdafx.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\playerdata.h(61): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\playerdata.h(62): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  winMain.cpp
+  villageScene.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(81): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(82): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(184): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(185): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  villageMap.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(225): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(228): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(231): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(241): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(247): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(255): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(261): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(269): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(275): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(293): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(299): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(401): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(407): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(412): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(418): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(422): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(428): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(441): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(447): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(457): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(463): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(468): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(474): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(478): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(484): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(497): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(503): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(512): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(518): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(523): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(529): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(533): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(539): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(552): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(558): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(566): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(572): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(577): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(583): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(587): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(593): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(606): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(612): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(620): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(626): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(631): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(637): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(640): warning C4554: '&': 연산자 우선 순위에 오류가 있는지 확인하십시오. 괄호를 사용하여 우선 순위를 명확하게 지정하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(649): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(655): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(668): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(674): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(689): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(695): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(705): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(711): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(716): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(722): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(726): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(732): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(741): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(747): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(752): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(758): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(762): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(768): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(781): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(787): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(795): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(801): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(806): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(812): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(816): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(822): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(835): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(841): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(902): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(909): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(914): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(920): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(923): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(929): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(944): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(950): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(980): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(984): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(988): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(992): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\villagemap.cpp(996): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  util.cpp
+  txtData.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(21): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(35): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(38): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(37): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(40): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(70): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(73): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
+  timeManager.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\timemanager.cpp(105): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\timemanager.cpp(108): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\timemanager.cpp(111): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  soundTestScene.cpp
+  soundManager.cpp
+  sceneTest.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\scenetest.cpp(25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  sceneManager.cpp
+  progressBar.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(28): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(29): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(24): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\progressbar.cpp(49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  playerData.cpp
+  player.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(82): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(93): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(94): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(95): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(106): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(107): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(108): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(93): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 'itoa' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(94): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 'itoa' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(95): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 'itoa' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(137): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\player.cpp(139): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  pixelCollision.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(19): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(41): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(43): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(56): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\pixelcollision.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  owDungeon.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(84): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(102): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(114): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(115): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(126): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(138): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(139): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(150): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(151): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(215): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(217): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(237): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(239): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(259): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(261): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(286): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(288): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(308): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(310): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(330): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(332): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(352): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(354): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(374): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(376): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(396): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(398): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(418): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(420): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(440): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(442): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(462): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(464): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(484): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(486): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(506): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(508): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(528): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(530): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(550): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(552): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(572): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(574): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(594): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(596): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(616): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(618): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(638): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(640): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(660): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(662): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(682): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(684): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(704): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(706): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(726): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(728): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1047): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1062): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1063): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1074): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1075): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1086): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1087): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1098): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1099): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1110): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1111): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1211): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1214): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1269): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1274): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1278): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1282): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1286): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1290): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1294): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1298): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1302): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1305): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1312): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1316): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1326): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1330): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1334): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1338): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1343): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1353): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1357): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1361): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1365): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1370): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1380): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1384): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1388): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1392): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1397): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1407): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1411): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1415): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1419): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1424): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1439): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1440): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1441): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1442): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1446): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1447): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1448): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1449): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1453): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1454): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1455): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1456): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1460): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1461): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1462): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1463): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1467): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1468): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1469): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1470): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1474): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1475): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1476): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1477): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1431): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owdungeon.cpp(1434): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+  minion.cpp
+  mainMenuScene.cpp
+  mainGame.cpp
+  loadingScene.cpp
+  loading.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(27): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(40): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(41): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(44): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(61): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(74): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(75): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(80): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(212): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(240): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(256): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(292): warning C4244: '인수': 'unsigned int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(292): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(278): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(279): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(283): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\loading.cpp(284): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...
+c:\users\sga\documents\github\mr.hwangteamproject\txtdata.cpp(44): warning C4172: 지역 변수 또는 임시: str의 주소를 반환하고 있습니다.
+  컴파일하고 있습니다...
+  keyManager.cpp
+  item.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\item.cpp(19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\item.cpp(35): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\item.cpp(48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  inventory.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(30): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(31): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(33): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(36): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(41): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(48): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(110): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(115): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(122): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(152): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(183): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(188): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(196): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(224): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(303): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(304): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(309): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(310): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(315): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(316): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(334): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(347): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(356): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(364): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(372): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  introScene.cpp
+  iniTestScene.cpp
+  iniData.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(36): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(32): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(34): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(48): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(50): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(65): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(67): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
+  imageManager.cpp
+  image.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\image.cpp(351): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  gameNode.cpp
+  enemyManager.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\enemymanager.cpp(81): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\enemymanager.cpp(94): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  enemy.cpp
+  effectManager.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(15): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(16): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(17): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(55): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\effectmanager.cpp(57): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  chat.cpp
+  bullet.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(38): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(67): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(119): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(165): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(180): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(237): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(250): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bullet.cpp(264): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsSlime.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsslime.cpp(163): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsslime.cpp(170): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsslime.cpp(175): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsslime.cpp(211): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsslime.cpp(211): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsPlayerManager.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayermanager.cpp(24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayermanager.cpp(35): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayermanager.cpp(43): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  bsPlayer.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.cpp(13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.cpp(14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsFlytrapper.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsflytrapper.cpp(187): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsflytrapper.cpp(194): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsflytrapper.cpp(199): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsflytrapper.cpp(245): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsflytrapper.cpp(245): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsFluffyBug.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsfluffybug.cpp(161): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsfluffybug.cpp(168): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsfluffybug.cpp(173): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsfluffybug.cpp(217): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsfluffybug.cpp(217): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsEnemyManager.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemymanager.cpp(57): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemymanager.cpp(68): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemymanager.cpp(76): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemymanager.cpp(124): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemymanager.cpp(141): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
+c:\users\sga\documents\github\mr.hwangteamproject\inidata.cpp(55): warning C4172: 지역 변수 또는 임시: data의 주소를 반환하고 있습니다.
+  컴파일하고 있습니다...
+  bsEnemy.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemy.cpp(13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsenemy.cpp(14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsDevilBomber.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsdevilbomber.cpp(189): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsdevilbomber.cpp(196): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsdevilbomber.cpp(201): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsdevilbomber.cpp(248): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsdevilbomber.cpp(248): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  bsBarbarian.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsbarbarian.cpp(161): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsbarbarian.cpp(168): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsbarbarian.cpp(173): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsbarbarian.cpp(209): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\bsbarbarian.cpp(209): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  battleScene.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(65): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(108): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(171): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(214): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(229): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(236): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(277): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(281): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(290): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(297): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(322): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(416): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(518): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(566): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\battlescene.cpp(574): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  Tempest.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(238): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(243): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(333): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(339): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(345): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(346): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\tempest.cpp(347): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Shop.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(37): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(55): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(174): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(242): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(255): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Owplayer.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(80): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(81): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(82): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(83): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(225): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(246): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(251): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(261): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(266): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(274): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(278): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(308): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(501): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(502): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(503): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(504): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(591): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(592): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(597): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(598): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(603): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(604): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(618): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(620): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(622): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(628): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(630): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(632): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(637): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(639): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(641): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(617): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(619): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(621): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(627): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(629): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(631): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(636): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(638): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(640): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(655): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(659): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(665): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(678): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(682): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(685): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(700): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(704): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(708): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(722): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(726): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(729): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(746): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(750): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(754): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(769): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(773): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(776): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  NPC.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(49): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(73): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(89): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(117): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(419): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(432): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(444): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(456): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(477): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(480): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(490): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(496): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(501): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(510): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(513): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(523): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(524): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(533): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(534): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(535): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(536): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(537): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(538): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(539): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(540): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(541): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(600): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(618): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(619): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(654): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(673): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(677): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(705): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(712): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(716): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(723): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(727): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(734): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(738): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(745): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(757): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(764): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(769): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(776): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(781): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(788): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(792): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(799): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(810): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(817): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(821): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(828): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(832): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(839): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(843): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\npc.cpp(850): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Lunar.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(221): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(226): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(300): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(306): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(312): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(313): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\lunar.cpp(314): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  AlexNoah.cpp
+c:\users\sga\documents\github\mr.hwangteamproject\bsplayer.h(78): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(224): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(229): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(316): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(322): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(328): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(329): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sga\documents\github\mr.hwangteamproject\alexnoah.cpp(330): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  WindowAPI.vcxproj -> C:\Users\SGA\Documents\GitHub\Mr.HwangTeamProject\Debug\WindowAPI.exe

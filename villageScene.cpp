@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "villageScene.h"
-
+#include "inventory.h"
 HRESULT villageScene::init(void)
 {
 	_villageMap = new villageMap;
@@ -9,13 +9,21 @@ HRESULT villageScene::init(void)
 	_Owplayer = new Owplayer;
 	_Owplayer->init();
 
+	_Shop = new Shop;
+	_Shop->init();
+	_Shop->setOwPlayer(_Owplayer);
+
 	_npc = new NPC;
 	_npc->init();
+
 
 	_villageMap->setOWPlayer(_Owplayer);
 	_Owplayer->setScene(_villageMap);
 	_npc->setRefer(_villageMap, _Owplayer);
+	_Owplayer->setnpc(_npc);
 	SOUNDMANAGER->play("villageMusic");
+
+
 	//SOUNDMANAGER->play("¸¶À»ver2");
 	time = 0;
 
@@ -30,15 +38,37 @@ void villageScene::release(void)
 	_Owplayer->release();
 	SAFE_DELETE(_Owplayer);
 
+	_Shop->release();
+	SAFE_DELETE(_Shop);
 	_npc->release();
 	SAFE_DELETE(_npc);
 }
 
 void villageScene::update(void)
 {
-	_villageMap->update();
-	_Owplayer->update();
-	_npc->update();
+
+
+	_Owplayer->getinventory()->isShopOpen(_Shop->getIsOpen());
+
+	
+	RECT _ARC;
+	if (IntersectRect(&_ARC,&_npc->shopCrashRc(),&_Owplayer->getPlayerImg()->boundingBoxWithFrame())&&KEYMANAGER->isOnceKeyDown(VK_SPACE))
+	{
+		if (_Shop->getIsOpen())
+		{
+			_npc->setState(MOVE);
+			_Shop->closeShop();
+		}
+
+		else
+		{
+	
+				_Shop->openShop();
+			
+		}
+	}
+
+	
 
 	time++;
 
@@ -107,15 +137,20 @@ void villageScene::update(void)
 			SOUNDMANAGER->play("bossRoomSound");
 		}
 	}
+	_villageMap->update();
+	_Owplayer->update();
+	_Shop->update();
+	_npc->update();
 	Load();
+
 
 }
 
 void villageScene::render(void)
 {
 	_villageMap->render();
-	_npc->render();
 	_Owplayer->render();
+	_npc->render();
 
 
 	if (_villageMap->getState() == VILLAGE)
@@ -124,20 +159,19 @@ void villageScene::render(void)
 			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
 		IMAGEMANAGER->alphaRender("village_in", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
 			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
-		IMAGEMANAGER->frameAlphaRender("NPCWalpha", getMemDC(), _npc->getNpc(0).x, _npc->getNpc(0).y, _npc->getNpc(0).frameX, _npc->getNpc(0).frameY, 100);
 	}
 
-	//if (_villageMap->getState() == DUNGEON)
-	//{
-	//	IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
-	//		1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
-	//}
+	if (_villageMap->getState() == DUNGEON)
+	{
+		IMAGEMANAGER->alphaRender("dungeon_tree", getMemDC(), 0, 0, _villageMap->getBgX(), _villageMap->getBgY(),
+			1600 - _villageMap->getBgX(), 1200 - _villageMap->getBgY(), 100);
+	}
 
+	_Owplayer->invenrender();
+	_Shop->render();
 	_npc->chatRender();
-
 	_villageMap->menuRender();
 }
-
 void villageScene::Load()
 {
 	if (_mainMenu->getIsLoading() == true)
@@ -154,4 +188,3 @@ void villageScene::Load()
 		}
 	}
 }
-

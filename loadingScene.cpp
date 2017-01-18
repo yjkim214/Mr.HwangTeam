@@ -136,13 +136,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("lunarVictory", "lunarVictory.bmp", 650, 400, 162, 57, 6, 1, true, RGB(255, 0, 255));
 
 
-	//오픈월드 플레이어
-	_loading->loadFrameImage("owPlayer_idle", "owPlayer_idle.bmp", 120, 65, 4, 1, true, RGB(255, 0, 255));
-	_loading->loadFrameImage("owPlayer_move", "owPlayer_move.bmp", 120, 260, 4, 4, true, RGB(255, 0, 255));
-
-
-	// 인벤토리
-	_loading->loadFrameImage("inven", "inven.bmp", 480, 172, 4, 1, true, RGB(255, 0, 255));
+	
 
 	//NPC
 	_loading->loadFrameImage("NPC book", "NPC book.bmp", 132, 52, 4, 1, true, RGB(255, 0, 255));
@@ -246,6 +240,46 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("menu", "menu.bmp", 800, 600, true, RGB(255, 0, 255));
 	_loading->loadImage("saveSelect", "saveSelect.bmp", 800, 600, true, RGB(255, 0, 255));
 	_loading->loadImage("menuSelect", "menuSelect.bmp", 800, 600, true, RGB(255, 0, 255));
+	
+	//오픈월드 플레이어
+	_loading->loadFrameImage("owPlayer_idle", "owPlayer_idle.bmp", 120, 65, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("owPlayer_move", "owPlayer_move.bmp", 120, 260, 4, 4, true, RGB(255, 0, 255));
+	//오픈월드 플레이어 템페스트 
+	_loading->loadFrameImage("owtem_idle", "owtem_idle.bmp", 120, 65, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("owtem_move", "owtem_move.bmp", 120, 260, 4, 4, true, RGB(255, 0, 255));
+	//오픈월드 플레이어 루나
+	_loading->loadFrameImage("owluna_idle", "owluna_idle.bmp", 120, 65, 4, 1, true, RGB(255, 0, 255));
+	_loading->loadFrameImage("owluna_move", "owluna_move.bmp", 120, 260, 4, 4, true, RGB(255, 0, 255));
+
+	// 인벤토리
+	_loading->loadFrameImage("inven", "inven.bmp", 800, 300, 4, 1, true, RGB(255, 0, 255));
+
+	//아이템
+	_loading->loadImage("sword01", "sword01.bmp", 8, 26, true, RGB(255, 0, 255));
+	_loading->loadImage("sword02", "sword02.bmp", 10, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("RongSword", "RongSword.bmp", 30, 32, true, RGB(255, 0, 255));
+	_loading->loadImage("Excalivur", "Excalivur.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("Shotbow", "Shotbow.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("bow2", "bow2.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("mase", "mase.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("mase2", "mase2.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("amour", "amour.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("amour2", "amour2.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("hppotion", "hppotion.bmp", 38, 40, true, RGB(255, 0, 255));
+	_loading->loadImage("mppotion", "mppotion.bmp", 38, 40, true, RGB(255, 0, 255));
+
+	//overWorld_UI
+	_loading->loadImage("status", "status.bmp", 350, 180, true, RGB(1, 0, 0));
+	_loading->loadImage("statustem", "statustem.bmp", 350, 180, true, RGB(1, 0, 0));
+	_loading->loadImage("statusluna", "statusluna.bmp", 350, 180, true, RGB(1, 0, 0));
+	_loading->loadImage("statusmenu", "statusmenu.bmp", 200, 300, true, RGB(255, 0, 255));
+
+	//Shop
+	_loading->loadImage("Shoping", "Shoping.bmp", 304, 470, true, RGB(0, 0, 0));
+
+
+
+
 }
 
 

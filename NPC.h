@@ -61,7 +61,9 @@ public:
 	tagNPC getNpc(int index) { return _npc[index]; }
 	void setX(float x, int index) { _npc[index].x = x; }
 	void setY(float y, int index) { _npc[index].y = y; }
+	E_NPCSTATE getState() { return _npc[4].State; }
 	void setState(E_NPCSTATE state) { _npc[4].State = state; }
+	RECT shopCrashRc() { return _npc[4].crashRc; }
 
 	NPC() {}
 	~NPC() {}

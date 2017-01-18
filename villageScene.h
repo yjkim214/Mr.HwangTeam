@@ -4,6 +4,7 @@
 #include "villageMap.h"
 #include "Owplayer.h"
 #include "NPC.h"
+#include "Shop.h"
 
 class villageScene : public gameNode
 {
@@ -12,6 +13,7 @@ private:
 	Owplayer* _Owplayer;
 	NPC* _npc;
 	mainMenuScene* _mainMenu;
+	Shop* _Shop;
 
 	int time;
 

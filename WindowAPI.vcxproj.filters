@@ -36,9 +36,6 @@
     <Filter Include="GameFramework2D\체력바">
       <UniqueIdentifier>{303adae7-c0be-4aeb-9338-cdab4bd4f769}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MainGame\픽셀충돌">
-      <UniqueIdentifier>{0c01106e-4580-4bd2-a61b-c8e95bed8e7d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MainGame\저장자료">
       <UniqueIdentifier>{927b22da-bd5f-4852-8baa-ea618e6fafde}</UniqueIdentifier>
     </Filter>
@@ -77,6 +74,9 @@
     </Filter>
     <Filter Include="MainGame\배틀화면\에너미">
       <UniqueIdentifier>{4dfebbbc-9b62-4656-a4c1-03104a10a922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\저장자료\픽셀충돌">
+      <UniqueIdentifier>{0c01106e-4580-4bd2-a61b-c8e95bed8e7d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +129,7 @@
       <Filter>GameFramework2D\체력바</Filter>
     </ClInclude>
     <ClInclude Include="pixelCollision.h">
-      <Filter>MainGame\픽셀충돌</Filter>
+      <Filter>MainGame\저장자료\픽셀충돌</Filter>
     </ClInclude>
     <ClInclude Include="playerData.h">
       <Filter>MainGame\저장자료</Filter>
@@ -230,6 +230,15 @@
     <ClInclude Include="Tempest.h">
       <Filter>MainGame\배틀화면\플레이어</Filter>
     </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -275,7 +284,7 @@
       <Filter>GameFramework2D\체력바</Filter>
     </ClCompile>
     <ClCompile Include="pixelCollision.cpp">
-      <Filter>MainGame\픽셀충돌</Filter>
+      <Filter>MainGame\저장자료\픽셀충돌</Filter>
     </ClCompile>
     <ClCompile Include="playerData.cpp">
       <Filter>MainGame\저장자료</Filter>
@@ -375,6 +384,15 @@
     </ClCompile>
     <ClCompile Include="effectManager.cpp">
       <Filter>GameFramework2D\매니져</Filter>
+    </ClCompile>
+    <ClCompile Include="inventory.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
