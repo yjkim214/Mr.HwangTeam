@@ -239,6 +239,12 @@
     <ClInclude Include="Shop.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="ending.h">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClInclude>
+    <ClInclude Include="bsBoss.h">
+      <Filter>MainGame\배틀화면\에너미</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainGame.cpp">
@@ -393,6 +399,12 @@
     </ClCompile>
     <ClCompile Include="Shop.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ending.cpp">
+      <Filter>MainGame\씬화면담당</Filter>
+    </ClCompile>
+    <ClCompile Include="bsBoss.cpp">
+      <Filter>MainGame\배틀화면\에너미</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

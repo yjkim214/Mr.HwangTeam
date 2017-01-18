@@ -28,11 +28,11 @@ HRESULT Tempest::init(void)
 	_uiImage->setY(5);
 
 	_hpBar = new progressBar;
-	_hpBar->init("bsHpbar_front", "bsHpbar_back", 300, 5, 150, 135);
+	_hpBar->init("bsHpbar_front", "bsBar_front", 340, 114, 150, 135);
 	_hpBar->setGauge(_hp, _maxHp);
 	
 	_mpBar = new progressBar;
-	_mpBar->init("bsMpbar_front", "bsMpbar_back", 300, 5, 150, 135);
+	_mpBar->init("bsMpbar_front", "bsBar_front", 340, 127, 150, 135);
 	_mpBar->setGauge(_mp, _maxMp);
 	
 	_state = TEMPEST_STATE::IDLE;

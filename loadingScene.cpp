@@ -283,6 +283,9 @@ void loadingScene::loadingImage(void)
 	_loading->loadFrameImage("tempestGetaway", "tempestGetaway.bmp", 6000, 150, 40, 1, true, RGB(255, 0, 255));
 
 
+
+	//¿£µù¾À
+	_loading->loadFrameImage("ending", "ending.bmp", 3200, 600, 4, 1);
 }
 
 

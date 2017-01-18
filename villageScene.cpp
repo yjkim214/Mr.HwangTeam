@@ -62,8 +62,8 @@ void villageScene::update(void)
 
 		else
 		{
-	
-				_Shop->openShop();
+			_npc->setState(STOP);
+			_Shop->openShop();
 			
 		}
 	}
@@ -131,6 +131,14 @@ void villageScene::update(void)
 	}
 	if (_villageMap->getState() == BOSSROOM)
 	{
+		COLORREF colorU = GetPixel(_villageMap->getPixelBoss()->getMemDC(), _Owplayer->getX() + 15, _villageMap->getBgY() + _Owplayer->getProveUp());
+		int rU = GetRValue(colorU);
+		int gU = GetGValue(colorU);
+		int bU = GetBValue(colorU);
+		if (rU == 0 && gU == 255 && bU == 0)
+		{
+			//SCENEMANAGER->changeScene("배틀화면");
+		}
 		if (SOUNDMANAGER->isPlaySound("villageMusic"))
 		{
 			SOUNDMANAGER->stop("villageMusic");

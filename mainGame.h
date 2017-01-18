@@ -11,6 +11,7 @@
 #include "villageScene.h"
 #include "battleScene.h"
 #include "owDungeon.h"
+#include "ending.h"
 
 class mainGame : public gameNode
 {

@@ -26,7 +26,7 @@ void chat::AlthenaChat()
 {
 	IMAGEMANAGER->render("Althena", getMemDC(), 300, 110);
 	IMAGEMANAGER->render("AlthenaText", getMemDC(), _x + 30, _y + 30);
-
+	SetTextColor(getMemDC(), RGB(0, 0, 0));
 	if (_count >= 1)
 	{
 		TextOut(getMemDC(), _x + 100, _y + 110, "´ç", strlen("´ç"));

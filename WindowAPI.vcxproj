@@ -145,6 +145,7 @@
     <ClInclude Include="AlexNoah.h" />
     <ClInclude Include="battleScene.h" />
     <ClInclude Include="bsBarbarian.h" />
+    <ClInclude Include="bsBoss.h" />
     <ClInclude Include="bsDevilBomber.h" />
     <ClInclude Include="bsEnemy.h" />
     <ClInclude Include="bsEnemyManager.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="chat.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="effectManager.h" />
+    <ClInclude Include="ending.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemyManager.h" />
     <ClInclude Include="gameNode.h" />
@@ -200,6 +202,7 @@
     <ClCompile Include="AlexNoah.cpp" />
     <ClCompile Include="battleScene.cpp" />
     <ClCompile Include="bsBarbarian.cpp" />
+    <ClCompile Include="bsBoss.cpp" />
     <ClCompile Include="bsDevilBomber.cpp" />
     <ClCompile Include="bsEnemy.cpp" />
     <ClCompile Include="bsEnemyManager.cpp" />
@@ -211,6 +214,7 @@
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="chat.cpp" />
     <ClCompile Include="effectManager.cpp" />
+    <ClCompile Include="ending.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemyManager.cpp" />
     <ClCompile Include="gameNode.cpp" />

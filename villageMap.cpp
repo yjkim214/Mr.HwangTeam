@@ -969,62 +969,67 @@ void villageMap::menuSelect()
 
 	}
 
-	//save 내용들  :  빌리지 상태, 캐릭터 좌표, 캐릭터 레벨, 캐릭터 공격력, 캐릭터 방어력, 아이템? 
-	//세이브클릭했을때~~~~~
-	if (PtInRect(&_selectRc[0], _ptMouse))
+	if (_isMenu == true)
 	{
-		_isSaveSelect = true;
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+		//save 내용들  :  빌리지 상태, 캐릭터 좌표, 캐릭터 레벨, 캐릭터 공격력, 캐릭터 방어력, 아이템? 
+		//세이브클릭했을때~~~~~
+		if (PtInRect(&_selectRc[0], _ptMouse))
 		{
-			char state[256];
-			sprintf(state, "%d", _state);
-			INIDATA->addData("VILLAGEMAP", "villageMapState", state);
+			_isSaveSelect = true;
+			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+			{
+				char state[256];
+				sprintf(state, "%d", _state);
+				INIDATA->addData("VILLAGEMAP", "villageMapState", state);
 
-			char bgX[256];
-			sprintf(bgX, "%d", _bgX);
-			INIDATA->addData("VILLAGEMAP", "villageMapBgX", bgX);
+				char bgX[256];
+				sprintf(bgX, "%d", _bgX);
+				INIDATA->addData("VILLAGEMAP", "villageMapBgX", bgX);
 
-			char bgY[256];
-			sprintf(bgY, "%d", _bgY);
-			INIDATA->addData("VILLAGEMAP", "villageMapBgY", bgY);
+				char bgY[256];
+				sprintf(bgY, "%d", _bgY);
+				INIDATA->addData("VILLAGEMAP", "villageMapBgY", bgY);
 
-			char playerX[256];
-			sprintf(playerX, "%f", _owPlayer->getX());
-			INIDATA->addData("PLAYER", "playerX", playerX);
+				char playerX[256];
+				sprintf(playerX, "%f", _owPlayer->getX());
+				INIDATA->addData("PLAYER", "playerX", playerX);
 
-			char playerY[256];
-			sprintf(playerY, "%f", _owPlayer->getY());
-			INIDATA->addData("PLAYER", "playerY", playerY);
+				char playerY[256];
+				sprintf(playerY, "%f", _owPlayer->getY());
+				INIDATA->addData("PLAYER", "playerY", playerY);
 
-			//char playerAtt[256];
-			//sprintf(playerAtt, "%d", _owPlayer->getAtt());
-			//INIDATA->addData("PLAYER", "playerAtt", playerAtt);
-			//
-			//char playerDex[256];
-			//sprintf(playerDex, "%d", _owPlayer->getDex());
-			//INIDATA->addData("PLAYER", "playerDex", playerDex);
+				//char playerAtt[256];
+				//sprintf(playerAtt, "%d", _owPlayer->getAtt());
+				//INIDATA->addData("PLAYER", "playerAtt", playerAtt);
+				//
+				//char playerDex[256];
+				//sprintf(playerDex, "%d", _owPlayer->getDex());
+				//INIDATA->addData("PLAYER", "playerDex", playerDex);
 
-			INIDATA->saveINI("RunarSilverStorySave");
+				INIDATA->saveINI("RunarSilverStorySave");
+				//_isSave = true;
+			}
+		}
+		else
+		{
+			_isSaveSelect = false;
+		}
+
+
+		if (PtInRect(&_selectRc[1], _ptMouse))
+		{
+			_isMenuSelect = true;
+			if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
+			{
+				SCENEMANAGER->changeScene("메인메뉴");
+			}
+		}
+		else
+		{
+			_isMenuSelect = false;
 		}
 	}
-	else
-	{
-		_isSaveSelect = false;
-	}
 
-
-	if (PtInRect(&_selectRc[1], _ptMouse))
-	{
-		_isMenuSelect = true;
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
-		{
-			SCENEMANAGER->changeScene("메인메뉴");
-		}
-	}
-	else
-	{
-		_isMenuSelect = false;
-	}
 
 
 }

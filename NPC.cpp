@@ -564,25 +564,27 @@ void NPC::npcUpdate()
 	_npc[2].x = _npc[1].x + 35;
 	_npc[2].y = _npc[1].y;
 
-
-	if (_npc[4].rc.top < _npc[4].ealryY)
+	if (_npc[4].State == MOVE)
 	{
-		_npc[4].isDown = true;
-	}
+		if (_npc[4].rc.top < _npc[4].ealryY)
+		{
+			_npc[4].isDown = true;
+		}
 
-	if (_npc[4].rc.bottom > _npc[4].endY)
-	{
-		_npc[4].isDown = false;
-	}
+		if (_npc[4].rc.bottom > _npc[4].endY)
+		{
+			_npc[4].isDown = false;
+		}
 
-	if (_npc[4].isDown == true)
-	{
-		_npc[4].y++;
-	}
+		if (_npc[4].isDown == true)
+		{
+			_npc[4].y++;
+		}
 
-	if (_npc[4].isDown == false)
-	{
-		_npc[4].y--;
+		if (_npc[4].isDown == false)
+		{
+			_npc[4].y--;
+		}
 	}
 }
 

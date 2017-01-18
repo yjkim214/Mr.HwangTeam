@@ -100,6 +100,7 @@ public:
 	void setState(int state) { _state = state; }
 	image* getPixelVillage() { return _pixelVillage; }
 	bool getIsMenu() { return _isMenu; }
+	image* getPixelBoss() { return _pixelBoss; }
 	villageMap() {}
 	~villageMap() {}
 };

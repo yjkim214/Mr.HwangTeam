@@ -74,7 +74,7 @@ public:
 	float getHp() { return _hp; }
 	float getMp() { return _mp; }
 	
-	void setHp(int hp)
+	void setHp(float hp)
 	{
 		_hp = hp;
 		if (_hp >= _maxHp) { _hp = _maxHp; }

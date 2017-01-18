@@ -22,6 +22,7 @@ HRESULT mainGame::init(void)
 	SCENEMANAGER->addScene("마을", _villageScene);
 	SCENEMANAGER->addScene("배틀화면", new battleScene);
 	SCENEMANAGER->addScene("던전", new owDungeon);
+	SCENEMANAGER->addScene("엔딩", new ending);
 
 	_villageScene->setMain(_mainMenu);
 

@@ -6,6 +6,7 @@
 #include "bsFlytrapper.h"
 #include "bsBarbarian.h"
 #include "bsDevilBomber.h"
+#include "bsBoss.h"
 
 #define ENEMY_PREVPOS_X		WINSIZEX * 0.1f
 #define ENEMY_PREVPOS_Y1	WINSIZEY * 0.3f
@@ -47,6 +48,11 @@ HRESULT bsEnemyManager::init(void)
 		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y1);
 		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
 		addDevilBomber(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y3);
+	}
+
+	if (PLAYERDATA->getMonsterNumber() == 6)
+	{
+		addBoss(ENEMY_PREVPOS_X, ENEMY_PREVPOS_Y2);
 	}
 
 	return S_OK;
@@ -117,6 +123,14 @@ void bsEnemyManager::addDevilBomber(float prevX, float prevY)
 	newDevilBomber->init();
 	newDevilBomber->setPrevPos(prevX, prevY);
 	_vEnemyList.push_back(newDevilBomber);
+}
+
+void bsEnemyManager::addBoss(float prevX, float prevY)
+{
+	bsBoss* newBoss = new bsBoss;
+	newBoss->init();
+	newBoss->setPrevPos(prevX, prevY);
+	_vEnemyList.push_back(newBoss);
 }
 
 void bsEnemyManager::selectedEnemy(int select)
