@@ -34,8 +34,6 @@ HRESULT Lunar::init(void)
 
 	_state = LUNAR_STATE::IDLE;
 
-	moveX = 0;
-
 	return S_OK;
 }
 
@@ -59,7 +57,7 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::GETDMG)
+			else if(_state == LUNAR_STATE::GETDMG)
 			{
 				if(_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -90,7 +88,7 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::DEAD)
+			else if(_state == LUNAR_STATE::DEAD)
 			{
 				if(_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -124,6 +122,7 @@ void Lunar::update(void)
 						if(_delayCount >= DELAYTIME)
 						{
 							_turnState = TURNEND;
+
 							_playerImg = IMAGEMANAGER->findImage("bsLunar_idle");
 							_currentFrameX = 0;
 							_state = LUNAR_STATE::IDLE;
@@ -134,7 +133,7 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::SKILL)
+			else if(_state == LUNAR_STATE::SKILL)
 			{
 				if(_currentFrameX == 5)
 				{
@@ -160,7 +159,7 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::DEFENSE)
+			else if(_state == LUNAR_STATE::DEFENSE)
 			{
 				if(_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -181,7 +180,7 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::VICTORY)
+			else if(_state == LUNAR_STATE::VICTORY)
 			{
 				if(_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -198,21 +197,17 @@ void Lunar::update(void)
 				}
 			}
 
-			if(_state == LUNAR_STATE::GETAWAY)
+			else if(_state == LUNAR_STATE::GETAWAY)
 			{
-				moveX += 5;
-				if(_currentFrameX > _playerImg->getMaxFrameX())
+				_destX += 5;
+				if (_destX > 800)
 				{
-					if(_isDelay)
-					{
-						_delayCount++;
-						if(_delayCount >= DELAYTIME)
-						{
-							_turnState = TURNEND;
-							_isVictory = true;
-							_isDelay = false;
-						}
-					}
+					_isGetaway = true;
+				}
+
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					_currentFrameX = 0;
 				}
 			}
 		}
@@ -244,14 +239,7 @@ void Lunar::render(void)
 
 	else if(_turnState == MYTURN)
 	{
-		if(_state == LUNAR_STATE::GETAWAY)
-		{
-			_playerImg->frameRender(getMemDC(), _destX + moveX, _destY, _currentFrameX, 0);
-		}
-		else
-		{
-			_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
-		}
+		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
 
 	_uiImage->render(getMemDC());
@@ -290,7 +278,6 @@ void Lunar::myTurnSkill(int enemyIndex)
 	_playerImg = IMAGEMANAGER->findImage("bsLunar_skill");
 	_currentFrameX = 0;
 	_mp -= 4.0f;
-	_mpBar->setGauge(_mp, _maxMp);
 	_state = LUNAR_STATE::SKILL;
 	_destX = _prevX;
 	_destY = _prevY;
@@ -344,8 +331,6 @@ void Lunar::getDmg(float enemyAtt)
 		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
 		_hp -= damage;
 	}
-
-	_hpBar->setGauge(_hp, _maxHp);
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());

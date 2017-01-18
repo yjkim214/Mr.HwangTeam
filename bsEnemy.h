@@ -12,29 +12,28 @@ protected:
 	float		_maxMp;
 
 protected:
-	float	_prevX, _prevY;
-	float	_destX, _destY;
+	float		_prevX, _prevY;
+	float		_destX, _destY;
 
 protected:
-	bool	_isSelected;
-	bool	_isAttack;
-	bool	_isDead;
+	bool		_isSelected;
+	bool		_isAttack;
+	bool		_isDead;
 
 protected:
-	image*	_enemyImg;
-	int		_currentFrameX;
+	image*		_enemyImg;
+	int			_currentFrameX;
 
 protected:
-	int		_countNotMyTurn;
-	int		_countMyTurn;
-	int		_countTurnEnd;
+	int			_countNotMyTurn;
+	int			_countMyTurn;
 
 protected:
-	bool	_isDelay;
-	int		_delayCount;
+	bool		_isDelay;
+	int			_delayCount;
 
 protected:
-	TURN_STATE _turnState;
+	TURN_STATE	_turnState;
 
 public:
 	virtual HRESULT init(void) = 0;
@@ -42,12 +41,13 @@ public:
 	virtual void update(void) = 0;
 	virtual void render(void) = 0;
 
-	virtual void myTurnAttack(int playerIndex) = 0;
-	virtual void getDmg(int playerAtt) = 0;
+public:
+	virtual void myTurn(int playerIndex) = 0;
+	virtual void getDmg(float playerAtt) = 0;
+//=============================================================
+//	## enemy ## (접근자 / 설정자)
+//=============================================================
 
-	//=============================================================
-	//	## enemy ## (접근자 / 설정자)
-	//=============================================================
 public:
 	float getAtt() { return _att; }
 	float getDef() { return _def; }
@@ -69,6 +69,13 @@ public:
 public:
 	TURN_STATE getTurnState() { return _turnState; }
 
-	bsEnemy() {}
+	bsEnemy() : _prevX(0), _prevY(0), _destX(0), _destY(0),
+		_isSelected(true), _isAttack(false), _isDead(false),
+		_currentFrameX(0), _countNotMyTurn(0), _countMyTurn(0),
+		_isDelay(true), _delayCount(0),
+		_turnState(NOTMYTURN) 
+	{
+
+	}
 	~bsEnemy() {}
 };

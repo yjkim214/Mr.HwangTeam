@@ -18,26 +18,7 @@ HRESULT bsBoss::init(void)
 	_mp = BOSS_MAXMP;
 	_maxMp = BOSS_MAXMP;
 
-	_prevX = 0;
-	_prevY = 0;
-	_destX = 0;
-	_destY = 0;
-
-	_isSelected = true;
-	_isAttack = false;
-	_isDead = false;
-
 	_enemyImg = IMAGEMANAGER->findImage("bsBoss_idle");
-	_currentFrameX = 0;
-
-	_countNotMyTurn = 0;
-	_countMyTurn = 0;
-	_countTurnEnd = 0;
-
-	_isDelay = true;
-	_delayCount = 0;
-
-	_turnState = NOTMYTURN;
 
 	_state = BOSS_STATE::IDLE;
 
@@ -66,7 +47,7 @@ void bsBoss::update(void)
 				}
 			}
 
-			if (_state == BOSS_STATE::GETDMG)
+			else if (_state == BOSS_STATE::GETDMG)
 			{
 				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
@@ -99,7 +80,7 @@ void bsBoss::update(void)
 				}
 			}
 
-			if (_state == BOSS_STATE::DEAD)
+			else if (_state == BOSS_STATE::DEAD)
 			{
 				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
@@ -252,7 +233,7 @@ void bsBoss::render(void)
 	}
 }
 
-void bsBoss::myTurnAttack(int playerIndex)
+void bsBoss::myTurn(int playerIndex)
 {
 	_turnState = MYTURN;
 
@@ -329,12 +310,12 @@ void bsBoss::myTurnAttack(int playerIndex)
 	_currentFrameX = 0;
 }
 
-void bsBoss::getDmg(int playerAtt)
+void bsBoss::getDmg(float playerAtt)
 {
 	_enemyImg = IMAGEMANAGER->findImage("bsBoss_getdmg");
 	_currentFrameX = 0;
 	_state = BOSS_STATE::GETDMG;
-	_hp -= playerAtt * playerAtt / _def + 1;
+	_hp -= (int)(playerAtt * playerAtt / _def) + 1;
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight());
 	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");

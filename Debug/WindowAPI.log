@@ -1,121 +1,18 @@
-﻿  inventory.cpp
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(11): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(30): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(31): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(33): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(36): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(41): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(48): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(80): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(110): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(115): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(122): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(152): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(183): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(188): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(196): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(224): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(303): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(304): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(309): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(310): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(315): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(316): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(334): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(347): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(356): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(364): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\inventory.cpp(372): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  Owplayer.cpp
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(78): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(79): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(80): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(81): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(114): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(122): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(129): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(275): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(289): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(294): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(304): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(309): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(317): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(321): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(351): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(544): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(545): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(546): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(547): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(634): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(635): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(640): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(641): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(646): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(647): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(661): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(663): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(665): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(671): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(673): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(675): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(680): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(682): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(684): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(660): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(662): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(664): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(670): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(672): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(674): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(679): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(681): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(683): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(745): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(752): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(759): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(777): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(781): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(787): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(800): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(804): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(807): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(822): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(826): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(830): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(844): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(848): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(851): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(868): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(872): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(876): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(891): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(895): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\owplayer.cpp(898): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  villageScene.cpp
-c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(81): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(82): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(135): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(195): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\villagescene.cpp(196): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Shop.cpp
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(31): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(37): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(55): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(174): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(242): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\sga\documents\github\mr.hwangteamproject\shop.cpp(255): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  WindowAPI.vcxproj -> C:\Users\SGA\Documents\GitHub\Mr.HwangTeamProject\Debug\WindowAPI.exe
+﻿  battleScene.cpp
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(72): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(87): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(126): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(196): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(249): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(271): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(321): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(326): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(342): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(367): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(385): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(424): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(489): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(591): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(639): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dydwo\desktop\20170110_0\battlescene.cpp(647): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  WindowAPI.vcxproj -> C:\Users\dydwo\Desktop\20170110_0\Debug\WindowAPI.exe

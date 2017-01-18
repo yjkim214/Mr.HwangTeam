@@ -1,19 +1,19 @@
 #pragma once
 #include "bsEnemy.h"
 
-enum DEVILBOMBER_STATE
+enum class DEVILBOMBER_STATE
 {
-	IDLE5,
-	ATTACK5,
-	SKILL5,
-	GETDMG5,
-	DEAD5,
+	IDLE,
+	ATTACK,
+	SKILL,
+	GETDMG,
+	DEAD,
 };
 
 class bsDevilBomber : public bsEnemy
 {
 private:
-	DEVILBOMBER_STATE _state5;
+	DEVILBOMBER_STATE _state;
 
 public:
 	virtual HRESULT init(void);
@@ -21,8 +21,8 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurnAttack(int playerIndex);
-	virtual void getDmg(int playerAtt);
+	virtual void myTurn(int playerIndex);
+	virtual void getDmg(float playerAtt);
 
 	bsDevilBomber() {}
 	~bsDevilBomber() {}

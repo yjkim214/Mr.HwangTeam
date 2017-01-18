@@ -1,18 +1,18 @@
 #pragma once
 #include "bsEnemy.h"
 
-enum FLUFFYBUG_STATE
+enum class FLUFFYBUG_STATE
 {
-	IDLE2,
-	ATTACK2,
-	GETDMG2,
-	DEAD2,
+	IDLE,
+	ATTACK,
+	GETDMG,
+	DEAD,
 };
 
 class bsFluffyBug : public bsEnemy
 {
 private:
-	FLUFFYBUG_STATE _state2;
+	FLUFFYBUG_STATE _state;
 
 public:
 	virtual HRESULT init(void);
@@ -20,8 +20,8 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurnAttack(int playerIndex);
-	virtual void getDmg(int playerAtt);
+	virtual void myTurn(int playerIndex);
+	virtual void getDmg(float playerAtt);
 
 	bsFluffyBug() {}
 	~bsFluffyBug() {}

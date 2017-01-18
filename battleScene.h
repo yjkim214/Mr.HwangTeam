@@ -61,7 +61,7 @@ private:
 
 private:
 	image* _background;
-	int time;
+
 public:
 	HRESULT init(void);
 	void release(void);

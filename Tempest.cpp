@@ -37,8 +37,6 @@ HRESULT Tempest::init(void)
 	
 	_state = TEMPEST_STATE::IDLE;
 
-	moveX = 0;
-
 	return S_OK;
 }
 
@@ -65,7 +63,7 @@ void Tempest::update(void)
 				}
 			}
 
-			if (_state == TEMPEST_STATE::GETDMG)
+			else if (_state == TEMPEST_STATE::GETDMG)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -96,7 +94,7 @@ void Tempest::update(void)
 				}
 			}
 
-			if (_state == TEMPEST_STATE::DEAD)
+			else if (_state == TEMPEST_STATE::DEAD)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -143,7 +141,7 @@ void Tempest::update(void)
 				}
 			}
 
-			if (_state == TEMPEST_STATE::SKILL)
+			else if (_state == TEMPEST_STATE::SKILL)
 			{
 				if (_currentFrameX == 7)
 				{
@@ -174,7 +172,7 @@ void Tempest::update(void)
 				}
 			}
 
-			if (_state == TEMPEST_STATE::DEFENSE)
+			else if (_state == TEMPEST_STATE::DEFENSE)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -195,7 +193,7 @@ void Tempest::update(void)
 				}
 			}
 
-			if (_state == TEMPEST_STATE::VICTORY)
+			else if (_state == TEMPEST_STATE::VICTORY)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -212,21 +210,17 @@ void Tempest::update(void)
 				}
 			}
 
-			if(_state == TEMPEST_STATE::GETAWAY)
+			else if(_state == TEMPEST_STATE::GETAWAY)
 			{
-				moveX += 5;
-				if(_currentFrameX > _playerImg->getMaxFrameX())
+				_destX += 5;
+				if (_destX > 800)
 				{
-					if(_isDelay)
-					{
-						_delayCount++;
-						if(_delayCount >= DELAYTIME)
-						{
-							_turnState = TURNEND;
-							_isVictory = true;
-							_isDelay = false;
-						}
-					}
+					_isGetaway = true;
+				}
+
+				if (_currentFrameX > _playerImg->getMaxFrameX())
+				{
+					_currentFrameX = 0;
 				}
 			}
 		}
@@ -260,14 +254,7 @@ void Tempest::render(void)
 
 	else if (_turnState == MYTURN)
 	{
-		if(_state == TEMPEST_STATE::GETAWAY)
-		{
-			_playerImg->frameRender(getMemDC(), _destX + moveX, _destY, _currentFrameX, 0);
-		}
-		else
-		{
-			_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
-		}
+		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
 
 	_bullet->render();

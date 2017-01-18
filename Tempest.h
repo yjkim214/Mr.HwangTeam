@@ -17,7 +17,7 @@ class Tempest : public bsPlayer
 {
 private:
 	TEMPEST_STATE _state;
-	int moveX;
+
 public:
 	virtual HRESULT init(void);
 	virtual void release(void);

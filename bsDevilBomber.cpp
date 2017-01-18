@@ -1,44 +1,26 @@
 #include "stdafx.h"
 #include "bsDevilBomber.h"
 
-#define DevilBomber_ATT		6
-#define DevilBomber_DEF		6
-#define DevilBomber_MAXHP		50
-#define DevilBomber_MAXMP		10
-#define DevilBomber_ANI_COUNT	10
+#define DEVILBOMBER_ATT			6
+#define DEVILBOMBER_DEF			6
+#define DEVILBOMBER_MAXHP		50
+#define DEVILBOMBER_MAXMP		10
+#define DEVILBOMBER_ANICOUNT	10
+#define DEVILBOMBER_DELAYTIME	5
 
 HRESULT bsDevilBomber::init(void)
 {
-	_att = DevilBomber_ATT;
-	_def = DevilBomber_DEF;
+	_att = DEVILBOMBER_ATT;
+	_def = DEVILBOMBER_DEF;
 
-	_hp = DevilBomber_MAXHP;
-	_maxHp = DevilBomber_MAXHP;
-	_mp = DevilBomber_MAXMP;
-	_maxMp = DevilBomber_MAXMP;
-
-	_prevX = 0;
-	_prevY = 0;
-	_destX = 0;
-	_destY = 0;
-
-	_isSelected = true;
-	_isAttack = false;
-	_isDead = false;
+	_hp = DEVILBOMBER_MAXHP;
+	_maxHp = DEVILBOMBER_MAXHP;
+	_mp = DEVILBOMBER_MAXMP;
+	_maxMp = DEVILBOMBER_MAXMP;
 
 	_enemyImg = IMAGEMANAGER->findImage("devilBomber_idle");
-	_currentFrameX = 0;
 
-	_countNotMyTurn = 0;
-	_countMyTurn = 0;
-	_countTurnEnd = 0;
-
-	_isDelay = true;
-	_delayCount = 0;
-
-	_turnState = NOTMYTURN;
-
-	_state5 = IDLE5;
+	_state = DEVILBOMBER_STATE::IDLE;
 
 	return S_OK;
 }
@@ -52,11 +34,10 @@ void bsDevilBomber::update(void)
 	if(_turnState == NOTMYTURN)
 	{
 		_countNotMyTurn++;
-		if(_countNotMyTurn % DevilBomber_ANI_COUNT == 0)
+		if(_countNotMyTurn % DEVILBOMBER_ANICOUNT == 0)
 		{
 			_currentFrameX++;
-
-			if(_state5 == IDLE5)
+			if(_state == DEVILBOMBER_STATE::IDLE)
 			{
 				//애니메이션 무한정 반복
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
@@ -65,14 +46,14 @@ void bsDevilBomber::update(void)
 				}
 			}
 
-			if(_state5 == GETDMG5)
+			else if(_state == DEVILBOMBER_STATE::GETDMG)
 			{
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= DEVILBOMBER_DELAYTIME)
 						{
 							_turnState = TURNEND;
 
@@ -82,25 +63,36 @@ void bsDevilBomber::update(void)
 								_enemyImg = IMAGEMANAGER->findImage("devilBomber_dead");
 								_currentFrameX = 0;
 								//hp가 바닥이면 죽은 상태로 바꿈
-								_state5 = DEAD5;
+								_state = DEVILBOMBER_STATE::DEAD;
 							}
+							
 							else
 							{
 								_enemyImg = IMAGEMANAGER->findImage("devilBomber_idle");
 								_currentFrameX = 0;
-								_state5 = IDLE5;
+								_state = DEVILBOMBER_STATE::IDLE;
 							}
+
 							_isDelay = false;
 						}
 					}
 				}
 			}
 
-			if(_state5 == DEAD5)
+			else if(_state == DEVILBOMBER_STATE::DEAD)
 			{
-				if(_currentFrameX > _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					_isDead = true;
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= DEVILBOMBER_DELAYTIME)
+						{
+							_turnState = TURNEND;
+							_isDead = true;
+							_isDelay = false;
+						}
+					}
 				}
 			}
 
@@ -111,29 +103,30 @@ void bsDevilBomber::update(void)
 	else if(_turnState == MYTURN)
 	{
 		_countMyTurn++;
-		if(_countMyTurn % DevilBomber_ANI_COUNT == 0)
+		if(_countMyTurn % DEVILBOMBER_ANICOUNT == 0)
 		{
 			_currentFrameX++;
-
-			if(_state5 == ATTACK5)
+			if(_state == DEVILBOMBER_STATE::ATTACK)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
 				if(_currentFrameX == 3)
 				{
 					_isAttack = true;
 				}
+
 				//다시 대기 상태로 돌입
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= DEVILBOMBER_DELAYTIME)
 						{
 							_turnState = TURNEND;
+
 							_enemyImg = IMAGEMANAGER->findImage("devilBomber_idle");
 							_currentFrameX = 0;
-							_state5 = IDLE5;
+							_state = DEVILBOMBER_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -141,25 +134,27 @@ void bsDevilBomber::update(void)
 				}
 			}
 
-			if(_state5 == SKILL5)
+			else if(_state == DEVILBOMBER_STATE::SKILL)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
 				if(_currentFrameX == 8 || _currentFrameX == 9 || _currentFrameX == 10)
 				{
 					_isAttack = true;
 				}
+
 				//다시 대기 상태로 돌입
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= DEVILBOMBER_DELAYTIME)
 						{
 							_turnState = TURNEND;
+
 							_enemyImg = IMAGEMANAGER->findImage("devilBomber_idle");
 							_currentFrameX = 0;
-							_state5 = IDLE5;
+							_state = DEVILBOMBER_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -204,19 +199,20 @@ void bsDevilBomber::render(void)
 	}
 }
 
-void bsDevilBomber::myTurnAttack(int playerIndex)
+void bsDevilBomber::myTurn(int playerIndex)
 {
-	int rndSkill = RND->getInt(3);
 	_turnState = MYTURN;
-	if(rndSkill == 1)
+	int rndSkill = RND->getInt(3);	
+	if(rndSkill == 0)
 	{
 		_enemyImg = IMAGEMANAGER->findImage("devilBomber_skill");
-		_state5 = SKILL5;
+		_state = DEVILBOMBER_STATE::SKILL;
 	}
+	
 	else
 	{
 		_enemyImg = IMAGEMANAGER->findImage("devilBomber_attack");
-		_state5 = ATTACK5;
+		_state = DEVILBOMBER_STATE::ATTACK;
 	}
 
 	_currentFrameX = 0;
@@ -239,11 +235,13 @@ void bsDevilBomber::myTurnAttack(int playerIndex)
 	}
 }
 
-void bsDevilBomber::getDmg(int playerAtt)
+void bsDevilBomber::getDmg(float playerAtt)
 {
 	_enemyImg = IMAGEMANAGER->findImage("devilBomber_getdmg");
 	_currentFrameX = 0;
-	_state5 = GETDMG5;
-	_hp -= playerAtt * playerAtt / _def + 1;
-	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight()), "bsEffect_attack");
+	_state = DEVILBOMBER_STATE::GETDMG;
+	_hp -= (int)(playerAtt * playerAtt / _def) + 1;
+	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65);
+	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight());
+	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
 }

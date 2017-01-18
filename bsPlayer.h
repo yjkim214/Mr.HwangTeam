@@ -35,6 +35,7 @@ protected:
 	bool	_isHeal;
 	bool	_isDefense;
 	bool	_isVictory;
+	bool	_isGetaway;
 	bool	_isDead;
 
 protected:
@@ -91,6 +92,7 @@ public:
 	void setIsHeal(bool isHeal) { _isHeal = isHeal; }
 	void setIsDefense(bool isDefense) { _isDefense = isDefense; }
 	bool getIsVictory() { return _isVictory; }
+	bool getIsGetaway() { return _isGetaway; }
 	bool getIsDead() { return _isDead; }
 
 public:
@@ -101,7 +103,7 @@ public:
 		_currentFrameX(0),
 		_countNotMyTurn(0), _countMyTurn(0), 
 		_isDelay(true), _delayCount(0), 
-		_isAttack(false), _isHeal(false), _isDefense(false), _isVictory(false), _isDead(false), 
+		_isAttack(false), _isHeal(false), _isDefense(false), _isVictory(false), _isGetaway(false), _isDead(false), 
 		_turnState(NOTMYTURN), 
 		_bullet(NULL)
 	{

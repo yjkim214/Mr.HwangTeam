@@ -3,12 +3,12 @@
 
 enum class ALEXNOAH_STATE
 {
-	IDLE,
-	ATTACK,
-	SKILL,
+	IDLE, 
+	ATTACK, 
+	SKILL, 
 	DEFENSE, 
-	GETDMG,
-	DEAD,
+	GETDMG, 
+	DEAD, 
 	VICTORY, 
 	GETAWAY, 
 };
@@ -17,7 +17,6 @@ class AlexNoah : public bsPlayer
 {
 private:
 	ALEXNOAH_STATE _state;
-	int moveX;
 public:
 	virtual HRESULT init(void);
 	virtual void release(void);

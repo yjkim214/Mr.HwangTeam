@@ -1,44 +1,26 @@
 #include "stdafx.h"
 #include "bsFlytrapper.h"
 
-#define Flytrapper_ATT		4
-#define Flytrapper_DEF		4
-#define Flytrapper_MAXHP		50
-#define Flytrapper_MAXMP		10
-#define Flytrapper_ANI_COUNT	10
+#define FLYTRAPPER_ATT			4
+#define FLYTRAPPER_DEF			4
+#define FLYTRAPPER_MAXHP		50
+#define FLYTRAPPER_MAXMP		10
+#define FLYTRAPPER_ANICOUNT		10
+#define FLYTRAPPER_DELAYTIME	5
 
 HRESULT bsFlytrapper::init(void)
 {
-	_att = Flytrapper_ATT;
-	_def = Flytrapper_DEF;
+	_att = FLYTRAPPER_ATT;
+	_def = FLYTRAPPER_DEF;
 
-	_hp = Flytrapper_MAXHP;
-	_maxHp = Flytrapper_MAXHP;
-	_mp = Flytrapper_MAXMP;
-	_maxMp = Flytrapper_MAXMP;
-
-	_prevX = 0;
-	_prevY = 0;
-	_destX = 0;
-	_destY = 0;
-
-	_isSelected = true;
-	_isAttack = false;
-	_isDead = false;
+	_hp = FLYTRAPPER_MAXHP;
+	_maxHp = FLYTRAPPER_MAXHP;
+	_mp = FLYTRAPPER_MAXMP;
+	_maxMp = FLYTRAPPER_MAXMP;
 
 	_enemyImg = IMAGEMANAGER->findImage("flytrapper_idle");
-	_currentFrameX = 0;
 
-	_countNotMyTurn = 0;
-	_countMyTurn = 0;
-	_countTurnEnd = 0;
-
-	_isDelay = true;
-	_delayCount = 0;
-
-	_turnState = NOTMYTURN;
-
-	_state3 = IDLE3;
+	_state = FLYTRAPPER_STATE::IDLE;
 
 	return S_OK;
 }
@@ -52,11 +34,11 @@ void bsFlytrapper::update(void)
 	if(_turnState == NOTMYTURN)
 	{
 		_countNotMyTurn++;
-		if(_countNotMyTurn % Flytrapper_ANI_COUNT == 0)
+		if(_countNotMyTurn % FLYTRAPPER_ANICOUNT == 0)
 		{
 			_currentFrameX++;
 
-			if(_state3 == IDLE3)
+			if(_state == FLYTRAPPER_STATE::IDLE)
 			{
 				//애니메이션 무한정 반복
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
@@ -65,14 +47,14 @@ void bsFlytrapper::update(void)
 				}
 			}
 
-			if(_state3 == GETDMG3)
+			else if(_state == FLYTRAPPER_STATE::GETDMG)
 			{
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= FLYTRAPPER_DELAYTIME)
 						{
 							_turnState = TURNEND;
 
@@ -82,25 +64,36 @@ void bsFlytrapper::update(void)
 								_enemyImg = IMAGEMANAGER->findImage("flytrapper_dead");
 								_currentFrameX = 0;
 								//hp가 바닥이면 죽은 상태로 바꿈
-								_state3 = DEAD3;
+								_state = FLYTRAPPER_STATE::DEAD;
 							}
+
 							else
 							{
 								_enemyImg = IMAGEMANAGER->findImage("flytrapper_idle");
 								_currentFrameX = 0;
-								_state3 = IDLE3;
+								_state = FLYTRAPPER_STATE::IDLE;
 							}
+							
 							_isDelay = false;
 						}
 					}
 				}
 			}
 
-			if(_state3 == DEAD3)
+			else if(_state == FLYTRAPPER_STATE::DEAD)
 			{
-				if(_currentFrameX > _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					_isDead = true;
+					if (_isDelay)
+					{
+						_delayCount++;
+						if (_delayCount >= FLYTRAPPER_DELAYTIME)
+						{
+							_turnState = TURNEND;
+							_isDead = true;
+							_isDelay = false;
+						}
+					}
 				}
 			}
 
@@ -111,10 +104,10 @@ void bsFlytrapper::update(void)
 	else if(_turnState == MYTURN)
 	{
 		_countMyTurn++;
-		if(_countMyTurn % Flytrapper_ANI_COUNT == 0)
+		if(_countMyTurn % FLYTRAPPER_ANICOUNT == 0)
 		{
 			_currentFrameX++;
-			if(_state3 == ATTACK3)
+			if(_state == FLYTRAPPER_STATE::ATTACK)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
 				if(_currentFrameX == 4)
@@ -127,12 +120,13 @@ void bsFlytrapper::update(void)
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= FLYTRAPPER_DELAYTIME)
 						{
 							_turnState = TURNEND;
+
 							_enemyImg = IMAGEMANAGER->findImage("flytrapper_idle");
 							_currentFrameX = 0;
-							_state3 = IDLE3;
+							_state = FLYTRAPPER_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -140,25 +134,27 @@ void bsFlytrapper::update(void)
 				}
 			}
 
-			if(_state3 == SKILL3)
+			else if(_state == FLYTRAPPER_STATE::SKILL)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
 				if(_currentFrameX == 6 || _currentFrameX == 7 || _currentFrameX == 8)
 				{
 					_isAttack = true;
 				}
+
 				//다시 대기 상태로 돌입
 				if(_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					if(_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= 5)
+						if(_delayCount >= FLYTRAPPER_DELAYTIME)
 						{
 							_turnState = TURNEND;
+
 							_enemyImg = IMAGEMANAGER->findImage("flytrapper_idle");
 							_currentFrameX = 0;
-							_state3 = IDLE3;
+							_state = FLYTRAPPER_STATE::IDLE;
 
 							_isDelay = false;
 						}
@@ -203,20 +199,21 @@ void bsFlytrapper::render(void)
 }
 
 
-void bsFlytrapper::myTurnAttack(int playerIndex)
+void bsFlytrapper::myTurn(int playerIndex)
 {
-	int rndSkill = RND->getInt(3);
 	_turnState = MYTURN;
-	if(rndSkill == 1)
+	int rndSkill = RND->getInt(3);
+	if(rndSkill == 0)
 	{
 		_enemyImg = IMAGEMANAGER->findImage("flytrapper_skill");
-		_state3 = SKILL3;
+		_state = FLYTRAPPER_STATE::SKILL;
 	}
 	else
 	{
 		_enemyImg = IMAGEMANAGER->findImage("flytrapper_attack");
-		_state3 = ATTACK3;
+		_state = FLYTRAPPER_STATE::ATTACK;
 	}
+
 	_currentFrameX = 0;
 	//어택시 에너미 위치 잡아주는 코드
 	_destX = WINSIZEX * 0.6f;
@@ -236,11 +233,13 @@ void bsFlytrapper::myTurnAttack(int playerIndex)
 	}
 }
 
-void bsFlytrapper::getDmg(int playerAtt)
+void bsFlytrapper::getDmg(float playerAtt)
 {
 	_enemyImg = IMAGEMANAGER->findImage("flytrapper_getdmg");
 	_currentFrameX = 0;
-	_state3 = GETDMG3;
-	_hp -= playerAtt * playerAtt / _def + 1;
-	EFFECTMANAGER->addEffect(RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65), RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight()), "bsEffect_attack");
+	_state = FLYTRAPPER_STATE::GETDMG;
+	_hp -= (int)(playerAtt * playerAtt / _def) + 1;
+	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _enemyImg->getFrameWidth() - 65);
+	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _enemyImg->getFrameHeight());
+	EFFECTMANAGER->addEffect(rndX, rndY, "bsEffect_attack");
 }

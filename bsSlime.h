@@ -1,7 +1,7 @@
 #pragma once
 #include "bsEnemy.h"
 
-enum SLIME_STATE
+enum class SLIME_STATE
 {
 	IDLE,
 	ATTACK,
@@ -20,8 +20,8 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurnAttack(int playerIndex);
-	virtual void getDmg(int playerAtt);
+	virtual void myTurn(int playerIndex);
+	virtual void getDmg(float playerAtt);
 
 	bsSlime() {}
 	~bsSlime() {}

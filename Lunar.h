@@ -17,7 +17,7 @@ class Lunar : public bsPlayer
 {
 private:
 	LUNAR_STATE _state;
-	int moveX;
+
 public:
 	virtual HRESULT init(void);
 	virtual void release(void);

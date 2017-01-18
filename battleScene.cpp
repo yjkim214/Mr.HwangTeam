@@ -53,8 +53,6 @@ HRESULT battleScene::init(void)
 
 	SOUNDMANAGER->play("battleMusic");
 
-	time = 0;
-
 	return S_OK;
 }
 
@@ -124,27 +122,26 @@ void battleScene::update(void)
 
 		SOUNDMANAGER->stop("battleMusic");
 		
-		bool isEnd = false;
-		
+		bool isEnd = true;
 		for (int i = 0; i < _pm->getVPlayerList().size() - 1; i++)
 		{
 			if (!_pm->getVPlayerList()[i]->getIsDead())
 			{
-				if (i == 0)
-				{
-					isEnd = _pm->getVPlayerList()[i]->getIsVictory();
-				}
-
-				else
-				{
-					isEnd = isEnd && _pm->getVPlayerList()[i]->getIsVictory();
-				}
+				isEnd = isEnd && _pm->getVPlayerList()[i]->getIsVictory();
 			}
 		}
 
 		if (isEnd)
 		{
-			SCENEMANAGER->changeScene("던전");
+			if (PLAYERDATA->getMonsterNumber() != 6)
+			{
+				SCENEMANAGER->changeScene("던전");
+			}
+
+			else
+			{
+				SCENEMANAGER->changeScene("엔딩");
+			}
 		}
 	}
 
@@ -178,7 +175,15 @@ void battleScene::update(void)
 
 		SOUNDMANAGER->stop("battleMusic");
 
-		SCENEMANAGER->changeScene("던전");
+		if (PLAYERDATA->getMonsterNumber() != 6)
+		{
+			SCENEMANAGER->changeScene("던전");
+		}
+
+		else
+		{
+			SCENEMANAGER->changeScene("마을");
+		}
 	}
 
 	else
@@ -187,6 +192,7 @@ void battleScene::update(void)
 		{
 			if (_playerTurnState == PLAYERTURNSTATE::START)
 			{
+				//방어력 업을 전부 해제한다
 				for (int i = 0; i < _pm->getVPlayerList().size(); i++)
 				{
 					if (!_pm->getVPlayerList()[i]->getIsDead())
@@ -194,6 +200,7 @@ void battleScene::update(void)
 						_pm->getVPlayerList()[i]->setIsDefense(false);
 					}
 				}
+				//업데이트 상태로 넘겨준다
 				_playerTurnState = PLAYERTURNSTATE::UPDATE;
 			}
 
@@ -375,8 +382,6 @@ void battleScene::update(void)
 
 				if(_userSelect == GETAWAY)
 				{
-					time++;
-
 					for(int i = 0; i < _pm->getVPlayerList().size(); i++)
 					{
 						if(!_pm->getVPlayerList()[i]->getIsDead())
@@ -415,9 +420,26 @@ void battleScene::update(void)
 
 					SOUNDMANAGER->stop("battleMusic");
 
-					if(time>200)
+					bool isGetaway = true;
+					for (int i = 0; i < _pm->getVPlayerList().size(); i++)
 					{
-						SCENEMANAGER->changeScene("던전");
+						if (!_pm->getVPlayerList()[i]->getIsDead())
+						{
+							isGetaway = isGetaway && _pm->getVPlayerList()[i]->getIsGetaway();
+						}
+					}
+
+					if(isGetaway)
+					{
+						if (PLAYERDATA->getMonsterNumber() != 6)
+						{
+							SCENEMANAGER->changeScene("던전");
+						}
+
+						else
+						{
+							SCENEMANAGER->changeScene("마을");
+						}
 					}
 				}
 			}
@@ -447,7 +469,7 @@ void battleScene::update(void)
 						}
 					}
 
-					_em->getVEnemyList()[_currentEnemyIndex]->myTurnAttack(_playerSelected);
+					_em->getVEnemyList()[_currentEnemyIndex]->myTurn(_playerSelected);
 				}
 
 				else if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == MYTURN)
@@ -697,7 +719,6 @@ void battleScene::setUiImage()
 		_uiDefense = IMAGEMANAGER->findImage("bsUi_Defense");
 		_uiDefense->setCenter(690, 50);
 	}
-
 
 	if (_actionSelected == 3)
 	{

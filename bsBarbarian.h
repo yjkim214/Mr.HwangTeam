@@ -1,18 +1,18 @@
 #pragma once
 #include "bsEnemy.h"
 
-enum BARBARIAN_STATE
+enum class BARBARIAN_STATE
 {
-	IDLE4,
-	ATTACK4,
-	GETDMG4,
-	DEAD4,
+	IDLE,
+	ATTACK,
+	GETDMG,
+	DEAD,
 };
 
 class bsBarbarian : public bsEnemy
 {
 private:
-	BARBARIAN_STATE _state4;
+	BARBARIAN_STATE _state;
 
 public:
 	virtual HRESULT init(void);
@@ -20,8 +20,8 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void myTurnAttack(int playerIndex);
-	virtual void getDmg(int playerAtt);
+	virtual void myTurn(int playerIndex);
+	virtual void getDmg(float playerAtt);
 
 	bsBarbarian() {}
 	~bsBarbarian() {}

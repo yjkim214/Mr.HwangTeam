@@ -34,8 +34,6 @@ HRESULT AlexNoah::init(void)
 
 	_state = ALEXNOAH_STATE::IDLE;
 
-	moveX = 0;
-
 	return S_OK;
 }
 
@@ -60,7 +58,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == ALEXNOAH_STATE::GETDMG)
+			else if (_state == ALEXNOAH_STATE::GETDMG)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -91,7 +89,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == ALEXNOAH_STATE::DEAD)
+			else if (_state == ALEXNOAH_STATE::DEAD)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -136,7 +134,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == ALEXNOAH_STATE::SKILL)
+			else if (_state == ALEXNOAH_STATE::SKILL)
 			{
 				if (_currentFrameX == 2 || _currentFrameX == 9 || _currentFrameX == 15 || _currentFrameX == 19 || _currentFrameX == 20 || _currentFrameX == 21 || _currentFrameX == 22 || _currentFrameX == 23 || _currentFrameX == 24)
 				{
@@ -162,7 +160,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == ALEXNOAH_STATE::DEFENSE)
+			else if (_state == ALEXNOAH_STATE::DEFENSE)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -183,7 +181,7 @@ void AlexNoah::update(void)
 				}
 			}
 
-			if (_state == ALEXNOAH_STATE::VICTORY)
+			else if (_state == ALEXNOAH_STATE::VICTORY)
 			{
 				if (_currentFrameX > _playerImg->getMaxFrameX())
 				{
@@ -202,19 +200,15 @@ void AlexNoah::update(void)
 
 			if(_state == ALEXNOAH_STATE::GETAWAY)
 			{
-				moveX += 5;
+				_destX += 5;
+				if (_destX > 800)
+				{
+					_isGetaway = true;
+				}
+
 				if(_currentFrameX > _playerImg->getMaxFrameX())
 				{
-					if(_isDelay)
-					{
-						_delayCount++;
-						if(_delayCount >= DELAYTIME)
-						{
-							_turnState = TURNEND;
-							_isVictory = true;
-							_isDelay = false;
-						}
-					}
+					_currentFrameX = 0;
 				}
 			}
 		}
@@ -246,14 +240,7 @@ void AlexNoah::render(void)
 
 	else if (_turnState == MYTURN)
 	{
-		if(_state == ALEXNOAH_STATE::GETAWAY)
-		{
-			_playerImg->frameRender(getMemDC(), _destX + moveX, _destY, _currentFrameX, 0);
-		}
-		else
-		{
-			_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
-		}
+		_playerImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 	}
 
 	_uiImage->render(getMemDC());
@@ -292,7 +279,6 @@ void AlexNoah::myTurnSkill(int enemyIndex)
 	_playerImg = IMAGEMANAGER->findImage("bsAlex_skill@2");
 	_currentFrameX = 0;
 	_mp -= 4.0f;
-	_mpBar->setGauge(_mp, _maxMp);
 	_state = ALEXNOAH_STATE::SKILL;
 	_destX = 30;
 	if (enemyIndex == 0)
@@ -359,8 +345,6 @@ void AlexNoah::getDmg(float enemyAtt)
 		int damage = (int)(enemyAtt * enemyAtt / (_def * 2)) + 1.0f;
 		_hp -= damage;
 	}
-
-	_hpBar->setGauge(_hp, _maxHp);
 
 	int rndX = RND->getFromIntTo(_prevX + 30, _prevX + _playerImg->getFrameWidth() - 65);
 	int rndY = RND->getFromIntTo(_prevY + 75, _prevY + _playerImg->getFrameHeight());
