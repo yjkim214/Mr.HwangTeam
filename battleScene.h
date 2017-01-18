@@ -6,10 +6,9 @@ class bsEnemyManager;
 
 enum BS_STATE
 {
-	FADEIN, 
+	START, 
 	PLAYERTURN, 
-	ENEMYTURN, 
-	FADEOUT, 
+	ENEMYTURN,
 };
 
 enum USER_SELECT

@@ -241,6 +241,7 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("bsBackground01", "bsBackground01.bmp", 800, 600);
 	_loading->loadImage("bsBackground02", "bsBackground02.bmp", 800, 600);
 	_loading->loadImage("bsBackground_boss", "bsBackground_boss.bmp", 800, 600);
+	_loading->loadImage("background_black", "background_black.bmp", 800, 600);
 	
 	//´ëÈ­Ã¢ UI
 	_loading->loadImage("chat", "chat.bmp", 600, 200, true, RGB(255, 0, 255));

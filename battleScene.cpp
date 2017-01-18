@@ -17,7 +17,7 @@ HRESULT battleScene::init(void)
 	_currentEnemyIndex = 0;
 
 	//먼저 에너미 턴부터
-	_bsState = PLAYERTURN;
+	_bsState = START;
 	_userSelect = INIT;
 	_enemyTurnState = ENEMYTURNSTATE::START;
 	_playerTurnState = PLAYERTURNSTATE::START;
@@ -51,6 +51,9 @@ HRESULT battleScene::init(void)
 		_background = IMAGEMANAGER->findImage("bsBackground_boss");
 	}
 
+	_fadeImg = IMAGEMANAGER->findImage("background_black");
+	_alpha = 255;
+
 	SOUNDMANAGER->play("battleMusic");
 
 	return S_OK;
@@ -67,6 +70,19 @@ void battleScene::release(void)
 
 void battleScene::update(void)
 {
+	if (_bsState == START)
+	{
+		if (_alpha > 0)
+		{
+			_alpha -= 5;
+		}
+
+		else
+		{
+			_bsState = PLAYERTURN;
+		}
+	}
+
 	//플레이어가 이겼을시
 	bool isPlayerWin = false;
 	for (int i = 0; i < _em->getVEnemyList().size(); i++)
@@ -133,19 +149,27 @@ void battleScene::update(void)
 
 		if (isEnd)
 		{
-			for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+			if (_alpha < 255)
 			{
-				_pm->getVPlayerList()[i]->saveData();
+				_alpha += 5;
 			}
-
-			if (PLAYERDATA->getMonsterNumber() != 6)
-			{
-				SCENEMANAGER->changeScene("던전");
-			}
-
+			
 			else
 			{
-				SCENEMANAGER->changeScene("엔딩");
+				for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+				{
+					_pm->getVPlayerList()[i]->saveData();
+				}
+
+				if (PLAYERDATA->getMonsterNumber() != 6)
+				{
+					SCENEMANAGER->changeScene("던전");
+				}
+
+				else
+				{
+					SCENEMANAGER->changeScene("엔딩");
+				}
 			}
 		}
 	}
@@ -178,16 +202,24 @@ void battleScene::update(void)
 			PLAYERDATA->setDevilBomberDie(true);
 		}
 
-		SOUNDMANAGER->stop("battleMusic");
-
-		if (PLAYERDATA->getMonsterNumber() != 6)
+		if (_alpha < 255)
 		{
-			SCENEMANAGER->changeScene("던전");
+			_alpha += 5;
 		}
 
 		else
 		{
-			SCENEMANAGER->changeScene("마을");
+			SOUNDMANAGER->stop("battleMusic");
+
+			if (PLAYERDATA->getMonsterNumber() != 6)
+			{
+				SCENEMANAGER->changeScene("던전");
+			}
+
+			else
+			{
+				SCENEMANAGER->changeScene("마을");
+			}
 		}
 	}
 
@@ -528,6 +560,8 @@ void battleScene::render(void)
 	_uiSkill->render(getMemDC());
 	_uiDefense->render(getMemDC());
 	_uiGetaway->render(getMemDC());
+
+	_fadeImg->alphaRender(getMemDC(), 0, 0, _alpha);
 }
 
 void battleScene::setPlayerIndex()
