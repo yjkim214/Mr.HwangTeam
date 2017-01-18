@@ -40,6 +40,36 @@ HRESULT playerData::init(void)
 
 	_npcX = 750;
 	_npcY = 600;
+	_money = 3000;
+	//
+	_Alexatt = 5;
+	_Alexdef = 10;
+	_Alexcurrenthp = 80;
+	_AlexMaxhp = 100;
+	_Alexcurrentmp = 100;
+	_AlexMaxmp = 100;
+	_AlexWeaponitem = NULL;
+	_AlexEquipitem = NULL;
+
+	//temp hp
+	_Tematt = 8;
+	_Temdef = 5;
+	_Temcurrenthp = 100;
+	_Temcurrentmp = 100;
+	_TemMaxhp = 100;
+	_TemMaxmp = 100;
+	_TemWeaponitem = NULL;
+	_TemEquipitem = NULL;
+
+	// luna hp
+	_Lunaatt = 8;
+	_Lunadef = 5;
+	_Lunacurrenthp = 100;
+	_Lunacurrentmp = 100;
+	_LunaMaxhp = 100;
+	_LunaMaxmp = 100;
+	_LunaWeaponitem = NULL;
+	_LunaEquipitem = NULL;
 
 
 	return S_OK;

@@ -248,6 +248,8 @@ public:
 	void OpenMenu();
 	void MenuUpdate();
 	void Font();
+
+	void saveData();
 	Owplayer() {}
 	~Owplayer() {}
 };

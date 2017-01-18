@@ -8,10 +8,8 @@
 
 HRESULT Owplayer::init(void)
 {
-
 	_inventory = new inventory;
 	_inventory->init();
-
 
 	_hp = new progressBar;
 	_hp->init("uihpbarfront", "uihpbarback", 180, 470, 145, 23);
@@ -28,37 +26,37 @@ HRESULT Owplayer::init(void)
 	_statusmenuimg->setY(WINSIZEY / 2);
 
 	//alex hp 
-	_AlexcurrentHp = 80;
-	_AlexMaxHp = 100;
+	_AlexcurrentHp = PLAYERDATA->getAlexcurrenthp();
+	_AlexMaxHp = PLAYERDATA->getAlexMaxhp();
 
-	_AlexcurrentMp = 100;
-	_AlexMaxMp = 100;
+	_AlexcurrentMp = PLAYERDATA->getAlexcurrentmp();
+	_AlexMaxMp = PLAYERDATA->getAlexMaxmp();
 
-	_AlexAtt = 5;
-	_AlexDef = 10;
+	_AlexAtt = PLAYERDATA->getAlexatt();
+	_AlexDef = PLAYERDATA->getAlexdef();
 	_AlexMatt = 0;
 
 
 	//temp hp
 
-	_TemcurrentHp = 100;
-	_TemcurrentMp = 100;
-	_TemMaxHp = 100;
-	_TemMaxMp = 100;
+	_TemcurrentHp = PLAYERDATA->getTemcurrenthp();
+	_TemcurrentMp = PLAYERDATA->getTemcurrentmp();
+	_TemMaxHp = PLAYERDATA->getTemMaxhp();
+	_TemMaxMp = PLAYERDATA->getTemMaxmp();
 
-	_TemAtt = 8;
-	_TemDef = 5;
+	_TemAtt = PLAYERDATA->getTematt();
+	_TemDef = PLAYERDATA->getTemdef();
 	_TemMatt = 2;
 	// luna hp
 
-	_LunaAtt = 3;
-	_LunaDef = 5;
+	_LunaAtt = PLAYERDATA->getLunaatt();
+	_LunaDef = PLAYERDATA->getLunadef();
 	_LunaMatt = 8;
 
-	_lunacurrentHp = 100;
-	_lunaMaxHp = 100;
-	_lunacurrentMp = 50;
-	_lunaMaxMp = 100;
+	_lunacurrentHp = PLAYERDATA->getLunacurrenthp();
+	_lunaMaxHp = PLAYERDATA->getLunaMaxhp();
+	_lunacurrentMp = PLAYERDATA->getLunacurrentmp();
+	_lunaMaxMp = PLAYERDATA->getLunaMaxmp();
 
 	//
 	_statusimg->setX(0);
@@ -69,7 +67,7 @@ HRESULT Owplayer::init(void)
 	_state = IDLE;
 	_lookat = DOWN;
 	_animcount = 0;
-	_money = 3000;
+	_money = PLAYERDATA->getMoney();
 	_isWeapon = false;
 	_isEquip = false;
 	_isTemWeapon = false;
@@ -82,11 +80,64 @@ HRESULT Owplayer::init(void)
 	_proveUp = _y + _playerImg->getFrameHeight() - 40;
 	_proveDown = _y + _playerImg->getFrameHeight() - 15;
 
+	if (PLAYERDATA->getAlexWeaponitem() != NULL)
+	{
+		addWeapon(PLAYERDATA->getAlexWeaponitem()->getkey(), PLAYERDATA->getAlexWeaponitem()->getAtt(), PLAYERDATA->getAlexWeaponitem()->getDef(), PLAYERDATA->getAlexWeaponitem()->getMatt(), PLAYERDATA->getAlexWeaponitem()->getkind(), PLAYERDATA->getAlexWeaponitem()->getcost());
+	}
+	if (PLAYERDATA->getAlexEquipeitem() != NULL)
+	{
+		addEquip(PLAYERDATA->getAlexEquipeitem()->getkey(), PLAYERDATA->getAlexEquipeitem()->getAtt(), PLAYERDATA->getAlexEquipeitem()->getDef(), PLAYERDATA->getAlexEquipeitem()->getMatt(), PLAYERDATA->getAlexEquipeitem()->getkind(), PLAYERDATA->getAlexEquipeitem()->getcost());
+	}
+
+	if (PLAYERDATA->getTemWeaponitem() != NULL)
+	{
+		addTemWeapon(PLAYERDATA->getTemWeaponitem()->getkey(), PLAYERDATA->getTemWeaponitem()->getAtt(), PLAYERDATA->getTemWeaponitem()->getDef(), PLAYERDATA->getTemWeaponitem()->getMatt(), PLAYERDATA->getTemWeaponitem()->getkind(), PLAYERDATA->getTemWeaponitem()->getcost());
+	}
+
+	if (PLAYERDATA->getTemEquipeitem() != NULL)
+	{
+		addTemEquip(PLAYERDATA->getTemEquipeitem()->getkey(), PLAYERDATA->getTemEquipeitem()->getAtt(), PLAYERDATA->getTemEquipeitem()->getDef(), PLAYERDATA->getTemEquipeitem()->getMatt(), PLAYERDATA->getTemEquipeitem()->getkind(), PLAYERDATA->getTemEquipeitem()->getcost());
+	}
+
+	if (PLAYERDATA->getLunaWeaponitem() != NULL)
+	{
+		addLunaWeapon(PLAYERDATA->getLunaWeaponitem()->getkey(), PLAYERDATA->getLunaWeaponitem()->getAtt(), PLAYERDATA->getLunaWeaponitem()->getDef(), PLAYERDATA->getLunaWeaponitem()->getMatt(), PLAYERDATA->getLunaWeaponitem()->getkind(), PLAYERDATA->getLunaWeaponitem()->getcost());
+	}
+
+	if (PLAYERDATA->getLunaEquipeitem() != NULL)
+	{
+		addLunaEquip(PLAYERDATA->getLunaEquipeitem()->getkey(), PLAYERDATA->getLunaEquipeitem()->getAtt(), PLAYERDATA->getLunaEquipeitem()->getDef(), PLAYERDATA->getLunaEquipeitem()->getMatt(), PLAYERDATA->getLunaEquipeitem()->getkind(), PLAYERDATA->getLunaEquipeitem()->getcost());
+	}
+
+	if (PLAYERDATA->getInvenWeapon().size() != 0)
+	{
+		for (int i = 0; i < PLAYERDATA->getInvenWeapon().size(); i++) {
+			_inventory->addInven(PLAYERDATA->getInvenWeapon()[i]->getkey(), PLAYERDATA->getInvenWeapon()[i]->getAtt(), PLAYERDATA->getInvenWeapon()[i]->getDef(), PLAYERDATA->getInvenWeapon()[i]->getMatt(), PLAYERDATA->getInvenWeapon()[i]->getkind(), PLAYERDATA->getInvenWeapon()[i]->getcost());
+		}
+	}
+
+
+	if (PLAYERDATA->getInvenEquip().size() != 0)
+	{
+		for (int i = 0; i < PLAYERDATA->getInvenEquip().size(); i++) {
+			_inventory->addEquip(PLAYERDATA->getInvenEquip()[i]->getkey(), PLAYERDATA->getInvenEquip()[i]->getAtt(), PLAYERDATA->getInvenEquip()[i]->getDef(), PLAYERDATA->getInvenEquip()[i]->getMatt(), PLAYERDATA->getInvenEquip()[i]->getkind(), PLAYERDATA->getInvenEquip()[i]->getcost());
+		}
+	}
+
+	if (PLAYERDATA->getInvenPotion().size() != 0)
+	{
+		for (int i = 0; i < PLAYERDATA->getInvenPotion().size(); i++)
+		{
+			_inventory->addpotion(PLAYERDATA->getInvenPotion()[i]->getkey(), PLAYERDATA->getInvenPotion()[i]->getHp(), PLAYERDATA->getInvenPotion()[i]->getMp(), PLAYERDATA->getInvenPotion()[i]->getkind(), PLAYERDATA->getInvenPotion()[i]->getcost());
+		}
+	}
+
 	return S_OK;
 }
 
 void Owplayer::release(void)
 {
+
 }
 
 void Owplayer::update(void)
@@ -104,7 +155,7 @@ void Owplayer::update(void)
 	if (KEYMANAGER->isOnceKeyDown('7'))
 	{
 		_money += 10000;
-		
+
 	}
 	RECT _crush;
 	if (IntersectRect(&_crush, &_npc->shopCrashRc(), &_playerImg->boundingBoxWithFrame()) && KEYMANAGER->isOnceKeyDown(VK_SPACE) && _shopopen == false)
@@ -142,7 +193,6 @@ void Owplayer::update(void)
 
 	if (_character == ALEX)
 	{
-
 		_statusimg = IMAGEMANAGER->findImage("status");
 		_hp->setGauge((float)_AlexcurrentHp, (float)_AlexMaxHp);
 		_mp->setGauge((float)_AlexcurrentMp, (float)_AlexMaxMp);
@@ -159,16 +209,17 @@ void Owplayer::update(void)
 	}
 	else if (_character == TEMP)
 	{
-
 		_statusimg = IMAGEMANAGER->findImage("statustem");
 		_hp->setGauge((float)_TemcurrentHp, (float)_TemMaxHp);
 		_mp->setGauge((float)_TemcurrentMp, (float)_TemMaxMp);
 		_statusimg->setX(0);
 		_statusimg->setY(400);
+
 		if (_TemcurrentHp > _TemMaxHp)
 		{
 			_TemcurrentHp = _TemMaxHp;
 		}
+
 		if (_TemcurrentMp > _TemMaxMp)
 		{
 			_TemcurrentMp = _TemMaxMp;
@@ -176,7 +227,6 @@ void Owplayer::update(void)
 	}
 	else if (_character == LUNAR)
 	{
-
 		_statusimg = IMAGEMANAGER->findImage("statusluna");
 		_hp->setGauge((float)_lunacurrentHp, (float)_lunaMaxHp);
 		_mp->setGauge((float)_lunacurrentMp, (float)_lunaMaxMp);
@@ -224,17 +274,10 @@ void Owplayer::render(void)
 {
 	_playerImg->frameRender(getMemDC(), _x, _y);
 
-
-
-
 	if (KEYMANAGER->isToggleKey('0'))
 	{
 		Rectangle(getMemDC(), _camera.left, _camera.top, _camera.right, _camera.bottom);
 	}
-
-
-
-
 }
 
 void Owplayer::invenrender(void)
@@ -283,7 +326,7 @@ void Owplayer::invenrender(void)
 
 	}
 
-if (KEYMANAGER->isToggleKey('J'))
+	if (KEYMANAGER->isToggleKey('J'))
 	{
 		OpenMenu();
 		Font();
@@ -640,6 +683,85 @@ void Owplayer::Font()
 		sprintf(str, "%d", _LunaMatt);
 		TextOut(getMemDC(), _statusmenuimg->getX() + 100, _statusmenuimg->getY() + 170, str, strlen(str));
 	}
+}
+
+void Owplayer::saveData()
+{
+	PLAYERDATA->setMoney(_money);
+	PLAYERDATA->setAlexatt(_AlexAtt);
+	PLAYERDATA->setAlexdef(_AlexDef);
+	PLAYERDATA->setAlexcurrenthp(_AlexcurrentHp);
+	PLAYERDATA->setAlexcurrentmp(_AlexcurrentMp);
+	PLAYERDATA->setAlexMaxhp(_AlexMaxHp);
+	PLAYERDATA->setAlexMaxmp(_AlexMaxMp);
+
+
+	PLAYERDATA->setTematt(_TemAtt);
+	PLAYERDATA->setTemdef(_TemDef);
+	PLAYERDATA->setTemcurrenthp(_TemcurrentHp);
+	PLAYERDATA->setTemcurrentmp(_TemcurrentMp);
+	PLAYERDATA->setTemMaxhp(_TemMaxHp);
+	PLAYERDATA->setTemMaxmp(_TemMaxMp);
+
+	PLAYERDATA->setLunaatt(_LunaAtt);
+	PLAYERDATA->setLunadef(_LunaDef);
+	PLAYERDATA->setLunacurrenthp(_lunacurrentHp);
+	PLAYERDATA->setLunacurrentmp(_lunacurrentMp);
+	PLAYERDATA->setLunaMaxhp(_lunaMaxHp);
+	PLAYERDATA->setLunaMaxmp(_lunaMaxMp);
+
+
+	if (_vWeaponlist.size() != 0)
+	{
+		PLAYERDATA->setAlexWeapoonitem(_vWeaponlist[0]);
+	}
+
+	if (_vIEquiplist.size() != 0)
+	{
+		PLAYERDATA->setAlexEquipitem(_vIEquiplist[0]);
+	}
+
+	if (_vTemWeaponlist.size() != 0)
+	{
+		PLAYERDATA->setTemWeapoonitem(_vTemWeaponlist[0]);
+	}
+	if (_vTemEquiplist.size() != 0)
+	{
+		PLAYERDATA->setTemEquipitem(_vTemEquiplist[0]);
+	}
+
+	if (_vLunaWeaponlist.size() != 0)
+	{
+		PLAYERDATA->setLunaWeapoonitem(_vLunaWeaponlist[0]);
+	}
+
+	if (_vLunaEquiplist.size() != 0)
+	{
+		PLAYERDATA->setLunaEquipitem(_vLunaEquiplist[0]);
+	}
+
+	if (_inventory->getVInvenList().size() != 0)
+	{
+		for (int i = 0; i < _inventory->getVInvenList().size(); i++)
+		{
+			PLAYERDATA->setInvenWeapon(_inventory->getVInvenList()[i]);
+		}
+	}
+	if (_inventory->getVEquipList().size() != 0)
+	{
+		for (int i = 0; i < _inventory->getVEquipList().size(); i++)
+		{
+			PLAYERDATA->setInvenEquip(_inventory->getVEquipList()[i]);
+		}
+	}
+	if (_inventory->getVPotionList().size() != 0)
+	{
+		for (int i = 0; i < _inventory->getVPotionList().size(); i++)
+		{
+			PLAYERDATA->setInvenPotion(_inventory->getVPotionList()[i]);
+		}
+	}
+
 }
 
 

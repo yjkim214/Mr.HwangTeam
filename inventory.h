@@ -59,6 +59,11 @@ public:
 
 	void isShopOpen(bool shopOpen) { _isShopOpen = shopOpen; }
 	image* getinvenimg() { return _inven; }
+
+	vector<item*> getVInvenList() { return _vinvenlist; }
+	vector<item*> getVEquipList() { return _vEquiplist; }
+	vector<item*> getVPotionList() { return _vpotionlist; }
+
 	inventory() {}
 	~inventory() {}
 };

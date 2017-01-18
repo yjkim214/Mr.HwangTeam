@@ -1,6 +1,6 @@
 #pragma once
 #include "singletonBase.h"
-
+class item;
 struct tagMonster
 {
 	float x, y;
@@ -36,6 +36,108 @@ private:
 	tagMonster _player;
 	float _bgX;
 	float _bgY;
+private:
+	int _money;
+	vector<item*> _vInvenWeapon;
+	vector<item*> _vInvenEquip;
+	vector<item*> _vInvenPotion;
+
+	int _Alexatt;
+	int _Alexdef;
+	int _Alexcurrenthp;
+	int _AlexMaxhp;
+	int _Alexcurrentmp;
+	int _AlexMaxmp;
+	item* _AlexWeaponitem;
+	item* _AlexEquipitem;
+
+	int _Tematt;
+	int _Temdef;
+	int _Temcurrenthp;
+	int _TemMaxhp;
+	int _Temcurrentmp;
+	int _TemMaxmp;
+	item* _TemWeaponitem;
+	item* _TemEquipitem;
+
+	int _Lunaatt;
+	int _Lunadef;
+	int _Lunacurrenthp;
+	int _LunaMaxhp;
+	int _Lunacurrentmp;
+	int _LunaMaxmp;
+	item* _LunaWeaponitem;
+	item* _LunaEquipitem;
+public:
+	int getMoney() { return _money; }
+	void setMoney(int set) { _money = set; }
+
+	int getAlexatt() { return _Alexatt; }
+	void setAlexatt(int set) { _Alexatt = set; }
+	int getAlexdef() { return _Alexdef; }
+	void setAlexdef(int set) { _Alexdef = set; }
+	int getAlexcurrenthp() { return _Alexcurrenthp; }
+	void setAlexcurrenthp(int set) { _Alexcurrenthp = set; }
+	int getAlexcurrentmp() { return _Alexcurrentmp; }
+	void setAlexcurrentmp(int set) { _Alexcurrentmp = set; }
+	int getAlexMaxhp() { return _AlexMaxhp; }
+	void setAlexMaxhp(int set) { _AlexMaxhp = set; }
+	int getAlexMaxmp() { return _AlexMaxmp; }
+	void setAlexMaxmp(int set) { _AlexMaxmp = set; }
+	item* getAlexWeaponitem() { return _AlexWeaponitem; }
+	void setAlexWeapoonitem(item* set) { _AlexWeaponitem = set; }
+	item* getAlexEquipeitem() { return _AlexEquipitem; }
+	void setAlexEquipitem(item* set) { _AlexEquipitem = set; }
+
+	int getTematt() { return _Tematt; }
+	void setTematt(int set) { _Tematt = set; }
+	int getTemdef() { return _Temdef; }
+	void setTemdef(int set) { _Temdef = set; }
+	int getTemcurrenthp() { return _Temcurrenthp; }
+	void setTemcurrenthp(int set) { _Temcurrenthp = set; }
+	int getTemcurrentmp() { return _Temcurrentmp; }
+	void setTemcurrentmp(int set) { _Temcurrentmp = set; }
+	int getTemMaxhp() { return _TemMaxhp; }
+	void setTemMaxhp(int set) { _TemMaxhp = set; }
+	int getTemMaxmp() { return _TemMaxmp; }
+	void setTemMaxmp(int set) { _TemMaxmp = set; }
+	item* getTemWeaponitem() { return _TemWeaponitem; }
+	void setTemWeapoonitem(item* set) { _TemWeaponitem = set; }
+	item* getTemEquipeitem() { return _TemEquipitem; }
+	void setTemEquipitem(item* set) { _TemEquipitem = set; }
+
+	int getLunaatt() { return _Lunaatt; }
+	void setLunaatt(int set) { _Lunaatt = set; }
+	int getLunadef() { return _Lunadef; }
+	void setLunadef(int set) { _Lunadef = set; }
+	int getLunacurrenthp() { return _Lunacurrenthp; }
+	void setLunacurrenthp(int set) { _Lunacurrenthp = set; }
+	int getLunacurrentmp() { return _Lunacurrentmp; }
+	void setLunacurrentmp(int set) { _Lunacurrentmp = set; }
+	int getLunaMaxhp() { return _LunaMaxhp; }
+	void setLunaMaxhp(int set) { _LunaMaxhp = set; }
+	int getLunaMaxmp() { return _LunaMaxmp; }
+	void setLunaMaxmp(int set) { _LunaMaxmp = set; }
+	item* getLunaWeaponitem() { return _LunaWeaponitem; }
+	void setLunaWeapoonitem(item* set) { _LunaWeaponitem = set; }
+	item* getLunaEquipeitem() { return _LunaEquipitem; }
+	void setLunaEquipitem(item* set) { _LunaEquipitem = set; }
+
+	vector<item*> getInvenWeapon() { return _vInvenWeapon; }
+	vector<item*> getInvenEquip() { return _vInvenEquip; }
+	vector<item*> getInvenPotion() { return _vInvenPotion; }
+	void setInvenWeapon(item* weaponItem)
+	{
+		_vInvenWeapon.push_back(weaponItem);
+	}
+	void setInvenEquip(item* equipItem)
+	{
+		_vInvenEquip.push_back(equipItem);
+	}
+	void setInvenPotion(item* potionItem)
+	{
+		_vInvenPotion.push_back(potionItem);
+	}
 public:
 	HRESULT init(void);
 	void release(void);

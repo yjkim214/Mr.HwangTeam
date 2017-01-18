@@ -127,6 +127,7 @@ void villageScene::update(void)
 			SOUNDMANAGER->stop("villageMusic");
 			/*SOUNDMANAGER->play("dungeonSound");*/
 		}
+		_Owplayer->saveData();
 		SCENEMANAGER->changeScene("´øÀü");
 	}
 	if (_villageMap->getState() == BOSSROOM)
