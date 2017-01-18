@@ -22,7 +22,7 @@ HRESULT bsBarbarian::init(void)
 	_destX = 0;
 	_destY = 0;
 
-	_isDead = false;
+	_isSelected = true;
 	_isAttack = false;
 	_isDead = false;
 

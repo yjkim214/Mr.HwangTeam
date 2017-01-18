@@ -15,6 +15,7 @@ private:
 	bool _isFlytrapperDie;
 	bool _isBarbarianDie;
 	bool _isDevilBomberDie;
+	bool _isBossDie;
 
 	int _monsterNumber;
 
@@ -49,6 +50,8 @@ public:
 	void setBarbarianDie(bool isBarbarianDie) { _isBarbarianDie = isBarbarianDie; }
 	bool getDevilBomberDie() { return _isDevilBomberDie; }
 	void setDevilBomberDie(bool isDevilBomberDie) { _isDevilBomberDie = isDevilBomberDie; }
+	bool getBossDie() { return _isBossDie; }
+	void setBossDie(bool isBossDie) { _isBossDie = isBossDie; }
 
 	void setMonsterNumber(int monsterNumber) { _monsterNumber = monsterNumber; }
 	int getMonsterNumber() { return _monsterNumber; }

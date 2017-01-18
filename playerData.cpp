@@ -8,6 +8,7 @@ HRESULT playerData::init(void)
 	_isFlytrapperDie = false;
 	_isBarbarianDie = false;
 	_isDevilBomberDie = false;
+	_isBossDie = false;
 
 	_monsterNumber = 0;
 

@@ -137,7 +137,9 @@ void villageScene::update(void)
 		int bU = GetBValue(colorU);
 		if (rU == 0 && gU == 255 && bU == 0)
 		{
-			//SCENEMANAGER->changeScene("배틀화면");
+			PLAYERDATA->setMonsterNumber(6);
+			SOUNDMANAGER->stop("bossRoomSound");
+			SCENEMANAGER->changeScene("배틀화면");
 		}
 		if (SOUNDMANAGER->isPlaySound("villageMusic"))
 		{
