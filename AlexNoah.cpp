@@ -351,7 +351,14 @@ void AlexNoah::saveData()
 {
 	PLAYERDATA->setAlexatt(_att);
 	PLAYERDATA->setAlexdef(_def);
-	PLAYERDATA->setAlexcurrenthp(_hp);
+	if (_isDead)
+	{
+		PLAYERDATA->setAlexcurrenthp(1);
+	}
+	else
+	{
+		PLAYERDATA->setAlexcurrenthp(_hp);
+	}
 	PLAYERDATA->setAlexcurrentmp(_mp);
 	PLAYERDATA->setAlexMaxhp(_maxHp);
 	PLAYERDATA->setAlexMaxmp(_maxMp);

@@ -337,7 +337,14 @@ void Lunar::saveData()
 {
 	PLAYERDATA->setLunaatt(_att);
 	PLAYERDATA->setLunadef(_def);
-	PLAYERDATA->setLunacurrenthp(_hp);
+	if (_isDead)
+	{
+		PLAYERDATA->setLunacurrenthp(1);
+	}
+	else
+	{
+		PLAYERDATA->setLunacurrenthp(_hp);
+	}
 	PLAYERDATA->setLunacurrentmp(_mp);
 	PLAYERDATA->setLunaMaxhp(_maxHp);
 	PLAYERDATA->setLunaMaxmp(_maxMp);

@@ -211,6 +211,11 @@ void battleScene::update(void)
 		{
 			SOUNDMANAGER->stop("battleMusic");
 
+			for (int i = 0; i < _pm->getVPlayerList().size(); i++)
+			{
+				_pm->getVPlayerList()[i]->saveData();
+			}
+
 			if (PLAYERDATA->getMonsterNumber() != 6)
 			{
 				SCENEMANAGER->changeScene("´øÀü");

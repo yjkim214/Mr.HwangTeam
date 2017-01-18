@@ -371,7 +371,14 @@ void Tempest::saveData()
 {
 	PLAYERDATA->setTematt(_att);
 	PLAYERDATA->setTemdef(_def);
-	PLAYERDATA->setTemcurrenthp(_hp);
+	if (_isDead)
+	{
+		PLAYERDATA->setTemcurrenthp(1);
+	}
+	else
+	{
+		PLAYERDATA->setTemcurrenthp(_hp);
+	}
 	PLAYERDATA->setTemcurrentmp(_mp);
 	PLAYERDATA->setTemMaxhp(_maxHp);
 	PLAYERDATA->setTemMaxmp(_maxMp);
