@@ -584,7 +584,7 @@ void battleScene::setPlayerIndex()
 	{
 		if (_pm->getVPlayerList()[_currentPlayerIndex]->getIsDead())
 		{
-			if (_currentPlayerIndex < 2)
+			if (_currentPlayerIndex < 3)
 			{
 				_currentPlayerIndex++;
 			}
@@ -725,7 +725,7 @@ void battleScene::setEnemyIndex()
 	{
 		if (_em->getVEnemyList()[_currentEnemyIndex]->getIsDead())
 		{
-			if (_currentEnemyIndex < 2)
+			if (_currentEnemyIndex < 3)
 			{
 				_currentEnemyIndex++;
 			}

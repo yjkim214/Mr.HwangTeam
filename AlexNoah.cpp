@@ -2,7 +2,7 @@
 #include "AlexNoah.h"
 
 #define ALEXNOAH_ANI_COUNT	5
-#define DELAYTIME			10
+#define DELAYTIME			20
 
 HRESULT AlexNoah::init(void)
 {

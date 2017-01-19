@@ -42,7 +42,7 @@ HRESULT playerData::init(void)
 	_npcY = 600;
 	_money = 3000;
 	//
-	_Alexatt = 5;
+	_Alexatt = 10;
 	_Alexdef = 10;
 	_Alexcurrenthp = 80;
 	_AlexMaxhp = 100;
@@ -52,7 +52,7 @@ HRESULT playerData::init(void)
 	_AlexEquipitem = NULL;
 
 	//temp hp
-	_Tematt = 8;
+	_Tematt = 15;
 	_Temdef = 5;
 	_Temcurrenthp = 100;
 	_Temcurrentmp = 100;
@@ -62,8 +62,8 @@ HRESULT playerData::init(void)
 	_TemEquipitem = NULL;
 
 	// luna hp
-	_Lunaatt = 8;
-	_Lunadef = 5;
+	_Lunaatt = 5;
+	_Lunadef = 10;
 	_Lunacurrenthp = 100;
 	_Lunacurrentmp = 100;
 	_LunaMaxhp = 100;

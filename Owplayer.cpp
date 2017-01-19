@@ -742,6 +742,7 @@ void Owplayer::saveData()
 
 	if (_inventory->getVInvenList().size() != 0)
 	{
+		PLAYERDATA->RemoveWeapon();
 		for (int i = 0; i < _inventory->getVInvenList().size(); i++)
 		{
 			PLAYERDATA->setInvenWeapon(_inventory->getVInvenList()[i]);
@@ -749,6 +750,7 @@ void Owplayer::saveData()
 	}
 	if (_inventory->getVEquipList().size() != 0)
 	{
+		PLAYERDATA->RemoveEquip();
 		for (int i = 0; i < _inventory->getVEquipList().size(); i++)
 		{
 			PLAYERDATA->setInvenEquip(_inventory->getVEquipList()[i]);
@@ -756,6 +758,7 @@ void Owplayer::saveData()
 	}
 	if (_inventory->getVPotionList().size() != 0)
 	{
+		PLAYERDATA->RemovePotion();
 		for (int i = 0; i < _inventory->getVPotionList().size(); i++)
 		{
 			PLAYERDATA->setInvenPotion(_inventory->getVPotionList()[i]);

@@ -2,7 +2,7 @@
 #include "Lunar.h"
 
 #define LUNAR_ANI_COUNT	5
-#define DELAYTIME		10
+#define DELAYTIME		20
 
 HRESULT Lunar::init(void)
 {

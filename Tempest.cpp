@@ -2,7 +2,7 @@
 #include "Tempest.h"
 
 #define Tempest_ANI_COUNT	5
-#define DELAYTIME			10
+#define DELAYTIME			20
 
 HRESULT Tempest::init(void)
 {

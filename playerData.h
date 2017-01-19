@@ -138,6 +138,11 @@ public:
 	{
 		_vInvenPotion.push_back(potionItem);
 	}
+
+	void RemoveWeapon() { _vInvenWeapon.clear(); }
+	void RemoveEquip() { _vInvenEquip.clear(); }
+	void RemovePotion() { _vInvenPotion.clear(); }
+
 public:
 	HRESULT init(void);
 	void release(void);
