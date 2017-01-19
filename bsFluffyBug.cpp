@@ -6,7 +6,7 @@
 #define FLUFFYBUG_MAXHP		200
 #define FLUFFYBUG_MAXMP		10
 #define FLUFFYBUG_ANICOUNT	10
-#define FLUFFYBUG_DELAYTIME	5
+#define FLUFFYBUG_DELAYTIME	4
 
 HRESULT bsFluffyBug::init(void)
 {
@@ -19,8 +19,6 @@ HRESULT bsFluffyBug::init(void)
 	_maxMp = FLUFFYBUG_MAXMP;
 
 	_enemyImg = IMAGEMANAGER->findImage("fluffyBug_idle");
-
-	_xp = 15;
 
 	_state = FLUFFYBUG_STATE::IDLE;
 
@@ -92,7 +90,6 @@ void bsFluffyBug::update(void)
 						{
 							_turnState = TURNEND;
 							_isDead = true;
-							_isGetXp = true;
 							_isDelay = false;
 						}
 					}

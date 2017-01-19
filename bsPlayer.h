@@ -14,10 +14,6 @@ protected:
 	float	_mp;
 	float	_maxMp;
 
-	float	_lv;
-	float	_xp;
-	float	_maxXp;
-
 protected:
 	float	_prevX, _prevY;
 	float	_destX, _destY;
@@ -52,7 +48,6 @@ protected:
 	image*			_uiImage;
 	progressBar*	_hpBar;
 	progressBar*	_mpBar;
-	progressBar*	_xpBar;
 
 public:
 	//=============================================================
@@ -82,7 +77,6 @@ public:
 	float getDef() { return _def; }
 	float getHp() { return _hp; }
 	float getMp() { return _mp; }
-	float getXp() { return _xp; }
 	void setHp(float hp)
 	{
 		_hp = hp;
@@ -111,7 +105,7 @@ public:
 	void levelUp();
 
 public:
-	bsPlayer() : _lv(1), _xp(0), _maxXp(100),
+	bsPlayer() : 
 		_prevX(0), _prevY(0), _destX(0), _destY(0),
 		_currentFrameX(0),
 		_countNotMyTurn(0), _countMyTurn(0),

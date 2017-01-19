@@ -6,7 +6,7 @@
 #define SLIME_MAXHP		50
 #define SLIME_MAXMP		10
 #define SLIME_ANICOUNT	10
-#define SLIME_DELAYTIME	5
+#define SLIME_DELAYTIME	4
 
 HRESULT bsSlime::init(void)
 {
@@ -17,8 +17,6 @@ HRESULT bsSlime::init(void)
 	_maxHp = SLIME_MAXHP;
 	_mp = SLIME_MAXMP;
 	_maxMp = SLIME_MAXMP;
-
-	_xp = 5;
 
 	_enemyImg = IMAGEMANAGER->findImage("slime_idle");
 
@@ -94,7 +92,6 @@ void bsSlime::update(void)
 							_turnState = TURNEND;
 
 							_isDead = true;
-							_isGetXp = true;
 							
 							_isDelay = false;
 						}

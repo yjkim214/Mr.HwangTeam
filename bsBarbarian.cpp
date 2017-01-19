@@ -6,7 +6,7 @@
 #define BARBARIAN_MAXHP		400
 #define BARBARIAN_MAXMP		10
 #define BARBARIAN_ANICOUNT	10
-#define BARBARIAN_DELAYTIME	5
+#define BARBARIAN_DELAYTIME	4
 
 HRESULT bsBarbarian::init(void)
 {
@@ -19,8 +19,6 @@ HRESULT bsBarbarian::init(void)
 	_maxMp = BARBARIAN_MAXMP;
 
 	_enemyImg = IMAGEMANAGER->findImage("barbarian_idle");
-
-	_xp = 20;
 
 	_state = BARBARIAN_STATE::IDLE;
 
@@ -92,7 +90,6 @@ void bsBarbarian::update(void)
 						{
 							_turnState = TURNEND;
 							_isDead = true;
-							_isGetXp = true;
 							_isDelay = false;
 						}
 					}

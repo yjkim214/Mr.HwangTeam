@@ -6,7 +6,7 @@
 #define BOSS_MAXHP		1600
 #define BOSS_MAXMP		1000
 #define BOSS_ANICOUNT	10
-#define BOSS_DELAYTIME	5
+#define BOSS_DELAYTIME	4
 
 HRESULT bsBoss::init(void)
 {

@@ -21,16 +21,12 @@ HRESULT Lunar::init(void)
 	_uiImage->setY(5);
 
 	_hpBar = new progressBar;
-	_hpBar->init("bsHpbar_front", "bsBar_back", 190, 114, 75, 8);
+	_hpBar->init("bsHpbar_front", "bsBar_back", 190, 101, 75, 8);
 	_hpBar->setGauge(_hp, _maxHp);
 
 	_mpBar = new progressBar;
-	_mpBar->init("bsMpbar_front", "bsBar_back", 190, 127, 75, 8);
+	_mpBar->init("bsMpbar_front", "bsBar_back", 190, 114, 75, 8);
 	_mpBar->setGauge(_mp, _maxMp);
-
-	_xpBar = new progressBar;
-	_xpBar->init("bsXpbar_front", "bsBar_back", 190, 101, 75, 8);
-	_xpBar->setGauge(_xp, _maxXp);
 
 	_state = LUNAR_STATE::IDLE;
 
@@ -39,14 +35,6 @@ HRESULT Lunar::init(void)
 
 void Lunar::release(void)
 {
-	_hpBar->release();
-	SAFE_DELETE(_hpBar);
-
-	_mpBar->release();
-	SAFE_DELETE(_mpBar);
-
-	_xpBar->release();
-	SAFE_DELETE(_xpBar);
 }
 
 void Lunar::update(void)
@@ -233,11 +221,9 @@ void Lunar::update(void)
 
 	_hpBar->setGauge(_hp, _maxHp);
 	_mpBar->setGauge(_mp, _maxMp);
-	_xpBar->setGauge(_xp, _maxXp);
 
 	_hpBar->update();
 	_mpBar->update();
-	_xpBar->update();
 }
 
 void Lunar::render(void)
@@ -256,7 +242,6 @@ void Lunar::render(void)
 
 	_hpBar->render();
 	_mpBar->render();
-	_xpBar->render();
 }
 
 void Lunar::myTurnAttack(int enemyIndex)

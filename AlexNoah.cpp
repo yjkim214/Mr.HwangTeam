@@ -21,16 +21,12 @@ HRESULT AlexNoah::init(void)
 	_uiImage->setY(5);
 
 	_hpBar = new progressBar;
-	_hpBar->init("bsHpbar_front", "bsBar_back", 40, 114, 75, 8);
+	_hpBar->init("bsHpbar_front", "bsBar_back", 40, 101, 75, 8);
 	_hpBar->setGauge(_hp, _maxHp);
 
 	_mpBar = new progressBar;
-	_mpBar->init("bsMpbar_front", "bsBar_back", 40, 127, 75, 8);
+	_mpBar->init("bsMpbar_front", "bsBar_back", 40, 114, 75, 8);
 	_mpBar->setGauge(_mp, _maxMp);
-
-	_xpBar = new progressBar;
-	_xpBar->init("bsXpbar_front", "bsBar_back", 40, 101, 75, 8);
-	_xpBar->setGauge(_xp, _maxXp);
 
 	_state = ALEXNOAH_STATE::IDLE;
 
@@ -39,14 +35,6 @@ HRESULT AlexNoah::init(void)
 
 void AlexNoah::release(void)
 {
-	_hpBar->release();
-	SAFE_DELETE(_hpBar);
-
-	_mpBar->release();
-	SAFE_DELETE(_mpBar);
-
-	_xpBar->release();
-	SAFE_DELETE(_xpBar);
 }
 
 void AlexNoah::update(void)
@@ -234,11 +222,9 @@ void AlexNoah::update(void)
 
 	_hpBar->setGauge(_hp, _maxHp);
 	_mpBar->setGauge(_mp, _maxMp);
-	_xpBar->setGauge(_xp, _maxXp);
 
 	_hpBar->update();
 	_mpBar->update();
-	_xpBar->update();
 }
 
 void AlexNoah::render(void)
@@ -257,7 +243,6 @@ void AlexNoah::render(void)
 	
 	_hpBar->render();
 	_mpBar->render();
-	_xpBar->render();
 }
 
 void AlexNoah::myTurnAttack(int enemyIndex)

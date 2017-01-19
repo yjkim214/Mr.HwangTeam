@@ -6,7 +6,7 @@
 #define FLYTRAPPER_MAXHP		100
 #define FLYTRAPPER_MAXMP		10
 #define FLYTRAPPER_ANICOUNT		10
-#define FLYTRAPPER_DELAYTIME	5
+#define FLYTRAPPER_DELAYTIME	4
 
 HRESULT bsFlytrapper::init(void)
 {
@@ -17,8 +17,6 @@ HRESULT bsFlytrapper::init(void)
 	_maxHp = FLYTRAPPER_MAXHP;
 	_mp = FLYTRAPPER_MAXMP;
 	_maxMp = FLYTRAPPER_MAXMP;
-
-	_xp = 10;
 
 	_enemyImg = IMAGEMANAGER->findImage("flytrapper_idle");
 
@@ -93,7 +91,6 @@ void bsFlytrapper::update(void)
 						{
 							_turnState = TURNEND;
 							_isDead = true;
-							_isGetXp = true;
 							_isDelay = false;
 						}
 					}

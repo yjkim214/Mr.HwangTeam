@@ -6,7 +6,7 @@
 #define DEVILBOMBER_MAXHP		800
 #define DEVILBOMBER_MAXMP		10
 #define DEVILBOMBER_ANICOUNT	10
-#define DEVILBOMBER_DELAYTIME	5
+#define DEVILBOMBER_DELAYTIME	4
 
 HRESULT bsDevilBomber::init(void)
 {
@@ -19,8 +19,6 @@ HRESULT bsDevilBomber::init(void)
 	_maxMp = DEVILBOMBER_MAXMP;
 
 	_enemyImg = IMAGEMANAGER->findImage("devilBomber_idle");
-
-	_xp = 25;
 
 	_state = DEVILBOMBER_STATE::IDLE;
 
@@ -92,7 +90,6 @@ void bsDevilBomber::update(void)
 						{
 							_turnState = TURNEND;
 							_isDead = true;
-							_isGetXp = true;
 							_isDelay = false;
 						}
 					}
