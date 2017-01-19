@@ -473,14 +473,22 @@ void battleScene::update(void)
 
 					if(isGetaway)
 					{
-						if (PLAYERDATA->getMonsterNumber() != 6)
+						if (_alpha < 255)
 						{
-							SCENEMANAGER->changeScene("던전");
+							_alpha += 5;
 						}
-
+						
 						else
 						{
-							SCENEMANAGER->changeScene("마을");
+							if (PLAYERDATA->getMonsterNumber() != 6)
+							{
+								SCENEMANAGER->changeScene("던전");
+							}
+
+							else
+							{
+								SCENEMANAGER->changeScene("마을");
+							}
 						}
 					}
 				}

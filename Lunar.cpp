@@ -195,7 +195,7 @@ void Lunar::update(void)
 
 			else if(_state == LUNAR_STATE::GETAWAY)
 			{
-				_destX += 5;
+				_destX += 10;
 				if (_destX > 800)
 				{
 					_isGetaway = true;

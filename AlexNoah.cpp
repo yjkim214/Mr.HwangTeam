@@ -196,7 +196,7 @@ void AlexNoah::update(void)
 
 			if(_state == ALEXNOAH_STATE::GETAWAY)
 			{
-				_destX += 5;
+				_destX += 10;
 				if (_destX > 800)
 				{
 					_isGetaway = true;
