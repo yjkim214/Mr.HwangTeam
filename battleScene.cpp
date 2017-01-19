@@ -306,19 +306,6 @@ void battleScene::update(void)
 							_em->getVEnemyList()[_enemySelected]->getDmg(_pm->getVPlayerList()[_currentPlayerIndex]->getAtt());
 							_pm->getVPlayerList()[_currentPlayerIndex]->setIsAttack(false);
 						}
-
-						if (_em->getVEnemyList()[_enemySelected]->getIsGetXp())
-						{
-							for (int i = 0; i < _pm->getVPlayerList().size(); i++)
-							{
-								if (!_pm->getVPlayerList()[i]->getIsDead())
-								{
-									_pm->getVPlayerList()[i]->setXp(_pm->getVPlayerList()[i]->getXp() + _em->getVEnemyList()[_enemySelected]->getXp());
-								}
-							}
-
-							_em->getVEnemyList()[_enemySelected]->setIsGetXp(false);
-						}
 					}
 
 					else if (_pm->getVPlayerList()[_currentPlayerIndex]->getTurnState() == TURNEND)
@@ -512,12 +499,13 @@ void battleScene::update(void)
 		{
 			if (_enemyTurnState == ENEMYTURNSTATE::START)
 			{
-				setEnemyIndex();
 				_enemyTurnState = ENEMYTURNSTATE::UPDATE;
 			}
 
 			else if (_enemyTurnState == ENEMYTURNSTATE::UPDATE)
 			{
+				setEnemyIndex();
+				
 				if (_em->getVEnemyList()[_currentEnemyIndex]->getTurnState() == NOTMYTURN)
 				{
 					_playerSelected = 0;
@@ -562,19 +550,6 @@ void battleScene::update(void)
 					}
 				}
 			}
-		}
-
-		if (_em->getVEnemyList()[_enemySelected]->getIsGetXp())
-		{
-			for (int i = 0; i < _pm->getVPlayerList().size(); i++)
-			{
-				if (!_pm->getVPlayerList()[i]->getIsDead())
-				{
-					_pm->getVPlayerList()[i]->setXp(_pm->getVPlayerList()[i]->getXp() + _em->getVEnemyList()[_enemySelected]->getXp());
-				}
-			}
-
-			_em->getVEnemyList()[_enemySelected]->setIsGetXp(false);
 		}
 	}
 
@@ -750,7 +725,17 @@ void battleScene::setEnemyIndex()
 	{
 		if (_em->getVEnemyList()[_currentEnemyIndex]->getIsDead())
 		{
-			_currentEnemyIndex++;
+			if (_currentEnemyIndex < 2)
+			{
+				_currentEnemyIndex++;
+			}
+
+			else
+			{
+				_currentEnemyIndex = 0;
+				_bsState = PLAYERTURN;
+				_enemyTurnState = ENEMYTURNSTATE::START;
+			}
 		}
 
 		else
