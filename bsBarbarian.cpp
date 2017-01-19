@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "bsBarbarian.h"
 
-#define BARBARIAN_ATT		5
-#define BARBARIAN_DEF		5
-#define BARBARIAN_MAXHP		50
+#define BARBARIAN_ATT		16
+#define BARBARIAN_DEF		16
+#define BARBARIAN_MAXHP		400
 #define BARBARIAN_MAXMP		10
 #define BARBARIAN_ANICOUNT	10
 #define BARBARIAN_DELAYTIME	5
@@ -20,6 +20,8 @@ HRESULT bsBarbarian::init(void)
 
 	_enemyImg = IMAGEMANAGER->findImage("barbarian_idle");
 
+	_xp = 20;
+
 	_state = BARBARIAN_STATE::IDLE;
 
 	return S_OK;
@@ -31,35 +33,35 @@ void bsBarbarian::release(void)
 
 void bsBarbarian::update(void)
 {
-	if(_turnState == NOTMYTURN)
+	if (_turnState == NOTMYTURN)
 	{
 		_countNotMyTurn++;
-		if(_countNotMyTurn % BARBARIAN_ANICOUNT == 0)
+		if (_countNotMyTurn % BARBARIAN_ANICOUNT == 0)
 		{
 			_currentFrameX++;
 
-			if(_state == BARBARIAN_STATE::IDLE)
+			if (_state == BARBARIAN_STATE::IDLE)
 			{
 				//애니메이션 무한정 반복
-				if(_currentFrameX > _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
 					_currentFrameX = 0;
 				}
 			}
 
-			else if(_state == BARBARIAN_STATE::GETDMG)
+			else if (_state == BARBARIAN_STATE::GETDMG)
 			{
-				if(_currentFrameX > _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					if(_isDelay)
+					if (_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= BARBARIAN_DELAYTIME)
+						if (_delayCount >= BARBARIAN_DELAYTIME)
 						{
 							_turnState = TURNEND;
 
 							//데미지를 받았을 시
-							if(_hp <= 0)
+							if (_hp <= 0)
 							{
 								_enemyImg = IMAGEMANAGER->findImage("barbarian_dead");
 								_currentFrameX = 0;
@@ -79,7 +81,7 @@ void bsBarbarian::update(void)
 				}
 			}
 
-			else if(_state == BARBARIAN_STATE::DEAD)
+			else if (_state == BARBARIAN_STATE::DEAD)
 			{
 				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
@@ -90,6 +92,7 @@ void bsBarbarian::update(void)
 						{
 							_turnState = TURNEND;
 							_isDead = true;
+							_isGetXp = true;
 							_isDelay = false;
 						}
 					}
@@ -100,26 +103,26 @@ void bsBarbarian::update(void)
 		}
 	}
 
-	else if(_turnState == MYTURN)
+	else if (_turnState == MYTURN)
 	{
 		_countMyTurn++;
-		if(_countMyTurn % BARBARIAN_ANICOUNT == 0)
+		if (_countMyTurn % BARBARIAN_ANICOUNT == 0)
 		{
 			_currentFrameX++;
-			if(_state == BARBARIAN_STATE::ATTACK)
+			if (_state == BARBARIAN_STATE::ATTACK)
 			{
 				//에너미 몇 프레임에서 공격을 할 지 정한다
-				if(_currentFrameX == 6)
+				if (_currentFrameX == 6)
 				{
 					_isAttack = true;
 				}
 				//다시 대기 상태로 돌입
-				if(_currentFrameX > _enemyImg->getMaxFrameX())
+				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					if(_isDelay)
+					if (_isDelay)
 					{
 						_delayCount++;
-						if(_delayCount >= BARBARIAN_DELAYTIME)
+						if (_delayCount >= BARBARIAN_DELAYTIME)
 						{
 							_turnState = TURNEND;
 
@@ -137,7 +140,7 @@ void bsBarbarian::update(void)
 		}
 	}
 
-	else if(_turnState == TURNEND)
+	else if (_turnState == TURNEND)
 	{
 		_isDelay = true;
 		_delayCount = 0;
@@ -147,16 +150,16 @@ void bsBarbarian::update(void)
 
 void bsBarbarian::render(void)
 {
-	if(!_isDead)
+	if (!_isDead)
 	{
-		if(_turnState == MYTURN)
+		if (_turnState == MYTURN)
 		{
 			_enemyImg->frameRender(getMemDC(), _destX, _destY, _currentFrameX, 0);
 		}
 
-		else if(_turnState == NOTMYTURN)
+		else if (_turnState == NOTMYTURN)
 		{
-			if(_isSelected)
+			if (_isSelected)
 			{
 				_enemyImg->frameRender(getMemDC(), _prevX, _prevY, _currentFrameX, 0);
 			}

@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "bsBoss.h"
 
-#define BOSS_ATT		20
-#define BOSS_DEF		20
-#define BOSS_MAXHP		1000
+#define BOSS_ATT		64
+#define BOSS_DEF		64
+#define BOSS_MAXHP		1600
 #define BOSS_MAXMP		1000
 #define BOSS_ANICOUNT	10
 #define BOSS_DELAYTIME	5

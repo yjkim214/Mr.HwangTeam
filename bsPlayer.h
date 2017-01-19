@@ -14,6 +14,10 @@ protected:
 	float	_mp;
 	float	_maxMp;
 
+	float	_lv;
+	float	_xp;
+	float	_maxXp;
+
 protected:
 	float	_prevX, _prevY;
 	float	_destX, _destY;
@@ -48,6 +52,7 @@ protected:
 	image*			_uiImage;
 	progressBar*	_hpBar;
 	progressBar*	_mpBar;
+	progressBar*	_xpBar;
 
 public:
 	//=============================================================
@@ -65,16 +70,19 @@ public:
 	virtual void getaway() = 0;
 	virtual void getDmg(float enemyAtt) = 0;
 	virtual void saveData() = 0;
+
 public:
 	virtual bullet* getBullet() { return NULL; }
+
 	//=============================================================
 	//	## player ## (접근자 / 설정자)
 	//=============================================================
+public:
 	float getAtt() { return _att; }
 	float getDef() { return _def; }
 	float getHp() { return _hp; }
 	float getMp() { return _mp; }
-	
+	float getXp() { return _xp; }
 	void setHp(float hp)
 	{
 		_hp = hp;
@@ -99,12 +107,17 @@ public:
 	TURN_STATE getTurnState() { return _turnState; }
 
 public:
-	bsPlayer() : _prevX(0), _prevY(0), _destX(0), _destY(0),
+	void setXp(float xp);
+	void levelUp();
+
+public:
+	bsPlayer() : _lv(1), _xp(0), _maxXp(100),
+		_prevX(0), _prevY(0), _destX(0), _destY(0),
 		_currentFrameX(0),
-		_countNotMyTurn(0), _countMyTurn(0), 
-		_isDelay(true), _delayCount(0), 
-		_isAttack(false), _isHeal(false), _isDefense(false), _isVictory(false), _isGetaway(false), _isDead(false), 
-		_turnState(NOTMYTURN), 
+		_countNotMyTurn(0), _countMyTurn(0),
+		_isDelay(true), _delayCount(0),
+		_isAttack(false), _isHeal(false), _isDefense(false), _isVictory(false), _isGetaway(false), _isDead(false),
+		_turnState(NOTMYTURN),
 		_bullet(NULL)
 	{
 

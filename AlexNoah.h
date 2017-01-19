@@ -17,6 +17,7 @@ class AlexNoah : public bsPlayer
 {
 private:
 	ALEXNOAH_STATE _state;
+
 public:
 	virtual HRESULT init(void);
 	virtual void release(void);
