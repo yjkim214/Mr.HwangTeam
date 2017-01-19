@@ -2,7 +2,7 @@
 #include "Tempest.h"
 
 #define Tempest_ANI_COUNT	5
-#define DELAYTIME			20
+#define DELAYTIME			10
 
 HRESULT Tempest::init(void)
 {
@@ -90,10 +90,7 @@ void Tempest::update(void)
 
 			else if (_state == TEMPEST_STATE::DEAD)
 			{
-				if (_currentFrameX > _playerImg->getMaxFrameX())
-				{
-					_isDead = true;
-				}
+				_isDead = true;
 			}
 
 			_countNotMyTurn = 0;

@@ -51,30 +51,30 @@ void bsBoss::update(void)
 			{
 				if (_currentFrameX > _enemyImg->getMaxFrameX())
 				{
-					if (_isDelay)
+					if (_hp <= 0)
 					{
-						_delayCount++;
-						if (_delayCount >= BOSS_DELAYTIME)
+						_enemyImg = IMAGEMANAGER->findImage("bsBoss_dead");
+						_currentFrameX = 0;
+						//hp가 바닥이면 죽은 상태로 바꿈
+						_state = BOSS_STATE::DEAD;
+					}
+
+					else
+					{
+						if (_isDelay)
 						{
-							_turnState = TURNEND;
-
-							//데미지를 받았을 시
-							if (_hp <= 0)
+							_delayCount++;
+							if (_delayCount >= BOSS_DELAYTIME)
 							{
-								_enemyImg = IMAGEMANAGER->findImage("bsBoss_dead");
-								_currentFrameX = 0;
-								//hp가 바닥이면 죽은 상태로 바꿈
-								_state = BOSS_STATE::DEAD;
-							}
+								_turnState = TURNEND;
 
-							else
-							{
+								//데미지를 받았을 시
 								_enemyImg = IMAGEMANAGER->findImage("bsBoss_idle");
 								_currentFrameX = 0;
 								_state = BOSS_STATE::IDLE;
-							}
 
-							_isDelay = false;
+								_isDelay = false;
+							}
 						}
 					}
 				}

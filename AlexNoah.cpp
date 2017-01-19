@@ -2,7 +2,7 @@
 #include "AlexNoah.h"
 
 #define ALEXNOAH_ANI_COUNT	5
-#define DELAYTIME			20
+#define DELAYTIME			10
 
 HRESULT AlexNoah::init(void)
 {
@@ -87,10 +87,7 @@ void AlexNoah::update(void)
 
 			else if (_state == ALEXNOAH_STATE::DEAD)
 			{
-				if (_currentFrameX > _playerImg->getMaxFrameX())
-				{
-					_isDead = true;
-				}
+				_isDead = true;
 			}
 
 			_countNotMyTurn = 0;

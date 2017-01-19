@@ -2,7 +2,7 @@
 #include "Lunar.h"
 
 #define LUNAR_ANI_COUNT	5
-#define DELAYTIME		20
+#define DELAYTIME		10
 
 HRESULT Lunar::init(void)
 {
@@ -86,10 +86,7 @@ void Lunar::update(void)
 
 			else if(_state == LUNAR_STATE::DEAD)
 			{
-				if(_currentFrameX > _playerImg->getMaxFrameX())
-				{
-					_isDead = true;
-				}
+				_isDead = true;
 			}
 
 			_countNotMyTurn = 0;
